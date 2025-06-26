@@ -1,0 +1,38 @@
+import Manu
+############标准测试模板#######################
+## Test:测试数据执行函数体，【测试数据】每一行数据调用一次Test
+## arg:输入参数
+## exp：预期输出
+def Test(arg,exp):
+  print '测试用例%d：命令设定温度值为%d' % (arg[1],arg[0])
+  Protocol_1.Tmp.Value=arg[0]
+  Protocol_1.Write()
+  API.Common.Timer.Normal.Sleep(1000)
+
+  show=[]
+  str = '遥控器设定温度为:%d,界面预期显示为:%d' % (arg[0],exp[0])
+  show.append(str)
+  show.append('界面室温显示是否正确?')
+  passed=Manu.Check(show)
+
+  if(passed):
+      print '界面显示与预期一致,界面判断通过'
+  else:
+      print '界面显示与预期不一致,界面判断不通过'
+
+  ## 断言:根据实际需求修改一下注释的部分 
+  #assertor=API.Platform.Assertion.Create()
+  #assertor.AddInput('命令设置温度',arg[0])
+  #assertor.AddOutput('界面显示温度',exp[0],passed)
+
+  if (arg[0]<16 and exp[0]==16 and passed) or (arg[0]>30 and exp[0]==30 and passed) or (16<=arg[0]<=30 and exp[0]==arg[0] and passed) :#测试通过
+    print '本次测试通过。'
+    #assertor.Pass()
+  else:
+    print '本次测试不通过，请输入测试问题'
+    #assertor.Failed()
+  #b=assertor.Commit()
+  CH_232_2.Clear()
+
+## Standard_Test:标准测试的方法入口，使用【测试数据】表循环调用Test方法
+Standard_Test(Test)

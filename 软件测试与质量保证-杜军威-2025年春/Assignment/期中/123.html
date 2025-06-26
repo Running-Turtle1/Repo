@@ -1,0 +1,99 @@
+!DOCTYPE html
+html lang=zh-CN
+head
+  meta charset=UTF-8
+  titleAllure 报告 — 京东购物流程n
+  style
+    body { font-family Arial, sans-serif; margin 0; padding 0; background #f4f4f4; }
+    header { background #2196F3; color white; padding 20px; text-align center; }
+    .container { padding 20px; }
+    .summary { display flex; justify-content space-around; margin-bottom 20px; }
+    .card { background white; padding 15px; border-radius 8px; box-shadow 0 2px 5px rgba(0,0,0,0.1); width 22%; text-align center; }
+    .card h2 { margin 0; font-size 2em; }
+    .card p { margin 5px 0 0; color #666; }
+    .test-list { background white; border-radius 8px; box-shadow 0 2px 5px rgba(0,0,0,0.1); }
+    table { width 100%; border-collapse collapse; }
+    th, td { padding 12px; text-align left; border-bottom 1px solid #ddd; }
+    th { background #f0f0f0; }
+    .status { padding 5px 10px; border-radius 4px; color white; font-weight bold; }
+    .passed { background #4CAF50; }
+    .failed { background #F44336; }
+    .skipped { background #FFC107; }
+    footer { text-align center; padding 10px; color #888; }
+  style
+head
+body
+  header
+    h1Allure 报告h1
+    p功能 京东购物流程 自动化测试p
+  header
+  div class=container
+    section class=summary
+      div class=card
+        h25h2
+        p总用例数p
+      div
+      div class=card
+        h2 class=passed4h2
+        p通过p
+      div
+      div class=card
+        h2 class=failed1h2
+        p失败p
+      div
+      div class=card
+        h2 class=skipped0h2
+        p跳过p
+      div
+    section
+
+    section class=test-list
+      table
+        thead
+          tr
+            th用例名称th
+            th所属 Featureth
+            th状态th
+            th耗时th
+          tr
+        thead
+        tbody
+          tr
+            td打开京东首页并断言标题td
+            td京东购物流程td
+            tdspan class=status passed通过spantd
+            td1.2std
+          tr
+          tr
+            td搜索商品 Redmi Buds6td
+            td京东购物流程td
+            tdspan class=status passed通过spantd
+            td1.8std
+          tr
+          tr
+            td应用筛选条件 京东物流td
+            td京东购物流程td
+            tdspan class=status passed通过spantd
+            td1.5std
+          tr
+          tr
+            td点击第一个商品进入详情页td
+            td京东购物流程td
+            tdspan class=status failed失败spantd
+            td0.9std
+          tr
+          tr
+            td将商品加入购物车并断言按钮存在td
+            td京东购物流程td
+            tdspan class=status passed通过spantd
+            td2.1std
+          tr
+        tbody
+      table
+    section
+  div
+  footer
+    p生成时间 2025-04-29p
+  footer
+body
+html

@@ -1,0 +1,79 @@
+;/*++
+;
+;Copyright (c) 2000-2011 ELTIMA Software
+;
+;Module Name:
+;
+;    evsbc7.inf
+;
+;Abstract:
+;    INF file for installing virtual serial bus enumerator driver
+;
+;--*/
+[Version]
+Signature="$WINDOWS NT$"
+Class=System
+ClassGuid={4D36E97D-E325-11CE-BFC1-08002BE10318}
+
+Provider=%ELTIMA%
+DriverVer=09/27/2011,7.1.304
+CatalogFile=evsbc7.cat
+
+[DestinationDirs]
+Drivers_Dir = 12
+
+[SourceDisksNames]
+1 = %DiskId1%,,,""
+
+[SourceDisksFiles]
+evsbc7.sys  = 1,,
+;evserial.sys = 1,,
+
+;*****************************************
+; VSBus  Install Section
+;*****************************************
+
+[Manufacturer]
+%ELTIMA%=Eltima, NTx86, NTia64, NTamd64
+
+
+[Eltima]
+%VSBus.DeviceDesc%=VSBus_Device, VSBC7
+
+[Eltima.NTx86]
+%VSBus.DeviceDesc%=VSBus_Device, VSBC7
+
+[Eltima.NTamd64]
+%VSBus.DeviceDesc%=VSBus_Device, VSBC7
+
+[Eltima.NTia64]
+%VSBus.DeviceDesc%=VSBus_Device, VSBC7
+
+
+[VSBus_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+evsbc7.sys
+;evserial.sys
+
+;-------------- Service installation
+[VSBus_Device.NT.Services]
+AddService = VSBC7,%SPSVCINST_ASSOCSERVICE%, VSBus_Service_Inst
+
+; -------------- vsbus driver install sections
+[VSBus_Service_Inst]
+DisplayName    = %VSBus.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START 
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\evsbc7.sys
+LoadOrderGroup = Extended Base
+
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ELTIMA = "ELTIMA Software"
+DiskId1 = "Virtual Serial Bus Installation Disk #1"
+VSBus.DeviceDesc = "Virtual Serial Bus Enumerator 7 (Eltima Software)"
+VSBus.SVCDESC = "Virtual Serial Bus Enumerator 7 (Eltima Software)"

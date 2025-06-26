@@ -1,0 +1,583 @@
+<Root>
+  <Solution KYID="FF0C3C51-908F-4F35-B0EF-23460625928F" Name="测试项目_1" Version="5.5.3" Type="Windows"><![CDATA[]]></Solution>
+  <Project KYID="B37B87AF-CB28-49D8-8034-23EC82F460AD" Name="测试项目_1" Author="作者名"><![CDATA[描述...]]></Project>
+  <Simulation KYID="7D335FDF-2B69-4591-9BBB-F93EBCA223BC" Name="交联环境" Project="B37B87AF-CB28-49D8-8034-23EC82F460AD" />
+  <TestingSystem KYID="9D9E37CC-48DD-4637-930E-30136CD5EC04" Name="待测系统" Simulation="7d335fdf-2b69-4591-9bbb-f93ebca223bc" Description="" />
+  <SIMTestingSystem KYID="D9CB8BE3-B29C-4B58-AC9C-381EFA23CC33" Name="待测系统" Model="9D9E37CC-48DD-4637-930E-30136CD5EC04" Rect="{X=596,Y=308,Width=100,Height=100}" Image="AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAnA0AAAKJUE5HDQoaCgAAAA1JSERSAAAAQAAAAEAIBgAAAKppcd4AAAABc1JHQgCuzhzpAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAADTFJREFUeF7tW/lXU9ca9c/qYKvM8wxJSCAJEMhEIMyjDIIyiYqzVkVFBKlaUZxaK6LWOjE4oCBga997nVvt9N77bb+1vzB50UWKl7jWa3/Yi+QmuXt/+57znfOdc1gx9s//4q+MFcoLfzX8bYDywp/Bx1fvob5hE2rqW7B23QbUrW9FXcOLqG/ciIqqehSXVaOhaRO27dqLQ509+Oj0eXzSfxUX+6+ht+8COrqOYcfudjRuaENpRS0qqtehvnHh/chBrtr6FtQ3bhINSl1/Bks2YGTyGfILy+DKyYM7vwj5hSUoLC5FYXEZioiSckFxaQXsDhdSjWbkFxRh3fpG7Ni5G51d3eg9dRq9p/rQ1d2DXbs/QENjM4qKS2Eyp8PhzJHfztyH9+S9iYKiEuTlFyEnNx+FJRW4O/lsgT5vsWQD7jz6Dg6nS4RQYGn5GpRXVqG8shoVa2pmUVlVi+KSchhNacjJzcPaunXYsnU7Dhw8hO6jPeg++iEOHjqMrdt2oH5dA9x5BTCZM+Q3/O38e/HeRFnFGjEnv6AY2Tl5uPPo+wX6vMWSDRgc+16ePp98aVnlbLAvw5rqtbA7spFhyUJJaQXWNzShrW0bdu7aI09+y9Yd8vTLyithybRJi+FvlPeZj9KKKhQWlSInt0C0KPV5i9czIDcfBYWlKKuo8hjwKlTVyncsFisys2woLCrBmqpa1NU3yFOvql6L4pIyZFntYgC/K4Eq76O4n8eA/DdjwP0nv0gLYH9k86+Ybp6vAoWzpWRZHTCnZSAryy6twuFwSeBp6RZYbU75Dr+r/L0SZeVVwu3KzRMtSn3ewisDrtyZxLHT/TjWR1yW153HzsHpykVeQTFKyivliSwGj/gq5BUUSfBZNoeAr3ltJocof/cy0HRyUwO1iL55oGZlHC/DogZcvjWOXHc+SsvK0bKhFfv3t+PERyclgdmdLhkBSsoqRZC3mDNj3hOdDspbkJPcdmeOaDl5shftBw6itXUTyssr4M7LR//N8QXxKLGoAV3Hz8HpdMnwdaijE5cuD2D88QSGR+4Jea67QDIyBfkS5CQ3h8vhkbuYmJzCwJVrONzZhYamFrhcuTjUfXpBPEosakD3ifNwZudIlu44fASXB64I2d1792GzZ0se4BjNYcuXICeHVXYfapmaeoKr167jSFc3mpo3wJWTi46evgXxKLGoAR1H+8SA9dMG9F8ewOOJCYzcvQebzYlsl1uysUx+fAhyunLcsNmdomVycgpXrn6GziNzBhw6qkILOHryIhyObNTVrcf+9oO48PFFPBgdxa3bd2C1OcSAAs4Ci0p9CnKSmxqoZfThI3zy6SUcONgh3TU72yXalfEosagBw49/RPPG7TJFra6uka6weXMbNmzcBEuWDc7sXJmRUZAvQU6nyw1Lpl20bG7bgsamFtTU1KKktBzNG7eJdmU8SixqwAzuTj2fxjP5e33kKTKtdjhdOTIdpiBfgpwcAqmBWua0efQp9b8KXhugxND4D9MtIAfuvEIR5EuQk62PM0tqUerzFks2gMVQRqZV5gI57nzk5hX4FOQkNzVQi1Kft3gtA9IzrLNDIefkvgQ5yU0Nb8SA2w+/Q1p6lszfmY0pyJfwjABO0UAtSn3eYskG3P/iV5jTLFLcsC9SkC9BTk9hlSlalPq8hVcG9F64jh17DmHn3sPYva8Te9qPYNvuA7LIwfKVCyNMhr4EOclNDdRCTbv2dWLn3g7RSs3KOF6GRQ24MDAMu92ByjXVsmrT0/Mh+vsv4+y580g1piE9I8tT1jpdPgU5yU0N1MIp+ofHTmD7jl2oqq6Bw+HE2f7BBfEosagBM8UQV3FYDHEqzGJoaHhEyFnHczpKQb4EOclNDdQyUwx1HumSCZFqxVDX8eliqKlFKi06PTn1RObfXOjk4ganoxTkS5CT3NRALVNPvpguho6iuaVVaoHDPWcWxKPEogbQRRrgaQFHcKmfxdAkhkdGkJJqgsmULqs7VqvDpyAnuamBWubK4W5PC2AxpEYLOHH2Kux2J2pq67Dng7043XcWdwaHhMxgSJUklJlpE0G+BDmNxjTRQC2DQ8M4c/Y89u5rl5VnpzNbtCvjUWJRA0af/o59Hcextr4J6xtb0byhDZvatqOltQ3JySnSBzMsVsnIvgQ5aQA1UAs1Nbe2oaGpFXX1TdjXcQyjX/6+IB4lFjXgVRie+Ak6GpBqRnpGpix5+xLkNBrNooFalPq8xZINuDX6DbQ6A1JTTZKNKciX8IwAJuh0Btwe/WaBPm/xWgZoNHqkpBolG1OQL0FOJkCtTv8mDUiWJMRsbDZn+BTkNBiMooFalPq8xWsZkJSkg16fKsmIgnwJcpI7KekNGTD8+CckJGqhS2YeMIsgTkr4WmD0XFsukIPc1EAtSn3eYlEDRp/+gf2HT2DtuiYZYmaGnJbWzYhPSIJWm4yUFKP0R2Zlq9UuMzWTKU2uCVJMkizVBDnJTQ3UMn8Y5JDNoZtDuDIeJRY14NTH16Ww8EyE9qGv78z0ROgqEhKSpBswD8ikyGiG212A/PxCmM3p0kQZPJusmKQiyEduahgYuLp8EyEphmanwp5iiFNhEsbFJyIhUYNkfQr0hlQJmNnZYslCcrJBTHC782XzUz/zHZVATnJTw+DwsOwLvFAMqTUVfmkxNDkl21FxcQmIj0+SsZgB88lws4LTVL5ni8jOzpUNFL7nrE0tkJPc1EAtT5arGDrYfcqzNzjdAqQYejwhLSA2Ll4EaLV6EcSnzBzA2oGv2Vdzct1yLkCn83xHLZCT3NRALfP3BlUth7moYLfNLIhsR0/PMekGfWfOIjomFrFxCTIWa7TJkpXZ3GkCXzMRZrtypUswYVG0WiAnuamBWuYWRHaiurpWvQURgstL22VJrEOWnbj8tHVXOyIjYxAbmyDJiGAzZ7AE8wETFVtDWppFPhejVALvR25qoBblktjJ858tiONl8MqAl+H+k18RERmN2Nh4JCZqkJSknYUmSSfX9MkGWU4zmcwvfK4GeH9yUwO1KPV5iyUbcPPB10IeExMnQ1FigscEs0yL05GUqJUuwNfp6RYkJGhEtFogJ7mpgVqU+rzFaxoQhejoWMTHJyI+IVGEZWXZYLM5kKTRSuJj8Bwd+B2KVgu8X0xMrGh4YwaEh0ciKioGcbEJkpFpAAPOyLBIN6BIGf50esTHJaoKckZHxYiGN2IAd2NCwyIQFRUlTZH9kQFnZGTCarXJU9JodNIaOBzyczVBzqjIGNHgk52hue3x57g39RzXhr9ESGg4IiIipRtQEMFg08wZ8ppdgF0iNcU4+7laIGdERJRooBZqWpbtcS43tWzaLgcZq2tq0djULIcRWlpaERwUijBpBTEiKDoqVp48A+d76RrT3SOGn6sIcpKbGqhl85at0wckPIcuqVmVAxI8c8cjMmvr108fkfkED0Yf4vrnNxAcHIqQkDBERkYL2DTZAsymNOkOOq0e6WkWuUZzKFotkI/c1PDZ5zfw8NHY8hyRma0FFKfEBgeHERQUIgLYFCMjouQpa5K0MKaaJEPHxyUgzZwOnTYZEeFRs0apAXKSOzg4BIODQ3JKjIek5p8SU+WQ1BGeCFUYMDk1haGhYQQGBosJzMQEDTAYUqDXG8SApCQNDHrWCAYRrCbIR+6goGDRMlcMqXxMTnaG5KDkvGJoYhK37wwiMCAIgQHBCAuNkP7IZq7VJEOr0SEmOk4MYQvgUMjPw8MiVQM5yU1QC7frZg9KNqpYDPG4qRyVLS1HS8sG7Nvfjo9O9krd7e8fgICAIISGhCEsNBzhYRFIkYURk7ynAZwNshAKDQ2Xa2qBnOT29w8ULb29pzxHZTduRHlFpWjuvzm2IB4lFjWAmD0sPY3jfQNygHK1XwAC/AMRwmQYHCoGmIxmGPQpiOAkKTIaJqMJGo1WEhZFqwXykZsaqIWaluWw9Ktwd/I5Vq3yg79fAIKZDINC5MlwEYRZPyI8QkzgiMAkyM9njFIDvB8NoAZqUerzFks24Mb9fwm532p/6YceE0JlKOS4T5Hsq5y2coSQEUNFkNNvdQBWr/ITLUp93uK1DCD5qvdXSyvwJMQgeSrE/Pf8G8QRY4mYSXZzCBJOcosB917DgEf/+A8efvXvafwh4HLyDB58+dsL4IEkLpVfujGOd95ZiZUr3/MIWe0PP7+AF8AkqQaU9yXXqlWr8d7K90XDpzfGRRO1KfVyh3gWTxkbY/TEy9hXeH74G+5N/SJz6OGJn2WjYWj8RwyO/SCFBnFr9FvcfPANbtz/GnfGfsDFz8cQGBiCt956G+/SiHffEzMoajlBDnKR8+233hENF6+PyX+OURsrQ+4UCR5+K9cZB+NhXCMTP3vqmSe/iCkrZp44TZg1YvK5/F/gyMQzjyETP2Po8U8YHP9Rgudf3uRA9zkYzVboko3QJZuQrCfMywyTcJGT3Ae6z4oWBjk/2PkBCyY9RRIDn2kpfPhLzgH/L/jbAOWFvxr+BzQiAkewEPuJAAAAAElFTkSuQmCCCw==" />
+  <DevicePlanFolder KYID="3F6223EB-F078-4834-9A20-AE848076BFCD" Name="规划目录" ParentID="B37B87AF-CB28-49D8-8034-23EC82F460AD" />
+  <CheckingFolder KYID="3CD91454-487C-4B79-A869-E905E6FE0548" Name="校验算法" ParentID="B37B87AF-CB28-49D8-8034-23EC82F460AD" />
+  <TopIncludedFolder KYID="F0F54F81-692D-45F9-BCEA-DBD3B1B923EE" Name="内容附件" ParentID="B37B87AF-CB28-49D8-8034-23EC82F460AD" />
+  <TopTestCaseFolder KYID="3221F14E-AEEF-435B-8ACA-A5C1FC7CD783" Name="测试目录" ParentID="B37B87AF-CB28-49D8-8034-23EC82F460AD" />
+  <TopMonitorFolder KYID="9D33894B-4C58-440D-944E-6D1281439EFC" Name="监控目录" ParentID="B37B87AF-CB28-49D8-8034-23EC82F460AD" />
+  <TopConstraintFolder KYID="7469AB35-20FC-4933-AFE7-90D97615C507" Name="约束变量" ParentID="B37B87AF-CB28-49D8-8034-23EC82F460AD" />
+  <HardwarePlan KYID="F8760CCC-C8AC-4BE4-A671-AC33B7FB88F5" Name="设备规划" Parent="3F6223EB-F078-4834-9A20-AE848076BFCD" />
+  <PCPlan KYID="1881F495-4FE4-4B0E-A9EB-DF545D91D79A" Name="PC规划" DevicePlan="F8760CCC-C8AC-4BE4-A671-AC33B7FB88F5" IsActive="true" />
+  <Server KYID="F984E79A-C878-4E28-83AF-2F19E39B53CC" Name="Server_1" IP="127.0.0.1" Port="2222" PCPlan="1881F495-4FE4-4B0E-A9EB-DF545D91D79A" />
+  <PeripheralSystem KYID="B14D4B2E-8430-4557-8A92-72C1B61CC583" Name="工作电机组" Simulation="7D335FDF-2B69-4591-9BBB-F93EBCA223BC" Description="" />
+  <SIMPeripheralSystem KYID="A82314BF-F908-49A5-A01E-CAA5E7D346C6" Name="工作电机组" Model="B14D4B2E-8430-4557-8A92-72C1B61CC583" Rect="{X=266,Y=125,Width=80,Height=80}" Image="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" />
+  <PeripheralSystem KYID="8A1BFEDC-406B-417E-89D9-1F886C5867B4" Name="遥控器" Simulation="7D335FDF-2B69-4591-9BBB-F93EBCA223BC" Description="" />
+  <SIMPeripheralSystem KYID="4B45F342-AA5A-4B18-9983-92131507A994" Name="遥控器" Model="8A1BFEDC-406B-417E-89D9-1F886C5867B4" Rect="{X=378,Y=537,Width=80,Height=80}" Image="AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAJgoAAAKJUE5HDQoaCgAAAA1JSERSAAAAQAAAAEAIBgAAAKppcd4AAAABc1JHQgCuzhzpAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAACbtJREFUeF7tWglXFFcWzh/K5miQfRMCCggqM8fMZDwxGpfEOGOijmvGDEbjPu6iBllaEGVrmm5pumUTgeqFHRRZtBW1WFyrcanWb859TWGl6AAaKHXS95zv0FQ96t3vq/fuve82773nNa95zWte85rXvDZOM5lMh81mM95mkI9KvyfMaIIXL17g+fPnkw6Xy/VaIB+Vfk+Y0cPJuUePHr2VUE2Ahw8f4smTJwyPHz+eVAwODg5DEIRhsuSDEqoKQM7t2LEDPj4+r4Tp06cz+Pr6ws/PDwEBAQgKCkJoaChmzJiByMhIREdHIyYmBnFxcYiPj8e8efPYT39//xHPS0pKUl+ABw8eMAEiIiLw/s5uvL/bgQ/29uDD/Xfw0X4eHx/gMeUgj6mHeEw7zMPnKA/fYzz8j/MIOM4j+CSPsBQeEWm9iM7oRWxmLxKy+/DnnD78taAfXxT2Y7FhAMuMA1hhuotVpXfx1fl+zC/g8ZmWx+c6Hgv0PL4w8AiIjMHVq1eZT6oJcP/+fbYkmQC7rmFnSQ/2lQ9gytGHmJos4HCNgCO1AnxOCvBNEXDMIiDZIiA4TUCYRkCKXUBqnYCYswLic53IanbibKsTfzc4sdA4CG37IIo6BrGyYhCrqwZh7B5E7hUBC0oELDQLWGQWsLhUwJJyAYGfxqK9vZ359IYEuI7d5js4WPUQ004+wScpIk7UueGfJiIgQ8QvDSJSGkWEnxERkS0ivUWEpk1EglZEok5E7lUR+Z0iFl1wYWm5C+evu2B0uLCmxoUNVheKHS7kd4n4skLEV5UillaJWF4t4psaEYFRceoKQJPcu3cPTqeTCfDBbgdb9vTmifz0dMAvA/DXAIGZQHAWEHYGCD8HROYA0XlAjBZIKAISDcBnRmCBGVhUBiyrBL6tAlbVAGstwHobsMEOLL8ELK4CllwCltcA39QC31qAf9iAoOg4XLlyhfkkiqI6Aty9e5cJQEHrwz0OtuenHRfgc0p8Sf40EJIFhBL5szLyBUB8ITDPAMwn8ibgyzJgaSWwYoj8miHym+uB1RZg8UU3+WUK8qvsbgEuX77MfFJNgIGBAZaSSICP9jqwt5TH4VoBvqniMHl684x89hD5XGBdphUbsqzYnG3DlnN2JOXWYXtBPXbqGrBH34T9xc04aGzBEVMLki+04pi5BdsKrEjK47A1j8NP+Ry2FXDYXsAx8t/XvRSAfFJNgP7+fpaLSYCP9zmwt4xnQc8vTRxBPmKI/KwCYEOmFUajESUlJczRCxcuoLS0FOXl5aisrMTFixdRVVWFS5cuobq6mt3X6/Uj8LOWY+TXNADB0XFoa2tjPqkiAE3S19fH8m54eDim7HNg6mEe038REJAuIigTCJGRjyLy+cDsQmDTGRuam5vR0tKC1tZW5ji9PdrDFMgonRE6OjrYtcbGRjQ0NIzAz4UcVjcAaxvdAtCzyKdnz56pI0Bvby/Lu2FhYfjTfx345AjP0l1ghoh/pnJYlcrh+3QOazIsWKuxYH2mFZuybDigKRoXeQIJpSQuYYeOY+TXNbkFoGeST6oJwPM8i7ohISGYut/BCh3/UwJCTov4LpVDWloaQ3p6OjIyMqDRaJCZmYnTGs2Y5Ds7O9l9JWk5duo4Rn5Di1sAEot8UkUAmuTOnTss6gYHB2PaAQer8oJSBYRmivgunWP7XNrrJpNpeL8X5uePIC8JIJEfbelL2FXEMfIbW90CNDU1MZ9UFYCibmBgIHwOOuCXzCM4XWCFzuoMi0fyFOx0Wu0IAeTk6fNoS1/C7iKOkd/cBgTPVFmAp0+f4vbt2yzo0EHG95ADASd4hGoERGaLWKOxeCRPkV5fWOiRvATay0qynrBHzzHyP1x2C0Arhnwi31QR4NatW2zPkQD+RxzscBORKSA6R2S53hP5iooKGIqKPO57wlj7Xo69Bo6R33IFCJkZx66RT6oKQIrT8TTwmIOd7KKyBMTmiazQ8USe8nyxXj9i3xNoVYy175UCEPkf29+QAD09PQy0AoKTb2BGWi9mZQuI14qsyvNEnooco8GAkuJimIxGmEtKUGoy4bxej5zsbJzNyvoVDmryWbSngEd7npb9HgPHyO87zzHy/7nqFqC+vp75o5oAN2/eHBYg/OQNRGX0YnaOE/N0Irbk2FFWVjaCvLzCq62tZaDrFC+Ki4tHgMj/qwlY3+xOd5uG9vy/h948kU/qcAtQV1fHfFJFAGqD3bhxg4E6OZ+euskaGnPznZhvELE1r84jeSJOqKmpGZM8YZeOe0m+1TP5rZ1uAex2O/OHfFNFAIfDwSakQigm7Sbis/vwF60TnxtF9+GmkFJVI/YZ3AecQyXNOGpuQXJpK06UteJQSSO2F1h/dbih+n5HIede9kNLfyzyPw0JYLPZmE+qCXD9+nU2IZXCs0/3IPFcH/6md2Kh2YUlFcDXF4GV1cCq2qFzvR34oR74kcpXO/BNDfB1LbDCAqy0uo+1dLiR6vt1sjdP6Y7Ib/FAfluXWwCr1cp8UlUAWgHUEEnRV0NjtiGnqgVarh1Ftk4Y7F0oruuCsb4bpsZumJuuMehtHcitvYzcmjbk1bqRz7lRQLC0QUuwtqFwCDqbG0Uy6O0vERkVrb4A165dYyuAusJRUVGYOXMmZs2ahdjY2OFObkJCAubOnYvExETMmTOHrRZlR3cisHHjRnR3dzOfVBGAusE0oRQHJFAUliClSQL9Ts51dXVNKsgn8k01AeSk5YSpICHQZxpD5Gn8aLBYLMxxAn1+3euqCUCQvhlSgnIxgT4rv+X5LdBzpW985HO86nXpntLvCbM//LfDr2s6nY7V/5SvxwMaS3+jfM47a14B3nUB3oW9r8SExgJ6ILWbxgI1TCUo/3PDE+Tjlc/6vSCflTxe2yQBlMWHVIBIlSHVBFKzhDpG1DajLyyof0hNVAn0O92jVjb18uR1Az1Hqh2Uc40XkyoAta6otS3HaI1OqUghUkpIJGmcVDWSAFTX0/Pkc9GY8WDSBaAOrBJEXE5MOi1K1aK8ZFa+ZXKaxKIVQyuHhKD71CClDrE0hyToWJh0AZQTKieXtgMRJTKjbQf6TNeU20FaCcpVMh68UQEInmICERuPCDTm94rwxgUg/JYI9JbHIwKtGk8iKOfxhLdCABo3lgieMoNSBGVmGM/8ky6ApyzgCTROmR2kQCYXSAIJIBeBxtB4yij0txRYxyPCpAugzABjgSK5/H8C5GlTLo60IiQR6Lo8FUrpcSwRJl2AV4V8K0iZQb4dlPFALgLd9xQTSIjRCqVJE2CioEbJPKEC/OEPQ17zmte85jWvee3/zv4H8joQqEI6FTcAAAAASUVORK5CYIIL" />
+  <LogicChannel KYID="5C1436C6-1656-4D95-9281-1AD12FB697E4" Name="CH_232_2" PeripheralSystem="8A1BFEDC-406B-417E-89D9-1F886C5867B4" ChannelType="232" />
+  <Client KYID="88A2D32F-1768-4E01-A6EA-70370DCFC52D" Name="客户端" IP="127.0.0.1" Port="10319" PCPlan="1881F495-4FE4-4B0E-A9EB-DF545D91D79A" />
+  <TCPython KYID="97649C68-B8D6-4F85-A8A8-3983A95A468D" Name="温度设置" FolderID="3221F14E-AEEF-435B-8ACA-A5C1FC7CD783">
+    <Code><![CDATA[import Manu
+############标准测试模板#######################
+## Test:测试数据执行函数体，【测试数据】每一行数据调用一次Test
+## arg:输入参数
+## exp：预期输出
+def Test(arg,exp):
+  print '测试用例%d：命令设定温度值为%d' % (arg[1],arg[0])
+  Protocol_1.Tmp.Value=arg[0]
+  Protocol_1.Write()
+  API.Common.Timer.Normal.Sleep(1000)
+
+  show=[]
+  str = '遥控器设定温度为:%d,界面预期显示为:%d' % (arg[0],exp[0])
+  show.append(str)
+  show.append('界面室温显示是否正确?')
+  passed=Manu.Check(show)
+
+  if(passed):
+      print '界面显示与预期一致,界面判断通过'
+  else:
+      print '界面显示与预期不一致,界面判断不通过'
+
+  ## 断言:根据实际需求修改一下注释的部分 
+  #assertor=API.Platform.Assertion.Create()
+  #assertor.AddInput('命令设置温度',arg[0])
+  #assertor.AddOutput('界面显示温度',exp[0],passed)
+
+  if (arg[0]<16 and exp[0]==16 and passed) or (arg[0]>30 and exp[0]==30 and passed) or (16<=arg[0]<=30 and exp[0]==arg[0] and passed) :#测试通过
+    print '本次测试通过。'
+    #assertor.Pass()
+  else:
+    print '本次测试不通过，请输入测试问题'
+    #assertor.Failed()
+  #b=assertor.Commit()
+  CH_232_2.Clear()
+
+## Standard_Test:标准测试的方法入口，使用【测试数据】表循环调用Test方法
+Standard_Test(Test)
+]]></Code>
+    <Data>
+      <Item Name="InE">
+        <InputExpectTD>
+          <InColumns>
+            <InColumn Name="设置温度" Type="System.UInt16" />
+            <InColumn Name="序号" Type="System.Byte" />
+          </InColumns>
+          <ExpColumns>
+            <ExpColumn Name="界面显示温度" Type="System.UInt16" />
+          </ExpColumns>
+          <Datas>
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAMAAAAIDhkACAIBCA4ZAAs=" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAMAAAAIDg8ACAICCA4QAAs=" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAMAAAAIDh4ACAIDCA4eAAs=" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAMAAAAIDiMACAIECA4eAAs=" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAMAAAAIDhAACAIFCA4QAAs=" />
+          </Datas>
+        </InputExpectTD>
+      </Item>
+    </Data>
+  </TCPython>
+  <KiyunHD KYID="49422346-8029-4D1B-920B-C7BB92B76CC8" Name="KiyunHD_1" HardwarePlan="F8760CCC-C8AC-4BE4-A671-AC33B7FB88F5" />
+  <SIMChannel KYID="EF660FBD-D552-4EC9-9BE1-147F76264F38" Name="SIMChannel_2" Model="5C1436C6-1656-4D95-9281-1AD12FB697E4" Rect="{X=513.9677,Y=475.0179,Width=10,Height=10}" />
+  <PlaningChannel KYID="E3E98DC1-5D9A-4513-A3B8-631995C7BD6E" Name="CH_232_2" HardwarePlan="F8760CCC-C8AC-4BE4-A671-AC33B7FB88F5" LogicChannelID="5C1436C6-1656-4D95-9281-1AD12FB697E4" />
+  <Protocol KYID="17DEEF77-E4D8-448B-8CC4-85A885ACA275" Name="Protocol_4" Parent="342C336F-94D4-4788-A622-D74D5F68FAD5" Direction="READ" Document=""><![CDATA[Protocol Protocol_1 #
+    Segment Head StandardUInt16 ByteOrder=Big Default=21930
+    Segment Flag StandardUInt8 Default=48
+    Segment 运转状态 StandardUInt8
+    Segment Check Checking Algorithm=常用校验_1 BitCount=8 Range=[Flag,运转状态]
+    Segment Tail StandardUInt16 ByteOrder=Big Default=21930
+End
+]]></Protocol>
+  <SIMProtocol KYID="D1447267-CA1D-4831-B26B-C966373E4814" Name="SIMProtocol_3" Model="17DEEF77-E4D8-448B-8CC4-85A885ACA275" Direction="READ_WRITE" Points="" />
+  <LogicChannel KYID="342C336F-94D4-4788-A622-D74D5F68FAD5" Name="CH_232_3" PeripheralSystem="B14D4B2E-8430-4557-8A92-72C1B61CC583" ChannelType="232" />
+  <SIMChannel KYID="E97974CB-6373-46C2-89A8-568AD6651F86" Name="SIMChannel_3" Model="342C336F-94D4-4788-A622-D74D5F68FAD5" Rect="{X=422.7519,Y=229.1121,Width=10,Height=10}" />
+  <PeripheralSystem KYID="59257756-820C-4AF2-A612-0E9961C75773" Name="室温传感器" Simulation="7D335FDF-2B69-4591-9BBB-F93EBCA223BC" Description="" />
+  <SIMPeripheralSystem KYID="608E45A7-39FC-4F60-8A4D-750E388E32A2" Name="外围系统_1" Model="59257756-820C-4AF2-A612-0E9961C75773" Rect="{X=1027,Y=174,Width=80,Height=80}" Image="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" />
+  <PlaningChannel KYID="AD948BE7-6268-4993-AB3B-4509C4CD330D" Name="CH_232_3" HardwarePlan="F8760CCC-C8AC-4BE4-A671-AC33B7FB88F5" LogicChannelID="342C336F-94D4-4788-A622-D74D5F68FAD5" />
+  <Protocol KYID="49016451-43A2-4589-B48B-176A82B346A3" Name="Protocol_1" Parent="5C1436C6-1656-4D95-9281-1AD12FB697E4" Direction="WRITE" Document=""><![CDATA[Protocol Main #
+    Segment Head StandardUInt16 ByteOrder=Big Default=21930
+    Segment Flag StandardUInt8
+    Segment Cmd StandardUInt16 Default=32
+    Segment Tmp StandardUInt16
+    Segment Check Checking Algorithm=常用校验_1 BitCount=16 Range=[Flag,Tmp]
+    Segment Tail StandardUInt16 ByteOrder=Big Default=21930
+End
+]]></Protocol>
+  <SIMProtocol KYID="9EA1443E-ECC6-41BB-818A-AF8616AEC9F8" Name="SIMProtocol_2" Model="49016451-43A2-4589-B48B-176A82B346A3" Direction="READ_WRITE" Points="" />
+  <LogicChannel KYID="357F1580-DDF1-464E-8937-76E544843FA7" Name="CH_232_1" PeripheralSystem="59257756-820C-4AF2-A612-0E9961C75773" ChannelType="232" />
+  <SIMChannel KYID="0A2BED50-EF6E-49C3-A860-7F59B56F4F80" Name="SIMChannel_1" Model="357F1580-DDF1-464E-8937-76E544843FA7" Rect="{X=922.4183,Y=219.815,Width=10,Height=10}" />
+  <PlaningChannel KYID="A2CE961C-33A4-48D1-A23C-6376A413E98C" Name="CH_232_1" HardwarePlan="F8760CCC-C8AC-4BE4-A671-AC33B7FB88F5" LogicChannelID="357F1580-DDF1-464E-8937-76E544843FA7" />
+  <Protocol KYID="D8505506-95F0-4EC2-9843-BAE224C890A4" Name="Protocol_3" Parent="357F1580-DDF1-464E-8937-76E544843FA7" Direction="WRITE" Document=""><![CDATA[Protocol Main #
+    Segment Head StandardUInt16 ByteOrder=Big Default=21930
+    Segment Flag StandardUInt8 Default=16
+    Segment 当前室温 StandardInt16
+    Segment Check Checking Algorithm=常用校验_1 BitCount=16 Range=[Flag,当前室温]
+    Segment Tail StandardUInt16 ByteOrder=Big Default=21930
+End
+]]></Protocol>
+  <SIMProtocol KYID="FC1B5FBC-3E3F-4D9A-AB1C-FD6CFC585576" Name="SIMProtocol_1" Model="D8505506-95F0-4EC2-9843-BAE224C890A4" Direction="READ_WRITE" Points="" />
+  <RS232 KYID="1F006706-7844-4D7E-BEC1-52002E356194" Name="CH_232_1" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="357F1580-DDF1-464E-8937-76E544843FA7" CacheSize="52428800" PortName="COM8" BaudRate="9600" Parity="0" DataBits="8" StopBits="1" />
+  <RS232 KYID="DE741694-A3B0-4327-B53F-652ED473FAFE" Name="CH_232_2" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="5C1436C6-1656-4D95-9281-1AD12FB697E4" CacheSize="52428800" PortName="COM6" BaudRate="9600" Parity="0" DataBits="8" StopBits="1" />
+  <RS232 KYID="5A904383-2647-408A-8AEF-FF46265E2DC3" Name="CH_232_3" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="342C336F-94D4-4788-A622-D74D5F68FAD5" CacheSize="52428800" PortName="COM10" BaudRate="9600" Parity="0" DataBits="8" StopBits="1" />
+  <RS232 KYID="CEC8ACD7-54BB-4B56-88D6-7ED30A1DEFBB" Name="RS2324" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" PortName="" BaudRate="9600" Parity="0" DataBits="8" StopBits="1" />
+  <RS232 KYID="F9F35052-9FF2-4D8C-BEE8-F0027BEDD6FC" Name="RS2325" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" PortName="" BaudRate="9600" Parity="0" DataBits="8" StopBits="1" />
+  <RS422 KYID="608DA5B1-9FC3-40F7-90D5-9087243CDAC3" Name="RS4221" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" PortName="" BaudRate="9600" Parity="0" DataBits="8" StopBits="1" />
+  <RS422 KYID="B1466B9A-F5E0-46C4-8D5F-28E80BC54362" Name="RS4222" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" PortName="" BaudRate="9600" Parity="0" DataBits="8" StopBits="1" />
+  <RS422 KYID="7A1127E6-EEB4-4A9C-8C5D-723A7294A0DB" Name="RS4223" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" PortName="" BaudRate="9600" Parity="0" DataBits="8" StopBits="1" />
+  <RS422 KYID="38A42864-EB3C-4358-9324-D0C314AD1F07" Name="RS4224" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" PortName="" BaudRate="9600" Parity="0" DataBits="8" StopBits="1" />
+  <RS422 KYID="C442B3B2-B100-471F-B61E-67F89DD05588" Name="RS4225" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" PortName="" BaudRate="9600" Parity="0" DataBits="8" StopBits="1" />
+  <RS485 KYID="C5BC6B31-BEE8-4745-98DB-16F29E548242" Name="RS4851" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" PortName="" BaudRate="9600" Parity="0" DataBits="8" StopBits="1" />
+  <RS485 KYID="6F341288-5B99-44A3-B59E-73690584FFBE" Name="RS4852" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" PortName="" BaudRate="9600" Parity="0" DataBits="8" StopBits="1" />
+  <RS485 KYID="FDCD4315-4A4B-478C-AD28-0B0EF6192698" Name="RS4853" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" PortName="" BaudRate="9600" Parity="0" DataBits="8" StopBits="1" />
+  <RS485 KYID="E392C608-1681-407F-A55C-4D6DE7D2AFAC" Name="RS4854" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" PortName="" BaudRate="9600" Parity="0" DataBits="8" StopBits="1" />
+  <RS485 KYID="F7D772E7-F76E-43A2-9D28-5950482FA0C6" Name="RS4855" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" PortName="" BaudRate="9600" Parity="0" DataBits="8" StopBits="1" />
+  <CustomPy KYID="0349CC9E-919B-4CD6-8ECB-25CDF19A0F84" Name="CustomPy5" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800"><![CDATA[def HasData():
+	return True;
+
+def Read():
+	return [1,2,3,4,5,6];
+
+def Write(buf):
+	return True;
+]]></CustomPy>
+  <TCP-Client KYID="5EAA7210-F61B-4C33-82BF-74D8CED9F10F" Name="TCPClient1" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" LocalIP="" LocalPort="9999" IPAddress="127.0.0.1" Port="8888" TimeOut="1000" />
+  <TCP-Client KYID="55FBD32D-FD9A-42EF-BC42-BFD6101A4588" Name="TCPClient2" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" LocalIP="" LocalPort="9999" IPAddress="127.0.0.1" Port="8888" TimeOut="1000" />
+  <TCP-Client KYID="ED05F495-BAD6-47AF-8A59-CE7D553B629B" Name="TCPClient3" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" LocalIP="" LocalPort="9999" IPAddress="127.0.0.1" Port="8888" TimeOut="1000" />
+  <TCP-Client KYID="81B40200-387D-499C-AFAB-5C72404C9C28" Name="TCPClient4" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" LocalIP="" LocalPort="9999" IPAddress="127.0.0.1" Port="8888" TimeOut="1000" />
+  <TCP-Client KYID="8A12F245-A34B-4DB1-910C-5A369E4B3ED5" Name="TCPClient5" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" LocalIP="" LocalPort="9999" IPAddress="127.0.0.1" Port="8888" TimeOut="1000" />
+  <TCP-Server KYID="D9BEAFD6-230A-4786-BBDB-79D220F91001" Name="TCPServer1" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" ListenerAddress="127.0.0.1" ListenerPort="23456" ClientAddress="127.0.0.2" ClientPort="23457" />
+  <TCP-Server KYID="398118D6-2748-42C8-8EE2-26B7D5E4DC4C" Name="TCPServer2" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" ListenerAddress="127.0.0.1" ListenerPort="23456" ClientAddress="127.0.0.2" ClientPort="23457" />
+  <TCP-Server KYID="F190FAEC-0290-4828-91E0-2D62E9E32221" Name="TCPServer3" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" ListenerAddress="127.0.0.1" ListenerPort="23456" ClientAddress="127.0.0.2" ClientPort="23457" />
+  <TCP-Server KYID="F75D6753-EFB5-4CD3-949E-2F7BDE4609F7" Name="TCPServer4" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" ListenerAddress="127.0.0.1" ListenerPort="23456" ClientAddress="127.0.0.2" ClientPort="23457" />
+  <TCP-Server KYID="AA2AD0D6-9827-4CD2-B3F7-F4EBAF2CF8B3" Name="TCPServer5" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" ListenerAddress="127.0.0.1" ListenerPort="23456" ClientAddress="127.0.0.2" ClientPort="23457" />
+  <UDP KYID="8C43B8AE-81B0-4543-86EF-513F373E66E6" Name="UDP1" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" ReadIP="127.0.0.1" ReadPort="11111" WriteIP="127.0.0.1" WritePort="22222" />
+  <UDP KYID="1E19D761-4D84-4945-A0E3-027D0A74C087" Name="UDP2" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" ReadIP="127.0.0.1" ReadPort="11111" WriteIP="127.0.0.1" WritePort="22222" />
+  <UDP KYID="BDE8A31F-DE02-46D5-A28B-7378695F1700" Name="UDP3" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" ReadIP="127.0.0.1" ReadPort="11111" WriteIP="127.0.0.1" WritePort="22222" />
+  <UDP KYID="48AB0323-D6A7-478F-9DC4-102AAE148C7C" Name="UDP4" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" ReadIP="127.0.0.1" ReadPort="11111" WriteIP="127.0.0.1" WritePort="22222" />
+  <UDP KYID="EB04565E-8312-474D-B351-614D6075B158" Name="UDP5" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" ReadIP="127.0.0.1" ReadPort="11111" WriteIP="127.0.0.1" WritePort="22222" />
+  <PlaningDevice KYID="2CB30B58-61B1-48EC-AD1A-9F07E6194E3D" Name="KiyunHD_1" PCPlan="1881F495-4FE4-4B0E-A9EB-DF545D91D79A" Client="88A2D32F-1768-4E01-A6EA-70370DCFC52D" Device="49422346-8029-4D1B-920B-C7BB92B76CC8" />
+  <TCPython KYID="49FBB179-DE2A-4F68-99EE-77BEC29BE1A8" Name="故障警告功能" FolderID="3221F14E-AEEF-435B-8ACA-A5C1FC7CD783">
+    <Code><![CDATA[#测试 室温采集故障告警（SWCJGZ_GN）;先启动软件脚本，然后打开被测件
+#传感器一直采集发送室温，观察界面是否还出现“传感器故障”信息——“传感器故障”信息一直存在。
+E = [-13,-12,-11,-10,-9,-8,-7,10,38,39,40,41,42]
+for i in range(0,5):
+  for a in E:
+    Protocol_3.当前室温.Value=a
+    Protocol_3.Write()
+    API.Common.Timer.Normal.Sleep(500)
+    print a
+  if (i==2):
+    print '测试5秒没有传感器温度，不显示报警标识'
+    API.Common.Timer.Normal.Sleep(5000)
+  if (i==3):
+    print '测试6秒没有传感器温度，显示报警标识'
+    API.Common.Timer.Normal.Sleep(6000)
+  if (i==4):
+    print '测试4秒没有传感器温度,报警标准不再显示'
+    API.Common.Timer.Normal.Sleep(4000)]]></Code>
+    <Data>
+      <Item Name="InE">
+        <InputExpectTD>
+          <InColumns />
+          <ExpColumns />
+          <Datas />
+        </InputExpectTD>
+      </Item>
+    </Data>
+  </TCPython>
+  <TCPython KYID="6CF2CC6A-4C38-452D-A454-C0BF62EFA2F0" Name="室温采集与处理" FolderID="3221F14E-AEEF-435B-8ACA-A5C1FC7CD783">
+    <Code><![CDATA[import Manu
+import math
+############标准测试模板#######################
+## Test:测试数据执行函数体，【测试数据】每一行数据调用一次Test
+## arg:输入参数
+## exp：预期输出
+
+def Test(arg,exp):
+  seekresult=CH_232_1.Clear()
+  print '测试用例%d'%arg[3]
+
+  Protocol_3.当前室温.Value=arg[0]
+  Protocol_3.Write()
+  API.Common.Timer.Normal.Sleep(500)
+  
+  Protocol_3.当前室温.Value=arg[1]
+  Protocol_3.Write()
+  API.Common.Timer.Normal.Sleep(500)
+
+  Protocol_3.当前室温.Value=arg[2]
+  Protocol_3.Write()
+  API.Common.Timer.Normal.Sleep(500)
+
+  show=[]
+  str = '室温预期显示为:%d' % (exp[0])
+  show.append(str)
+  str = '界面室温显示是否正确?'
+  show.append(str)
+  passed=Manu.Check(show)
+
+  if(passed):
+      print '界面显示与预期一致,界面判断通过'
+  else:
+      print '界面显示与预期不一致,界面判断不通过'
+
+  ## 断言:根据实际需求修改一下注释的部分 
+  assertor=API.Platform.Assertion.Create()
+  assertor.AddInput('设置室内温度',arg[2])
+  assertor.AddOutput('采集显示温度',exp[0],passed) 
+
+  if (passed):#测试通过   
+    print '本次测试通过。'
+    assertor.Pass()
+  else:
+    print '本次测试不通过，请输入测试问题'
+    assertor.Failed()
+  b=assertor.Commit()
+
+
+## Standard_Test:标准测试的方法入口，使用【测试数据】表循环调用Test方法
+Standard_Test(Test)
+#############################################]]></Code>
+    <Data>
+      <Item Name="InE">
+        <InputExpectTD>
+          <InColumns>
+            <InColumn Name="当前室温1" Type="System.Int16" />
+            <InColumn Name="当前室温2" Type="System.Int16" />
+            <InColumn Name="当前室温3" Type="System.Int16" />
+            <InColumn Name="序号" Type="System.Byte" />
+            <InColumn Name="数据情况" Type="System.String" />
+          </InColumns>
+          <ExpColumns>
+            <ExpColumn Name="输出室温" Type="System.Int16" />
+          </ExpColumns>
+          <Datas>
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAYAAAAIB/X/CAf1/wgH9f8IAgEGAgAAAA/otoXlh7rkuIvovrnnlYwIB/b/Cw==" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAYAAAAIB/b/CAf2/wgH9v8IAgYGAgAAAAzkuIvovrnnlYzlgLwIB/b/Cw==" />
+          </Datas>
+        </InputExpectTD>
+      </Item>
+    </Data>
+  </TCPython>
+  <Checking.FrequentlyUsed KYID="BEF2970A-5CB4-4FBC-BAD2-83FA6E9D0282" Name="常用校验_1" Parent="3CD91454-487C-4B79-A869-E905E6FE0548" Author="作者名">
+    <Description><![CDATA[描述...]]></Description>
+    <Algorithm><![CDATA[AAEAAAD/////AQAAAAAAAAAMAgAAAGZLaXl1bi5FbWJlZFRlc3QuUGx1Z2luLkNoZWNraW5ncy5GcmVxdWVudGx5VXNlZCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAAD9LaXl1bi5FbWJlZFRlc3QuUGx1Z2luLkNoZWNraW5ncy5GcmVxdWVudGx5VXNlZC5BbGdvcml0aG1zLlN1bTgAAAAAAgAAAAs=]]></Algorithm>
+  </Checking.FrequentlyUsed>
+  <TCPython KYID="68C6FBE8-0210-459A-BBDB-EC692BD7F1F2" Name="控温自动调节" FolderID="3221F14E-AEEF-435B-8ACA-A5C1FC7CD783">
+    <Code><![CDATA[import Manu
+############标准测试模板#######################
+## Test:测试数据执行函数体，【测试数据】每一行数据调用一次Test
+## arg:输入参数
+## exp：预期输出
+
+
+def Test(arg,exp):
+  CH_232_2.Clear()
+  CH_232_3.Clear()
+  CH_232_1.Clear()
+  print '测试用例%d'%arg[2]
+
+  if arg[0]==0: #设置停止7秒
+    API.Common.Timer.Normal.Sleep(7000)
+  else:
+    Protocol_3.当前室温.Value=arg[0]
+    Protocol_3.Write()
+    API.Common.Timer.Normal.Sleep(500)
+  
+    Protocol_3.当前室温.Value=arg[0]
+    Protocol_3.Write()
+    API.Common.Timer.Normal.Sleep(500)
+    
+    Protocol_3.当前室温.Value=arg[0]
+    Protocol_3.Write()
+    
+  Protocol_1.Tmp.Value=arg[1]
+  Protocol_1.Write()
+#  API.Common.Timer.Normal.Sleep(500)
+  Protocol_4.Read()
+
+  b = Protocol_4.运转状态.Value
+  if arg[0]==0: 
+    str='*当前室温故障*'
+  else:
+    str = arg[0]
+  print '设定温度为%d,当前室温为%s,预期运转状态%d,输出运转状态%d'%(arg[1],str,exp[0],b)
+  show=[]
+  str = '设定温度为：%d' % (arg[1])
+  show.append(str)
+  if arg[0]==0: 
+    str='当前室温故障'
+  else:
+    str = '当前室温为：%d' % (arg[0])
+  show.append(str)
+  str = '请确认：%s' % (exp[1])
+  show.append(str)
+  passed=Manu.Check(show)
+  
+  if(passed):
+      print '界面判断通过'
+  else:
+      print '界面判断不通过'
+
+  ## 断言:根据实际需求修改一下注释的部分 
+  assertor=API.Platform.Assertion.Create()
+  assertor.AddInput('当前温度',arg[0])
+  assertor.AddOutput('运转状态',exp[0],exp[0])
+  assertor.AddOutput('是否发送指令',exp[1],passed) 
+
+  if passed:#测试通过
+    print '本次测试通过。'
+    assertor.Pass()
+  else:
+    print '本次测试不通过，请输入测试问题'
+    assertor.Failed()
+  b=assertor.Commit()
+
+  API.Common.Timer.Normal.Sleep(1000) 
+
+## Standard_Test:标准测试的方法入口，使用【测试数据】表循环调用Test方法
+Standard_Test(Test)
+#############################################
+]]></Code>
+    <Data>
+      <Item Name="InE">
+        <InputExpectTD>
+          <InColumns>
+            <InColumn Name="当前室温" Type="System.Int16" />
+            <InColumn Name="设置温度" Type="System.UInt16" />
+            <InColumn Name="序号" Type="System.Byte" />
+          </InColumns>
+          <ExpColumns>
+            <ExpColumn Name="运转状态" Type="System.Byte" />
+            <ExpColumn Name="是否发送指令" Type="System.String" />
+          </ExpColumns>
+          <Datas>
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAUAAAAIBxkACA4ZAAgCAQgCAQYCAAAAD+S4jeWPkemAgeaMh+S7pAs=" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAUAAAAIBxgACA4ZAAgCAggCAQYCAAAAD+S4jeWPkemAgeaMh+S7pAs=" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAUAAAAIBxcACA4ZAAgCAwgCAAYCAAAAGOWPkemAgeWBnOatoui/kOi9rOaMh+S7pAs=" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAUAAAAIBxoACA4aAAgCBggCAQYCAAAAEuWPkemAgei/kOi9rOaMh+S7pAs=" />
+          </Datas>
+        </InputExpectTD>
+      </Item>
+    </Data>
+  </TCPython>
+  <TCPython KYID="413CDD25-F1E0-4DC7-9961-09CC125B6A61" Name="接口1" FolderID="3221F14E-AEEF-435B-8ACA-A5C1FC7CD783">
+    <Code><![CDATA[import Manu
+############标准测试模板#######################
+## Test:测试数据执行函数体，【测试数据】每一行数据调用一次Test
+## arg:输入参数
+## exp：预期输出
+def Test(arg,exp):
+  datas=arg[0].split('，')
+  l=[]
+  for a in datas:
+    l.append(int(a,16))
+  CH_232_2.Clear()
+  CH_232_2.Write(l)
+  
+  show=[]      
+  str='输入：%s'%(arg[1])
+  show.append(str) 
+  str='预期结果：%s'%exp[0]
+  show.append(str)
+  show.append('界面显示室温是否和预期一致？')
+  passed=Manu.Check(show)  
+ 
+  if(passed):
+      print '界面显示与预期一致,界面判断通过'
+  else:
+      print '界面显示与预期不一致,界面判断不通过'
+# 断言:根据实际需求修改一下注释的部分 
+  assertor=API.Platform.Assertion.Create()
+  assertor.AddInput('数据帧',arg[0])
+  assertor.AddOutput('界面显示',exp[0],passed)
+  if passed:#测试通过
+    assertor.Pass()
+    print '本次测试通过'
+  else:
+    assertor.Failed()
+    print '本次测试未通过，请提交测试问题'
+  b=assertor.Commit()
+
+## Standard_Test:标准测试的方法入口，使用【测试数据】表循环调用Test方法
+Standard_Test(Test)
+#############################################
+]]></Code>
+    <Data>
+      <Item Name="InE">
+        <InputExpectTD>
+          <InColumns>
+            <InColumn Name="数据帧" Type="System.String" />
+            <InColumn Name="输入类型" Type="System.String" />
+          </InColumns>
+          <ExpColumns>
+            <ExpColumn Name="界面显示" Type="System.String" />
+          </ExpColumns>
+          <Datas>
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAMAAAAGAgAAADQ1Ne+8jEFB77yMMDDvvIwyMO+8jDAw77yMMUXvvIwwMO+8jDNF77yMMDDvvIw1Ne+8jEFBBgMAAAAM5q2j5bi46L6T5YWlBgQAAAAg55WM6Z2i6K6+572u5rip5bqm5pi+56S65Li6MzDihIML" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAMAAAAGAgAAADQ1Ne+8jEFB77yMMDDvvIwyMO+8jDAw77yMMTTvvIwwMO+8jDM077yMMDDvvIw1Ne+8jEJCBgMAAAAM5YyF5bC+6ZSZ6K+vBgQAAAAn5Lii5YyF5aSE55CG77yM55WM6Z2i6K6+572u5rip5bqm5LiN5Y+YCw==" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAMAAAAGAgAAADQ2Nu+8jEND77yMMDDvvIwyMO+8jDAw77yMMTbvvIwwMO+8jDM277yMMDDvvIxDQ++8jDY2BgMAAAAV5YyF5aS05ZKM5YyF5bC+6ZSZ6K+vBgQAAAAn5Lii5YyF5aSE55CG77yM55WM6Z2i6K6+572u5rip5bqm5LiN5Y+YCw==" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAMAAAAGAgAAADQ1Ne+8jEFB77yMMDHvvIwyMO+8jDAw77yMMTjvvIwwMO+8jDM477yMMDDvvIw1Ne+8jEFBBgMAAAAP5qCH6K+G5L2N6ZSZ6K+vBgQAAAAn5Lii5YyF5aSE55CG77yM55WM6Z2i6K6+572u5rip5bqm5LiN5Y+YCw==" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAMAAAAGAgAAADQ1Ne+8jEFB77yMMDDvvIwyMe+8jDAw77yMMUHvvIwwMO+8jDNC77yMMDDvvIw1Ne+8jEFBBgMAAAAV5ZG95Luk5qCH6K+G5L2N6ZSZ6K+vBgQAAAAn5Lii5YyF5aSE55CG77yM55WM6Z2i6K6+572u5rip5bqm5LiN5Y+YCw==" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAMAAAAGAgAAADQ1Ne+8jEFB77yMMDDvvIwyMO+8jDAw77yMMULvvIwwMO+8jDNG77yMMDDvvIw1Ne+8jEFBBgMAAAAP5qCh6aqM5ZKM6ZSZ6K+vBgQAAAAn5Lii5YyF5aSE55CG77yM55WM6Z2i6K6+572u5rip5bqm5LiN5Y+YCw==" />
+          </Datas>
+        </InputExpectTD>
+      </Item>
+    </Data>
+  </TCPython>
+  <TCPython KYID="0395B633-B281-40DB-9B23-DC1288CC6D3D" Name="接口2" FolderID="3221F14E-AEEF-435B-8ACA-A5C1FC7CD783">
+    <Code><![CDATA[import Manu
+############标准测试模板#######################
+## Test:测试数据执行函数体，【测试数据】每一行数据调用一次Test
+## arg:输入参数
+## exp：预期输出
+def Test(arg,exp):
+  print 'Hello World!'
+  datas=arg[0].split(',')
+  l=[]
+  for a in datas:
+    l.append(int(a,16))
+  CH_232_1.Clear()
+  CH_232_1.Write(l)
+  API.Common.Timer.Normal.Sleep(500)
+  CH_232_1.Write(l)
+  API.Common.Timer.Normal.Sleep(500)
+  CH_232_1.Write(l)
+  API.Common.Timer.Normal.Sleep(500)
+  show=[]      
+  str='输入：%s'%(arg[1])
+  show.append(str) 
+  str='预期结果：%s'%exp[0]
+  show.append(str)
+  show.append('界面显示室温是否和预期一致？')
+  passed=Manu.Check(show)
+
+  if(passed):
+      print '界面显示与预期一致,界面判断通过'
+  else:
+      print '界面显示与预期不一致,界面判断不通过'
+
+# 断言:根据实际需求修改一下注释的部分 
+  assertor=API.Platform.Assertion.Create()
+  assertor.AddInput('数据帧',arg[0])
+  assertor.AddOutput('界面显示',exp[0],passed)
+  if passed:#测试通过
+    assertor.Pass()
+    print '本次测试通过'
+  else:
+    assertor.Failed()
+    print '本次测试未通过，请提交测试问题'
+  b=assertor.Commit()
+
+## Standard_Test:标准测试的方法入口，使用【测试数据】表循环调用Test方法
+Standard_Test(Test)
+#############################################
+
+]]></Code>
+    <Data>
+      <Item Name="InE">
+        <InputExpectTD>
+          <InColumns>
+            <InColumn Name="数据帧" Type="System.String" />
+            <InColumn Name="输入类型" Type="System.String" />
+          </InColumns>
+          <ExpColumns>
+            <ExpColumn Name="界面显示" Type="System.String" />
+          </ExpColumns>
+          <Datas>
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAMAAAAGAgAAABo1NSxBQSwxMCwwRiwwMCwxRiwwMCw1NSxBQQYDAAAADOato+W4uOi+k+WFpQYEAAAAF+eVjOmdouaYvuekuuWupOa4qTE14oSDCw==" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAMAAAAGAgAAAB0wYyw1NSxBQSwxMCwyOCwwMCwzOCwwMCw1NSxBQQYDAAAADOW5suaJsOWtl+iKggYEAAAAIOato+ehruWkhOeQhu+8jOWupOa4qeaYvuekujQw4oSDCw==" />
+          </Datas>
+        </InputExpectTD>
+      </Item>
+    </Data>
+  </TCPython>
+  <TCPython KYID="C6455040-CF38-4961-9646-A80AF489A7A0" Name="接口3" FolderID="3221F14E-AEEF-435B-8ACA-A5C1FC7CD783">
+    <Code><![CDATA[############标准测试模板#######################
+## Test:测试数据执行函数体，【测试数据】每一行数据调用一次Test
+## arg:输入参数
+## exp：预期输出
+def Test(arg,exp):
+  print 'Hello World!'
+  CH_232_1.Clear()
+  CH_232_2.Clear()
+  CH_232_3.Clear()
+  #设置遥控器的输入温度
+  Protocol_1.Tmp.Value=arg[0]
+  Protocol_1.Write()
+  API.Common.Timer.Normal.Sleep(50)
+  #设置传感器的采集温度
+  Protocol_3.当前室温.Value=arg[1]
+  Protocol_3.Write()
+  API.Common.Timer.Normal.Sleep(500)
+  
+  Protocol_3.当前室温.Value=arg[2]
+  Protocol_3.Write()
+  API.Common.Timer.Normal.Sleep(500)
+
+  Protocol_3.当前室温.Value=arg[3]
+  Protocol_3.Write()
+  API.Common.Timer.Normal.Sleep(500)
+
+  Protocol_4.BlockRead()
+
+#  print '输入温度：%s，采集室温：%s'%(arg[0],arg[1])
+  passed=True
+  if Protocol_4.Head.Value!=0x55AA:
+    passed=False
+    print '包头错误！ %s' %Protocol_4.Head.Value
+  if Protocol_4.Flag.Value!=0x30:
+    passed=False
+    print '标识位错误！ %s' %Protocol_4.Flag.Value
+  if Protocol_4.运转状态.Value!=exp[0]:
+    passed=False
+    print '运转状态错误！ %s' %Protocol_4.运转状态.Value
+  if Protocol_4.Check.Checked!=True:
+    passed=False
+    print '校验和错误！' 
+  if Protocol_4.Tail.Value!=0x55AA:
+    passed=False
+    print '包尾错误！ %s' %Protocol_4.Tail.Value
+
+  out=''
+#  print Protocol_ServerOutput.Chech_num.Checked
+## 断言:根据实际需求修改一下注释的部分 
+  assertor=API.Platform.Assertion.Create()
+  assertor.AddInput('输入数据',arg[0])
+  assertor.AddOutput('输出数据',exp[0],out)
+  if passed:#测试通过
+    assertor.Pass()
+    print '输出数据正确，测试通过。'
+  else:
+    assertor.Failed()
+    print '输出数据有错误，请提交问题。'
+  b=assertor.Commit()
+
+## Standard_Test:标准测试的方法入口，使用【测试数据】表循环调用Test方法
+Standard_Test(Test)
+#############################################
+]]></Code>
+    <Data>
+      <Item Name="InE">
+        <InputExpectTD>
+          <InColumns>
+            <InColumn Name="遥控器输入温度" Type="System.UInt16" />
+            <InColumn Name="室温1" Type="System.Int16" />
+            <InColumn Name="室温2" Type="System.Int16" />
+            <InColumn Name="室温3" Type="System.Int16" />
+          </InColumns>
+          <ExpColumns>
+            <ExpColumn Name="运转状态" Type="System.Byte" />
+          </ExpColumns>
+          <Datas>
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAUAAAAIDhkACAcWAAgHFQAIBxcACAIACw==" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAUAAAAIDhkACAcbAAgHHAAIBx0ACAIBCw==" />
+          </Datas>
+        </InputExpectTD>
+      </Item>
+    </Data>
+  </TCPython>
+</Root>

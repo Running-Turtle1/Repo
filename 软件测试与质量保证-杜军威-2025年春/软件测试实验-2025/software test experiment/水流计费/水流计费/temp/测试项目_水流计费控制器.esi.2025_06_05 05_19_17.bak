@@ -1,0 +1,401 @@
+<Root>
+  <Solution KYID="32C1CD39-8BBE-42D0-8217-C85A3737277F" Name="测试项目_new" Version="5.5.3" Type="Windows"><![CDATA[]]></Solution>
+  <Project KYID="5AC5FC45-490F-4467-B053-646B558F34AC" Name="测试项目_new" Author="作者名"><![CDATA[描述...]]></Project>
+  <Simulation KYID="51ECDA83-EA8E-4A65-A4F8-EA15E1148706" Name="交联环境" Project="5AC5FC45-490F-4467-B053-646B558F34AC" />
+  <TestingSystem KYID="1561341B-EB82-4BF9-A766-C5BC007FB78B" Name="待测系统" Simulation="51ecda83-ea8e-4a65-a4f8-ea15e1148706" Description="" />
+  <SIMTestingSystem KYID="7478E0DD-85C0-4425-A83C-4EFCB5EE08A6" Name="待测系统" Model="1561341B-EB82-4BF9-A766-C5BC007FB78B" Rect="{X=108,Y=172,Width=100,Height=100}" Image="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" />
+  <DevicePlanFolder KYID="47780723-9A0B-4DE9-955E-90E19DB6C020" Name="规划目录" ParentID="5AC5FC45-490F-4467-B053-646B558F34AC" />
+  <IncludedFolder KYID="678A3D97-0774-4C4F-9784-FE83A454874F" Name="内容附件" ParentID="5AC5FC45-490F-4467-B053-646B558F34AC" />
+  <TopTestCaseFolder KYID="9080E480-F790-4702-B8B4-053849D98998" Name="测试目录" ParentID="5AC5FC45-490F-4467-B053-646B558F34AC" />
+  <TopMonitorFolder KYID="9A5ABED5-67C6-4DAA-B87F-7B558E888FC7" Name="监控目录" ParentID="5AC5FC45-490F-4467-B053-646B558F34AC" />
+  <TopConstraintFolder KYID="ABF94451-25FC-4385-9F60-4DC5A6C2B118" Name="约束变量" ParentID="5AC5FC45-490F-4467-B053-646B558F34AC" />
+  <HardwarePlan KYID="07DD7C80-43C0-4C19-9BE5-E0B13A295928" Name="设备规划" Parent="47780723-9A0B-4DE9-955E-90E19DB6C020" />
+  <PCPlan KYID="98C33CD4-C5D6-4F8F-803F-20ABF17503A6" Name="PC规划" DevicePlan="07DD7C80-43C0-4C19-9BE5-E0B13A295928" IsActive="true" />
+  <Server KYID="BDA4F07C-5A18-455A-87E8-FE595A4091A7" Name="Server_1" IP="127.0.0.1" Port="2222" PCPlan="98C33CD4-C5D6-4F8F-803F-20ABF17503A6" />
+  <PeripheralSystem KYID="98862632-54CA-4012-B40C-88E37148EC38" Name="外围系统_1" Simulation="51ECDA83-EA8E-4A65-A4F8-EA15E1148706" Description="" />
+  <SIMPeripheralSystem KYID="33BCC7DA-95EE-4074-8937-DAEEA894FB09" Name="外围系统_1" Model="98862632-54CA-4012-B40C-88E37148EC38" Rect="{X=660,Y=175,Width=100,Height=100}" Image="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" />
+  <LogicChannel KYID="B60FB8E2-6496-42FE-B6A8-297BF48D6E3C" Name="CH_232_1" PeripheralSystem="98862632-54CA-4012-B40C-88E37148EC38" ChannelType="232" />
+  <SIMChannel KYID="D5E98B66-2B4C-498B-B574-822E466BDEB9" Name="SIMChannel_1" Model="B60FB8E2-6496-42FE-B6A8-297BF48D6E3C" Rect="{X=589.0171,Y=222.1872,Width=10,Height=10}" />
+  <Protocol KYID="FD783177-0018-4EBD-9739-BA5E7A475C9F" Name="Protocol_1" Parent="B60FB8E2-6496-42FE-B6A8-297BF48D6E3C" Direction="WRITE" Document=""><![CDATA[Protocol Main #
+    Segment 包头 StandardUInt16 ByteOrder=Big Default=21930
+    Segment 阀门控制器ID StandardUInt8
+    Segment 水流监控计费器ID StandardUInt8 Default=32
+    Segment 瞬时流量 StandardFloat
+    Segment 计费标志 StandardUInt8
+    Segment 管道压力 StandardFloat
+    Segment 校验和 Checking Algorithm=CRC_SUM_8 BitCount=16
+    Segment 包尾 StandardUInt16 ByteOrder=Big Default=21930
+End
+]]></Protocol>
+  <SIMProtocol KYID="6C4A01C3-066E-48B7-91D7-4144B094ECED" Name="Protocol_1" Model="FD783177-0018-4EBD-9739-BA5E7A475C9F" Direction="WRITE" Points="376,160" />
+  <Protocol KYID="F1518E7C-6CA7-4E20-A3CE-8C1D644565CB" Name="Protocol_2" Parent="B60FB8E2-6496-42FE-B6A8-297BF48D6E3C" Direction="READ" Document=""><![CDATA[Protocol Main #
+    Segment 包头 StandardUInt16 ByteOrder=Big Default=21930
+    Segment 水流监控计费器ID StandardUInt8 Default=32
+    Segment 阀门控制器ID StandardUInt8
+    Segment 瞬时流量报警标志 StandardUInt8
+    Segment 管道压力控制指令 StandardUInt8
+    Segment 校验和 CRC Algorithm=CRC_SUM_8 BitCount=8
+    Segment 包尾 StandardUInt16 ByteOrder=Big Default=21930
+End
+]]></Protocol>
+  <SIMProtocol KYID="03630185-E11E-43C6-B3C7-F94D45F1631A" Name="Protocol_2" Model="F1518E7C-6CA7-4E20-A3CE-8C1D644565CB" Direction="READ" Points="392,256" />
+  <KiyunHD KYID="0736B8F5-5EAC-4E65-B6BE-292A49A65D96" Name="KiyunHD" HardwarePlan="07DD7C80-43C0-4C19-9BE5-E0B13A295928" />
+  <RS232 KYID="9A81A743-2662-42A2-9892-0330323044A3" Name="CH_232_1" Device="0736B8F5-5EAC-4E65-B6BE-292A49A65D96" LogicChannel="B60FB8E2-6496-42FE-B6A8-297BF48D6E3C" CacheSize="52428800" PortName="COM4" BaudRate="9600" Parity="0" DataBits="8" StopBits="1" />
+  <RS232 KYID="B80FC0EA-2B13-45ED-A9FE-67F3151945D9" Name="RS232" Device="0736B8F5-5EAC-4E65-B6BE-292A49A65D96" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" PortName="COM2" BaudRate="9600" Parity="0" DataBits="8" StopBits="1" />
+  <RS232 KYID="E6D8073B-A0C9-47BA-A129-600829EB6079" Name="RS232" Device="0736B8F5-5EAC-4E65-B6BE-292A49A65D96" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" PortName="COM9" BaudRate="9600" Parity="0" DataBits="8" StopBits="1" />
+  <TCP-Client KYID="9AB0A078-8C6F-4129-8CDB-53C9DF812F65" Name="TCPClient" Device="0736B8F5-5EAC-4E65-B6BE-292A49A65D96" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" LocalIP="" LocalPort="9999" IPAddress="127.0.0.1" Port="8888" TimeOut="1000" />
+  <TCP-Client KYID="260F0B88-D461-4F5E-B803-41A0CA074D96" Name="TCPClient" Device="0736B8F5-5EAC-4E65-B6BE-292A49A65D96" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" LocalIP="" LocalPort="9999" IPAddress="127.0.0.1" Port="8888" TimeOut="1000" />
+  <TCP-Server KYID="47956601-BAB2-4F27-998E-805CB77DCF0B" Name="TCPServer" Device="0736B8F5-5EAC-4E65-B6BE-292A49A65D96" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" ListenerAddress="127.0.0.1" ListenerPort="23456" ClientAddress="127.0.0.2" ClientPort="23457" />
+  <TCP-Server KYID="18B7D4A3-BF2C-40DB-AE45-F484FE118C29" Name="TCPServer" Device="0736B8F5-5EAC-4E65-B6BE-292A49A65D96" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" ListenerAddress="127.0.0.1" ListenerPort="1111" ClientAddress="127.0.0.2" ClientPort="2222" />
+  <UDP KYID="3D1031C3-D347-4525-8ACC-2581EA2A9AFF" Name="UDP" Device="0736B8F5-5EAC-4E65-B6BE-292A49A65D96" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" ReadIP="127.0.0.1" ReadPort="1112" WriteIP="127.0.0.1" WritePort="2223" />
+  <UDP KYID="3B1AAEC4-0515-493D-ACF7-43332AC2C826" Name="UDP" Device="0736B8F5-5EAC-4E65-B6BE-292A49A65D96" LogicChannel="00000000-0000-0000-0000-000000000000" CacheSize="52428800" ReadIP="127.0.0.1" ReadPort="1114" WriteIP="127.0.0.1" WritePort="2225" />
+  <PlaningChannel KYID="7A0A4B7D-036E-4147-87E0-023F6C2BC7AD" Name="CH_232_1" HardwarePlan="07DD7C80-43C0-4C19-9BE5-E0B13A295928" LogicChannelID="B60FB8E2-6496-42FE-B6A8-297BF48D6E3C" />
+  <Client KYID="1AF907B5-8A80-420C-BE5F-0FF35E9F6AA6" Name="Win客户端" IP="127.0.0.1" Port="11819" PCPlan="98C33CD4-C5D6-4F8F-803F-20ABF17503A6" />
+  <PlaningDevice KYID="A8DDEA92-7465-4AEA-9511-11C5AC74CA1C" Name="KiyunHD" PCPlan="98C33CD4-C5D6-4F8F-803F-20ABF17503A6" Client="1AF907B5-8A80-420C-BE5F-0FF35E9F6AA6" Device="0736B8F5-5EAC-4E65-B6BE-292A49A65D96" />
+  <TCPython KYID="820BF64D-AD28-4382-ACDF-566D8F34180D" Name="功能1" FolderID="9080E480-F790-4702-B8B4-053849D98998">
+    <Code><![CDATA[############标准测试模板#######################
+## Test:测试数据执行函数体，【测试数据】每一行数据调用一次Test
+## arg:输入参数
+## exp：预期输出
+import Manu
+def Test(arg,exp):
+  print 'Hello World!'
+
+  Protocol_1.瞬时流量.Value=arg[1]
+  Protocol_1.计费标志.Value=arg[2]
+  Protocol_1.管道压力.Value=arg[3] 
+  print '######第%s个测试用例开始#################' %arg[0]
+  print '输入：瞬时流量=%s 计费标志=%s 管道压力=%s' %(arg[1],arg[2],arg[3]) 
+  b=Protocol_1.Write()
+  print '上报实时数据：%s' %b
+  if not b:
+    print '上报请求失败。。。。。。'
+  else:
+    str='请检查待测软件界面输出：'
+    str1='瞬时流量=%.2f 计费标志=%d 管道压力=%.2f' %(exp[0],exp[1],exp[2])
+    show=[]
+    show.append(str)
+    show.append(str1)
+    passed=Manu.Check(show)
+  
+    print '测试结果：%s' %passed
+  print '######第%s个测试用例结束#################' %arg[0]
+
+Standard_Test(Test)
+#############################################
+]]></Code>
+    <Data>
+      <Item Name="InE">
+        <InputExpectTD>
+          <InColumns>
+            <InColumn Name="ID" Type="System.Byte" />
+            <InColumn Name="瞬时流量" Type="System.Double" />
+            <InColumn Name="计费标识" Type="System.Byte" />
+            <InColumn Name="管道压力" Type="System.Double" />
+          </InColumns>
+          <ExpColumns>
+            <ExpColumn Name="瞬时流量" Type="System.Double" />
+            <ExpColumn Name="计费标识" Type="System.Byte" />
+            <ExpColumn Name="管道压力" Type="System.Double" />
+          </ExpColumns>
+          <Datas>
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAcAAAAIAgEIBpqZmZmZmbm/CAIBCAaamZmZmZnJvwgGAAAAAAAAAAAIAgEIBgAAAAAAAAAACw==" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAcAAAAIAgYIBgAAAAAAUH9ACAIDCAYAAAAAAAAmQAgGAAAAAABAf0AIAgAIBgAAAAAAACRACw==" />
+          </Datas>
+        </InputExpectTD>
+      </Item>
+    </Data>
+  </TCPython>
+  <TCPython KYID="73A33CB7-1176-4F82-84A6-C163BFBFB887" Name="功能2" FolderID="9080E480-F790-4702-B8B4-053849D98998">
+    <Code><![CDATA[############标准测试模板#######################
+## Test:测试数据执行函数体，【测试数据】每一行数据调用一次Test
+## arg:输入参数
+## exp：预期输出
+def Test(arg,exp):
+  print 'Hello World!'
+  Protocol_1.管道压力.Value=arg[1] 
+  print '######第%s个测试用例开始#################' %arg[0]
+  print '输入：管道压力=%.2f' %arg[1]
+  bool=Protocol_1.Write()
+  API.Common.Timer.Normal.Sleep(500)
+  b=Protocol_2.Read()
+  if not b:
+    print '上报-反馈 失败。。。。。。'
+  else:
+    ret='Yes'
+    actual=Protocol_2.管道压力控制指令.Value
+    if actual != exp[0]:
+      ret='No'
+    print '管道压力控制指令【预期值=%s 实际值=%s】' %(exp[0],actual)
+    print '测试结果：%s' %ret
+
+  print '######第%s个测试用例结束#################' %arg[0]
+Standard_Test(Test)
+#############################################
+
+]]></Code>
+    <Data>
+      <Item Name="InE">
+        <InputExpectTD>
+          <InColumns>
+            <InColumn Name="ID" Type="System.Byte" />
+            <InColumn Name="管道压力" Type="System.Double" />
+          </InColumns>
+          <ExpColumns>
+            <ExpColumn Name="控制指令" Type="System.Byte" />
+          </ExpColumns>
+          <Datas>
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAMAAAAIAgEIBjMzMzMzMwdACAIBCw==" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAMAAAAIAgIIBgAAAAAAAAhACAICCw==" />
+          </Datas>
+        </InputExpectTD>
+      </Item>
+    </Data>
+  </TCPython>
+  <TCPython KYID="3054BD91-1B08-4D38-AAF5-4752BC029EF4" Name="功能3" FolderID="9080E480-F790-4702-B8B4-053849D98998">
+    <Code><![CDATA[############标准测试模板#######################
+## Test:测试数据执行函数体，【测试数据】每一行数据调用一次Test
+## arg:输入参数
+## exp：预期输出
+import Manu
+def Test(arg,exp):
+  print 'Hello World!'
+  Protocol_1.瞬时流量.Value=arg[1]
+  print '######第%s个测试用例开始#################' %arg[0]
+  print '输入：瞬时流量=%s' %arg[1]
+  bool=Protocol_1.Write()
+  API.Common.Timer.Normal.Sleep(500)
+  b=Protocol_2.Read()
+  if not b:
+    print '上报-反馈 失败。。。。。。'
+  else:
+    ret='No'
+    actual=Protocol_2.瞬时流量报警标志.Value
+    if actual == exp[0]:#只有在接收到的反馈信息里指令等于用例里的预期值的时候才需要进一步比较
+      str='请检查待测软件界面的瞬时流量报警是否与预期一致：'
+      str1='预期报警：%d（1：报警，0：不报警）' %exp[0]
+      show=[]
+      show.append(str)
+      show.append(str1)
+      passed=Manu.Check(show)
+      if passed: ret='Yes'
+      
+      else: ret='No，界面显示的瞬时流量报警标志与预期不一致'
+    else:
+      ret='No，控制与报警输出中的瞬时流量报警标志与预期不一致'
+
+    print '瞬时流量报警【预期值=%s 实际值=%s】' %(exp[0],actual)
+    print '测试结果：%s' %ret
+
+  print '######第%s个测试用例结束#################' %arg[0]
+Standard_Test(Test)
+#############################################
+]]></Code>
+    <Data>
+      <Item Name="InE">
+        <InputExpectTD>
+          <InColumns>
+            <InColumn Name="ID" Type="System.Byte" />
+            <InColumn Name="瞬时流量" Type="System.Double" />
+          </InColumns>
+          <ExpColumns>
+            <ExpColumn Name="瞬时流量报警" Type="System.Byte" />
+          </ExpColumns>
+          <Datas>
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAMAAAAIAgEIBgAAAAAAAAAACAIACw==" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAMAAAAIAgIIBqRwPQrXv3JACAIACw==" />
+          </Datas>
+        </InputExpectTD>
+      </Item>
+    </Data>
+  </TCPython>
+  <TCPython KYID="3E0BE8E6-7685-4804-8B6E-52C25FD43BBA" Name="功能4" FolderID="9080E480-F790-4702-B8B4-053849D98998">
+    <Code><![CDATA[############标准测试模板#######################
+## Test:测试数据执行函数体，【测试数据】每一行数据调用一次Test
+## arg:输入参数
+## exp：预期输出
+import Manu
+def Test(arg,exp):
+  print 'Hello World!'
+
+  Protocol_1.瞬时流量.Value=arg[1]
+  Protocol_1.计费标志.Value=arg[2]
+  print '######第%s个测试用例开始#################' %arg[0]
+  print '输入：瞬时流量=%s,计费标识：%d' %(arg[1],arg[2]) 
+  b=Protocol_1.Write()
+  print '上报实时数据：%s' %b
+  if not b:
+    print '上报请求失败。。。。。。'
+  else:
+    str='请检查待测软件界面的输出是否与预期一致：'
+    str1='累计流量=%.2f, 累计流量计费=%.2f' %(exp[0],exp[1])
+    show=[]
+    show.append(str)
+    show.append(str1)
+    passed=Manu.Check(show)
+    print '测试结果：%s' %passed
+ 
+  print '######第%s个测试用例结束#################' %arg[0]
+
+Standard_Test(Test)
+#############################################
+]]></Code>
+    <Data>
+      <Item Name="InE">
+        <InputExpectTD>
+          <InColumns>
+            <InColumn Name="序号" Type="System.Byte" />
+            <InColumn Name="瞬时流量" Type="System.Double" />
+            <InColumn Name="计费标记" Type="System.Byte" />
+          </InColumns>
+          <ExpColumns>
+            <ExpColumn Name="累计流量" Type="System.Int32" />
+            <ExpColumn Name="累计费用" Type="System.Double" />
+          </ExpColumns>
+          <Datas>
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAUAAAAIAgEIBgAAAAAAQH9ACAIBCAj0AQAACAYAAAAAAEB/QAs=" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAUAAAAIAgIIBgAAAAAAQH9ACAIBCAjoAwAACAYAAAAAAECPQAs=" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAUAAAAIAgMIBgAAAAAAQH9ACAIBCAjcBQAACAYAAAAAAHCXQAs=" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAUAAAAIAgQIBgAAAAAAQH9ACAIBCAjQBwAACAYAAAAAAECfQAs=" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAUAAAAIAgUIBgAAAAAAQH9ACAIBCAjECQAACAYAAAAAAIijQAs=" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAUAAAAIAgYIBgAAAAAAQH9ACAIBCAi4CwAACAYAAAAAAHCnQAs=" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAUAAAAIAgcIBgAAAAAAQH9ACAIBCAisDQAACAYAAAAAAFirQAs=" />
+          </Datas>
+        </InputExpectTD>
+      </Item>
+    </Data>
+  </TCPython>
+  <TCPython KYID="8E462DCE-B69E-4427-858C-CA30036F004B" Name="接口1" FolderID="9080E480-F790-4702-B8B4-053849D98998">
+    <Code><![CDATA[############标准测试模板#######################
+## Test:测试数据执行函数体，【测试数据】每一行数据调用一次Test
+## arg:输入参数
+## exp：预期输出
+def Test(arg,exp):
+  print '######第%s个测试用例开始##########' %arg[1]
+  seekresult=CH_232_1.Clear()
+  print '输入数据帧%s' %exp[0]
+  arr=arg[0].split(',')
+  l=[]
+  for a in arr:
+    l.append(int(a,16))
+  bool=CH_232_1.Write(l)
+  API.Common.Timer.Normal.Sleep(500)
+  b=Protocol_2.Read()
+#  array=CH_232_1.Read(len)
+  print b
+  if b==exp[1]: 
+    print '测试结果：通过。 '
+  else: 
+    print '测试结果：不通过'
+  
+  print '######第%s个测试用例结束#################' %arg[1]
+
+Standard_Test(Test)
+#############################################
+]]></Code>
+    <Data>
+      <Item Name="InE">
+        <InputExpectTD>
+          <InColumns>
+            <InColumn Name="输入数据" Type="System.String" />
+            <InColumn Name="序号" Type="System.Byte" />
+          </InColumns>
+          <ExpColumns>
+            <ExpColumn Name="描述" Type="System.String" />
+            <ExpColumn Name="是否收到返回参数" Type="System.Byte" />
+          </ExpColumns>
+          <Datas>
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAQAAAAGAgAAADI1NSxBQSwwMCwyMSwwMCwwMCwwMCwwMCwwMCwwMCwwMCwwMCwwMCwyMSwwMCw1NSxBQQgCAQYDAAAAHeawtOa1geebkeaOp+iuoei0ueWZqElE6ZSZ6K+vCAIACw==" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAQAAAAGAgAAADI1NSxBQSwwMCwyMCwwMCwwMCxjOCw0MiwwMSwwMCwwMCwwMCwwMCwyYiwwMSw1NSxBQQgCAgYDAAAACeato+W4uOW4pwgCAQs=" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAQAAAAGAgAAADI1NSxBQSwwMCwyMCwwMCwwMCwwMCwwMCwwMCwwMCwwMCwwMCwwMCwyMiwwMCw1NSxBQQgCAwYDAAAADOagoemqjOmUmeivrwgCAAs=" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAQAAAAGAgAAADI1NSxBQSwwMCwyMCwwMCwwMCxjOCw0MiwwMSwwMCwwMCwwMCwwMCwyYiwwMSw1NSxBQQgCBAYDAAAACeato+W4uOW4pwgCAQs=" />
+            <Row Value="AAEAAAD/////AQAAAAAAAAAQAQAAAAQAAAAGAgAAADI1NSxBQSwwMCwyMCwwMCwwMCwwMCwwMCwwMCwwMCwwMCwwMCwwMCwyMCwwMCw1NSxCQggCBQYDAAAADOWMheWwvumUmeivrwgCAAs=" />
+          </Datas>
+        </InputExpectTD>
+      </Item>
+    </Data>
+  </TCPython>
+  <TCPython KYID="2BBF62D7-D5AE-4B57-A251-0DF8199076D1" Name="接口2" FolderID="9080E480-F790-4702-B8B4-053849D98998">
+    <Code><![CDATA[def Main():
+  print '@@@@@@测试开始....................'
+  seekresult=CH_232_1.Clear()
+  
+  Protocol_1.阀门控制器ID.Value=0X99
+  bool=Protocol_1.Write()
+  API.Common.Timer.Normal.Sleep(500)
+  b=Protocol_2.Read()
+  
+  if b:
+    print '包头：%x' %Protocol_2.包头.Value
+    if Protocol_2.包头.Value== 0X55AA: print '正确'
+    else: print '错误'
+
+    print '水流监控计费器ID：%x' %Protocol_2.水流监控计费器ID.Value
+    if Protocol_2.水流监控计费器ID.Value== 0X20:print '正确'
+    else: print '错误'
+
+    print '阀门控制器ID：%x' %Protocol_2.阀门控制器ID.Value
+    if Protocol_2.阀门控制器ID.Value== 0X99:print '正确'
+    else: print '错误'
+
+    print '校验和：%s' %Protocol_2.校验和.Checked
+    print '包尾：%x' %Protocol_2.包尾.Value
+    if Protocol_2.包尾.Value== 0X55AA:print '正确'
+    else: print '错误'
+
+  else:
+    print '测试数据发送读取失败，测试失败！' 
+
+  print '######测试结束.................................'
+
+Main()
+############################################
+
+]]></Code>
+    <Data>
+      <Item Name="InE">
+        <InputExpectTD>
+          <InColumns />
+          <ExpColumns />
+          <Datas />
+        </InputExpectTD>
+      </Item>
+    </Data>
+  </TCPython>
+  <TCPython KYID="3FB9F5CA-0E28-4BC5-BA59-5AAA910E8958" Name="性能" FolderID="9080E480-F790-4702-B8B4-053849D98998">
+    <Code><![CDATA[############自定义测试模板#######################
+## 如果不希望使用测试数据驱动测试，则将【标准测试模板】删除，使用【自定义模板】
+## 否则可以删除本节
+def Main():
+  print '@@@@@@测试开始....................'
+  seekresult=CH_232_1.Clear()
+  ts=0
+  for a in range(0,10):
+    print '第%d次测试' %(a+1)
+    Protocol_1.瞬时流量.Value=a
+    bool=Protocol_1.Write()
+    t1=API.Common.Timer.Normal.Now()
+    Protocol_2.BlockRead()
+    t2=API.Common.Timer.Normal.Now()
+    span=t2-t1
+    print '第%d次测试的反馈时间：%d' %((a+1),span.Milliseconds)
+    ts=ts+span.Milliseconds
+  t=ts/10
+  print '10次测试的平均反馈时间为：%d' %t
+
+  print '######测试结束.................................'
+Main()
+#################################################
+]]></Code>
+    <Data>
+      <Item Name="InE">
+        <InputExpectTD>
+          <InColumns />
+          <ExpColumns />
+          <Datas />
+        </InputExpectTD>
+      </Item>
+    </Data>
+  </TCPython>
+  <CheckingFolder KYID="0EDF71E3-3FD5-40A8-A7AF-C850D193FDB2" Name="校验算法" ParentID="5AC5FC45-490F-4467-B053-646B558F34AC" />
+</Root>

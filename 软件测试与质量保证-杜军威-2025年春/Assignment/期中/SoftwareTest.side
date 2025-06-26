@@ -1,0 +1,302 @@
+{
+  "id": "2614131f-da6a-4b39-bcc5-d5edd024d587",
+  "version": "2.0",
+  "name": "SoftwareTest",
+  "url": "https://www.jd.com/",
+  "tests": [{
+    "id": "32092025-6d44-4d98-8932-1d47b4bdf480",
+    "name": "Demo",
+    "commands": [{
+      "id": "45a747ce-1d46-4862-9a39-9ad8131788db",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.jd.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fd3a5783-fc21-42b5-bffb-4d8bdd679d7c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1550x878",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c52feeb1-e4d1-4848-bd00-53eb26b64b6a",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=黄金项链",
+      "targets": [
+        ["linkText=黄金项链", "linkText"],
+        ["css=#hotwords > a:nth-child(5)", "css:finder"],
+        ["xpath=//a[contains(text(),'黄金项链')]", "xpath:link"],
+        ["xpath=//div[@id='hotwords']/a[5]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '//search.jd.com/Search?keyword=%E9%BB%84%E9%87%91%E9%A1%B9%E9%93%BE&enc=utf-8')]", "xpath:href"],
+        ["xpath=//a[5]", "xpath:position"],
+        ["xpath=//a[contains(.,'黄金项链')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b22cc35d-6499-4da6-928a-8efd70d4c3f9",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "linkText=黄金项链",
+      "targets": [
+        ["linkText=黄金项链", "linkText"],
+        ["css=#hotwords > a:nth-child(5)", "css:finder"],
+        ["xpath=//a[contains(text(),'黄金项链')]", "xpath:link"],
+        ["xpath=//div[@id='hotwords']/a[5]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '//search.jd.com/Search?keyword=%E9%BB%84%E9%87%91%E9%A1%B9%E9%93%BE&enc=utf-8')]", "xpath:href"],
+        ["xpath=//a[5]", "xpath:position"],
+        ["xpath=//a[contains(.,'黄金项链')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "675a4411-fa82-44f7-8b6b-945825112b04",
+      "comment": "",
+      "command": "click",
+      "target": "css=#cate_item2 .cate_detail_item1 .cate_detail_con_lk:nth-child(1) > .cate_detail_tit_content",
+      "targets": [
+        ["css=#cate_item2 .cate_detail_item1 .cate_detail_con_lk:nth-child(1) > .cate_detail_tit_content", "css:finder"],
+        ["xpath=//div[@id='cate_item2']/div/div[2]/dl/dd/a/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/dl/dd/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'游戏手机')]", "xpath:innerText"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win5671",
+      "windowTimeout": 2000
+    }, {
+      "id": "9b39e614-d7c6-468d-8c4c-ecf36edd83ee",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win5671}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a96a7c03-e2a4-4580-ac8b-526814698d35",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=立即注册",
+      "targets": [
+        ["linkText=立即注册", "linkText"],
+        ["css=.regist-link > a", "css:finder"],
+        ["xpath=//a[contains(text(),'立即注册')]", "xpath:link"],
+        ["xpath=//div[@id='kbCoagent']/ul/li[3]/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '//reg.jd.com/p/regPage?ignore=1')]", "xpath:href"],
+        ["xpath=//li[3]/div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'立即注册')]", "xpath:innerText"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win3242",
+      "windowTimeout": 2000
+    }, {
+      "id": "ca926c1e-6c49-4d5e-9512-85498e32f911",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win3242}",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "feca7887-548a-439b-b3e5-8879ea6adf91",
+    "name": "test",
+    "commands": [{
+      "id": "4886fa3e-4fd4-445b-8a00-198d5726cf06",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.jd.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7017114b-8092-4bd3-9d63-53ad4818a3fb",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1550x878",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "315f5f73-ac15-49ab-848c-3ba38fddf63a",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.button",
+      "targets": [
+        ["css=.button", "css:finder"],
+        ["xpath=//div[@id='search']/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'搜索')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ceb8389a-00bd-4d8f-940d-ab642f471dbd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.umc-equity-reward",
+      "targets": [
+        ["css=.umc-equity-reward", "css:finder"],
+        ["xpath=//div[@id='umc-equity-content']/div", "xpath:idRelative"],
+        ["xpath=//div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eff65fea-49c9-4898-9e26-987b3495069d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.umc-equity-close",
+      "targets": [
+        ["css=.umc-equity-close", "css:finder"],
+        ["xpath=//div[@id='umc-equity-content']/img", "xpath:idRelative"],
+        ["xpath=//img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "53da372c-10c5-4926-b4bb-a811acad9a2d",
+      "comment": "",
+      "command": "click",
+      "target": "id=key",
+      "targets": [
+        ["id=key", "id"],
+        ["css=#key", "css:finder"],
+        ["xpath=//input[@id='key']", "xpath:attributes"],
+        ["xpath=//div[@id='search']/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b02210aa-1337-45f2-9e38-08b4d596b7fc",
+      "comment": "",
+      "command": "type",
+      "target": "id=key",
+      "targets": [
+        ["id=key", "id"],
+        ["css=#key", "css:finder"],
+        ["xpath=//input[@id='key']", "xpath:attributes"],
+        ["xpath=//div[@id='search']/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "无线蓝牙耳机"
+    }, {
+      "id": "6e33ce18-1440-48fd-840b-522a98c5732a",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=key",
+      "targets": [
+        ["id=key", "id"],
+        ["css=#key", "css:finder"],
+        ["xpath=//input[@id='key']", "xpath:attributes"],
+        ["xpath=//div[@id='search']/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "c91dade1-cc63-4df8-b677-9b914479265d",
+      "comment": "",
+      "command": "click",
+      "target": "css=#J_feature li:nth-child(1) i",
+      "targets": [
+        ["css=#J_feature li:nth-child(1) i", "css:finder"],
+        ["xpath=//div[@id='J_feature']/ul/li/a/i", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/div/div[2]/div[2]/ul/li/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "548f6e56-6047-4dfd-8abb-0a6c950c5d2c",
+      "comment": "",
+      "command": "click",
+      "target": "css=#warecard_10063504420346 .skcolor_ljg",
+      "targets": [
+        ["css=#warecard_10063504420346 .skcolor_ljg", "css:finder"],
+        ["xpath=//div[@id='warecard_10063504420346']/div[4]/a/em/font", "xpath:idRelative"],
+        ["xpath=//font", "xpath:position"],
+        ["xpath=//font[contains(.,'无线蓝牙耳机')]", "xpath:innerText"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win3009",
+      "windowTimeout": 2000
+    }, {
+      "id": "f56c679d-5911-4d08-806b-ff5d0d7778b3",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win3009}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "766a7946-ab48-453a-96b1-53d2056857d5",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,36)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ea2bbd11-190b-4a93-88b7-c6b450bb38b2",
+      "comment": "",
+      "command": "click",
+      "target": "id=InitCartUrl",
+      "targets": [
+        ["id=InitCartUrl", "id"],
+        ["linkText=加入购物车", "linkText"],
+        ["css=#InitCartUrl", "css:finder"],
+        ["xpath=(//a[contains(text(),'加入购物车')])[2]", "xpath:link"],
+        ["xpath=//a[@id='InitCartUrl']", "xpath:attributes"],
+        ["xpath=//div[@id='choose-btns']/div/div[2]/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '//cart.jd.com/gate.action?pid=10063504420346&pcount=1&ptype=1')]", "xpath:href"],
+        ["xpath=//div[2]/a[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3e91b0a-d776-44d3-a44d-d8629060f013",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=蓝色【APP+40ms低延迟+续航60h】",
+      "targets": [
+        ["linkText=蓝色【APP+40ms低延迟+续航60h】", "linkText"],
+        ["css=.item:nth-child(2) > a:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='choose-attr-1']/div[2]/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#none')])[16]", "xpath:href"],
+        ["xpath=//div[2]/div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'蓝色【APP+40ms低延迟+续航60h】')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7ad78377-223f-42cc-bf1a-bb90a45555ea",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "linkText=蓝色【APP+40ms低延迟+续航60h】",
+      "targets": [
+        ["linkText=蓝色【APP+40ms低延迟+续航60h】", "linkText"],
+        ["css=.item:nth-child(2) > a:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='choose-attr-1']/div[2]/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#none')])[16]", "xpath:href"],
+        ["xpath=//div[2]/div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'蓝色【APP+40ms低延迟+续航60h】')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b62365ae-03c7-478d-b4db-756aa7b5e5ad",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=退出",
+      "targets": [
+        ["linkText=退出", "linkText"],
+        ["css=.link-logout", "css:finder"],
+        ["xpath=//a[contains(text(),'退出')]", "xpath:link"],
+        ["xpath=//li[@id='ttbar-login-2024']/div[2]/div/div/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '//passport.jd.com/uc/login?ltype=logout&ReturnUrl=https%3A%2F%2Fitem.jd.com%2F10063504420346.html')]", "xpath:href"],
+        ["xpath=//div/div/a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'退出')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "9e55f12c-7d32-4741-92cd-2bac996f1cfa",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["32092025-6d44-4d98-8932-1d47b4bdf480"]
+  }],
+  "urls": [],
+  "plugins": []
+}
