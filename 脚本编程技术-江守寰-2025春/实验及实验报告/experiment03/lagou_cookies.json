@@ -1,0 +1,178 @@
+{
+  "timestamp": 1751169781.2889187,
+  "cookies": [
+    {
+      "domain": "www.lagou.com",
+      "expiry": 1751774555,
+      "httpOnly": false,
+      "name": "hasDeliver",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "0"
+    },
+    {
+      "domain": ".lagou.com",
+      "expiry": 1751774555,
+      "httpOnly": false,
+      "name": "privacyPolicyPopup",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "false"
+    },
+    {
+      "domain": "www.lagou.com",
+      "expiry": 1751774555,
+      "httpOnly": false,
+      "name": "showExpriedMyPublish",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "1"
+    },
+    {
+      "domain": "www.lagou.com",
+      "expiry": 1751774555,
+      "httpOnly": false,
+      "name": "showExpriedCompanyHome",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "1"
+    },
+    {
+      "domain": "www.lagou.com",
+      "expiry": 1751774555,
+      "httpOnly": false,
+      "name": "showExpriedIndex",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "1"
+    },
+    {
+      "domain": ".lagou.com",
+      "httpOnly": false,
+      "name": "login",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "true"
+    },
+    {
+      "domain": ".lagou.com",
+      "expiry": 1785729755,
+      "httpOnly": false,
+      "name": "LG_HAS_LOGIN",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "1"
+    },
+    {
+      "domain": ".lagou.com",
+      "httpOnly": false,
+      "name": "_putrc",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "6CC2BC8FD82C642C123F89F2B170EADC"
+    },
+    {
+      "domain": ".lagou.com",
+      "expiry": 1751774555,
+      "httpOnly": false,
+      "name": "gate_login_token",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "v1####8c4ab1f2e8e99e2a606468d177abb2af1f962961d19ce62276cfb71ab6e0e89c"
+    },
+    {
+      "domain": ".lagou.com",
+      "httpOnly": false,
+      "name": "sensorsdata2015session",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "%7B%7D"
+    },
+    {
+      "domain": ".lagou.com",
+      "expiry": 1751212799,
+      "httpOnly": false,
+      "name": "sajssdk_2015_cross_new_user",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "1"
+    },
+    {
+      "domain": "www.lagou.com",
+      "httpOnly": false,
+      "name": "WEBTJ-ID",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "20250629120147-197b9d92ebdb2b-09a3d436cb5c1f-26011151-1327104-197b9d92ebe1a33"
+    },
+    {
+      "domain": ".lagou.com",
+      "expiry": 1785729757,
+      "httpOnly": false,
+      "name": "sensorsdata2015jssdkcross",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "%7B%22distinct_id%22%3A%22197b9d92f73b06-0d8b83cde5ba99-26011151-1327104-197b9d92f7419b2%22%2C%22first_id%22%3A%22%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24os%22%3A%22Windows%22%2C%22%24browser%22%3A%22Chrome%22%2C%22%24browser_version%22%3A%22138.0.0.0%22%7D%2C%22%24device_id%22%3A%22197b9d92f73b06-0d8b83cde5ba99-26011151-1327104-197b9d92f7419b2%22%7D"
+    },
+    {
+      "domain": "www.lagou.com",
+      "httpOnly": true,
+      "name": "JSESSIONID",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "ABAABJAABEGAAGJ9DF446995E04D122B91E493BC323292D"
+    },
+    {
+      "domain": ".lagou.com",
+      "httpOnly": false,
+      "name": "unick",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "%E7%8E%8B%E6%B8%85"
+    },
+    {
+      "domain": ".lagou.com",
+      "httpOnly": false,
+      "name": "X_HTTP_TOKEN",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "42daf4b72327b2816579611571bf5e71415983ed09"
+    },
+    {
+      "domain": ".lagou.com",
+      "expiry": 1785729755,
+      "httpOnly": false,
+      "name": "LG_LOGIN_USER_ID",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "v1####2e5ce2555e71f5bfd613f52a2aa78c157ab349c9bcecf1a184e76e7c3fd860a8"
+    },
+    {
+      "domain": ".lagou.com",
+      "expiry": 1753761695,
+      "httpOnly": false,
+      "name": "index_location_city",
+      "path": "/wn",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "%E5%85%A8%E5%9B%BD"
+    }
+  ]
+}
