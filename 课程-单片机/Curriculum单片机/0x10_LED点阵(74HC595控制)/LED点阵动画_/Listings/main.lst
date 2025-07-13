@@ -1,0 +1,114 @@
+C51 COMPILER V9.54   MAIN                                                                  05/07/2024 18:59:35 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: E:\KeilC51\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main
+                    -.lst) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include "reg52.h"
+   2          
+   3          /* data, RCLK 是预定义变量*/
+   4          
+   5          int i, j, k = 0;
+   6          sbit SER = P3^4; // 串行数据输入引脚
+   7          sbit SRCLK = P3^6; // 移位时钟输入引脚
+   8          sbit RCLK_ = P3^5; // 存储时钟输入引脚
+   9          
+  10          void delay_ten_us(int x){
+  11   1              while(x --);
+  12   1      }
+  13          
+  14          // 上升沿时数据寄存器的数据移位。Q0->Q1->Q2-->Q3-->...-->Q7;下降沿移位寄存器数据不变。
+  15          void SRCLK_down(){
+  16   1              SRCLK = 0;
+  17   1              delay_ten_us(1);
+  18   1              SRCLK = 1;
+  19   1              delay_ten_us(1);
+  20   1      }
+  21          
+  22          // 12 脚 : 上升沿时移位寄存器的数据进入数据存储寄存器，下降沿时存储寄存器数据不变。
+  23          void RCLK_down(){
+  24   1              RCLK_ = 0;
+  25   1              delay_ten_us(1);
+  26   1              RCLK_ = 1;
+  27   1              delay_ten_us(1);
+  28   1      }
+  29          
+  30          // 写入数据
+  31          void hc595_write_data(int data_){
+  32   1              int i;
+  33   1              for(i = 7; i >= 0; i --){
+  34   2                      SER = data_ >> i & 1;
+  35   2                      SRCLK_down();
+  36   2              }               
+  37   1              RCLK_down();
+  38   1      }
+  39          /*
+  40          01111111
+  41          10111111
+  42          11011111
+  43          11101111
+  44          11110111
+  45          11111011
+  46          11111101
+  47          11111110
+  48          */
+  49          unsigned char code col[8] = {0x7f, 0xbf, 0xdf, 0xef, 0xf7, 0xfb, 0xfd, 0xfe};
+  50          
+  51          
+  52          unsigned char code led_matrix_row_codes[][8] = {
+  53                  {0x00,0x00,0x3e,0x41,0x41,0x41,0x3e,0x00},     //0
+  54                  {0x00,0x00,0x00,0x21,0x7f,0x01,0x00,0x00},     //1
+C51 COMPILER V9.54   MAIN                                                                  05/07/2024 18:59:35 PAGE 2   
+
+  55                  {0x00,0x00,0x27,0x45,0x45,0x45,0x39,0x00},     //2
+  56                  {0x00,0x00,0x2a,0x49,0x49,0x49,0x36,0x00},     //3
+  57                  {0x00,0x00,0x0c,0x14,0x24,0x7f,0x04,0x00},     //4
+  58                  {0x00,0x00,0x72,0x51,0x51,0x51,0x4e,0x00},     //5
+  59                  {0x00,0x00,0x3e,0x49,0x49,0x49,0x26,0x00},     //6
+  60                  {0x00,0x00,0x40,0x40,0x4f,0x50,0x60,0x00},     //7
+  61                  {0x00,0x00,0x36,0x49,0x49,0x49,0x36,0x00},     //8
+  62                  {0x00,0x00,0x32,0x49,0x49,0x49,0x3e,0x00},         //9
+  63          };
+  64          /*
+  65                  74HC595 控制行
+  66                  对于行, 1 是联通
+  67                  0x0f = 0000 1111
+  68                  从上到下后四个亮
+  69          */
+  70          /*
+  71                  P0 控制列
+  72                  对于列, 0 是联通
+  73                  0x7f = 0111 1111
+  74                  从左到右控制列的从左到右
+  75          */
+  76          void main(){
+  77   1              P0 = 0xff;
+  78   1              for(i = 0; i < 10; i ++){
+  79   2                      for(j = 0; j < 8; j ++){
+  80   3                              hc595_write_data(led_matrix_row_codes[i][j]);
+  81   3                              P0 = col[j];
+  82   3                              delay_ten_us(100);
+  83   3                              P0 = 0xff;
+  84   3                      }
+  85   2                      delay_ten_us(100 * 500);
+  86   2                      delay_ten_us(100 * 500);
+  87   2              }
+  88   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    228    ----
+   CONSTANT SIZE    =     88    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      6       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

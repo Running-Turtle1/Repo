@@ -1,0 +1,71 @@
+C51 COMPILER V9.01   TIMER                                                                 05/11/2024 15:40:49 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE TIMER
+OBJECT MODULE PLACED IN ..\output\timer.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE ..\bsp\timer\timer.c BROWSE INCDIR(..\bsp;..\public;..\bsp\led;..\bsp\key;.
+                    -.\bsp\smg;..\bsp\step_motor;..\bsp\iic;..\bsp\24c02;..\bsp\lcd1602;..\bsp\timer) DEBUG OBJECTEXTEND PRINT(.\timer.lst) O
+                    -BJECT(..\output\timer.obj)
+
+line level    source
+
+   1          #include "public.h"
+   2          
+   3          /*******************************************************************************
+   4          * 函 数 名       : time1_1ms_init
+   5          * 函数功能               : (P3.4)定时器0中断配置函数，通过设置TH和TL即可确定定时时间
+   6          * 输    入       : 无
+   7          * 输    出       : 无
+   8          *******************************************************************************/
+   9          void time1_1ms_init(void)
+  10          {
+  11   1              //设置T0的工作方式，使用工作模式1
+  12   1              TMOD|=0x10;
+  13   1              //设置时间初值TH0，TL0 ，机器周期=1us（晶振12M）
+  14   1              //使用定时器初值计算工具
+  15   1              TH1=0xFC;
+  16   1              TL1=0x18;
+  17   1              //开启定时器0中断
+  18   1              ET1=1;
+  19   1              //开启全局中断
+  20   1              EA=1;
+  21   1              //启动定时器
+  22   1              TR1=1;
+  23   1      }
+  24          /*******************************************************************************
+  25          * 函 数 名       : time0_init
+  26          * 函数功能               : (P3.4)定时器0中断配置函数，通过设置TH和TL即可确定定时时间
+  27          * 输    入       : 无
+  28          * 输    出       : 无
+  29          *******************************************************************************/
+  30          void time0_1ms_init(void)
+  31          {
+  32   1              //设置T0的工作方式，使用工作模式1
+  33   1              TMOD|=0x01;
+  34   1              //设置时间初值TH0，TL0 ，机器周期=1us（晶振12M）
+  35   1              //使用定时器初值计算工具
+  36   1              TH0=0xfc;
+  37   1              TL0=0x18;
+  38   1              //开启定时器0中断
+  39   1              ET0=1;
+  40   1              //开启全局中断
+  41   1              EA=1;
+  42   1              //启动定时器
+  43   1              TR0=1;
+  44   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     32    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+C51 COMPILER V9.01   TIMER                                                                 05/11/2024 15:40:49 PAGE 2   
+
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

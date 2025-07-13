@@ -1,0 +1,3 @@
+".\Objects\main.obj" 
+TO ".\Objects\colOperation" 
+PRINT(".\Listings\colOperation.m51") RAMSIZE(256) 

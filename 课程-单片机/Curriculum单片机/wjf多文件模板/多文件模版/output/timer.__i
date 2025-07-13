@@ -1,0 +1,1 @@
+"..\bsp\timer\timer.c" BROWSE INCDIR(..\bsp;..\public;..\bsp\led;..\bsp\key;..\bsp\smg;..\bsp\step_motor;..\bsp\iic;..\bsp\24c02;..\bsp\lcd1602;..\bsp\timer) DEBUG OBJECTEXTEND PRINT(.\timer.lst) OBJECT(..\output\timer.obj)

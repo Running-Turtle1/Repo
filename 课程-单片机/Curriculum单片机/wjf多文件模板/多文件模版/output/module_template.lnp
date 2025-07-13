@@ -1,0 +1,12 @@
+"..\output\main.obj",
+"..\output\public.obj",
+"..\output\led.obj",
+"..\output\key.obj",
+"..\output\smg.obj",
+"..\output\step_motor.obj",
+"..\output\iic.obj",
+"..\output\24c02.obj",
+"..\output\lcd1602.obj",
+"..\output\timer.obj" 
+TO "..\output\module_template" 
+PRINT(".\module_template.m51") RAMSIZE(256) 

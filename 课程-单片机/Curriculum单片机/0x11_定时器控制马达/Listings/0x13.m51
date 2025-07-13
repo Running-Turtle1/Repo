@@ -1,0 +1,187 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        04/23/2024  19:15:11  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+E:\KEILC51\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\0x13 PRINT (.\Listings\0x13.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  E:\KEILC51\C51\LIB\C51S.LIB (?C_STARTUP)
+  E:\KEILC51\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\0x13 (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0004H     UNIT         ?DT?MAIN
+            IDATA   000CH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     UNIT         ?PR?DC_MOTOR_INIT?MAIN
+                    0006H     0005H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+            CODE    000EH     0009H     UNIT         ?C_INITSEG
+                    0017H     0004H                  *** GAP ***
+            CODE    001BH     0003H     ABSOLUTE     
+            CODE    001EH     008CH     UNIT         ?C_C51STARTUP
+            CODE    00AAH     0029H     UNIT         ?PR?T0_ISR?MAIN
+            CODE    00D3H     001FH     UNIT         ?PR?T1_ISR?MAIN
+            CODE    00F2H     0014H     UNIT         ?PR?MAIN?MAIN
+            CODE    0106H     0010H     UNIT         ?PR?T0_1MS_INIT?MAIN
+            CODE    0116H     0010H     UNIT         ?PR?T1_50MS_INIT?MAIN
+            CODE    0126H     000FH     UNIT         ?PR?_DELAY_TEN_US?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\0x13 (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN
+  +--> ?PR?DC_MOTOR_INIT?MAIN
+  +--> ?PR?_DELAY_TEN_US?MAIN
+  +--> ?PR?T0_1MS_INIT?MAIN
+  +--> ?PR?T1_50MS_INIT?MAIN
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/23/2024  19:15:11  PAGE 2
+
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\0x13 (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:012AH         PUBLIC        _delay_ten_us
+  B:0090H.0       PUBLIC        dc_motor_pin
+  B:00A0H.0       PUBLIC        LED0
+  B:00A8H.7       PUBLIC        EA
+  B:00A0H.1       PUBLIC        LED1
+  C:0106H         PUBLIC        T0_1ms_init
+  D:00A8H         PUBLIC        IE
+  C:0003H         PUBLIC        DC_MOTOR_INIT
+  D:00B8H         PUBLIC        IP
+  C:00F2H         PUBLIC        main
+  C:00AAH         PUBLIC        T0_isr
+  D:0098H         PUBLIC        SCON
+  C:00D3H         PUBLIC        T1_isr
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  C:0116H         PUBLIC        T1_50ms_init
+  B:00A8H.1       PUBLIC        ET0
+  B:00A8H.3       PUBLIC        ET1
+  D:008CH         PUBLIC        TH0
+  D:008DH         PUBLIC        TH1
+  D:008AH         PUBLIC        TL0
+  D:008BH         PUBLIC        TL1
+  B:0088H.4       PUBLIC        TR0
+  B:0088H.6       PUBLIC        TR1
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          T0_1MS_INIT
+  C:0106H         LINE#         6
+  C:0106H         LINE#         8
+  C:0109H         LINE#         16
+  C:010CH         LINE#         17
+  C:010FH         LINE#         20
+  C:0111H         LINE#         22
+  C:0113H         LINE#         25
+  C:0115H         LINE#         26
+  -------         ENDPROC       T0_1MS_INIT
+  -------         PROC          T1_50MS_INIT
+  C:0116H         LINE#         28
+  C:0116H         LINE#         30
+  C:0119H         LINE#         33
+  C:011CH         LINE#         34
+  C:011FH         LINE#         37
+  C:0121H         LINE#         39
+  C:0123H         LINE#         42
+  C:0125H         LINE#         43
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/23/2024  19:15:11  PAGE 3
+
+
+  -------         ENDPROC       T1_50MS_INIT
+  C:0126H         SYMBOL        L?0019
+  -------         PROC          L?0018
+  -------         ENDPROC       L?0018
+  C:0126H         SYMBOL        L?0019
+  -------         PROC          _DELAY_TEN_US
+  D:0006H         SYMBOL        x
+  C:012AH         LINE#         55
+  C:012AH         LINE#         56
+  C:0134H         LINE#         57
+  -------         ENDPROC       _DELAY_TEN_US
+  -------         PROC          DC_MOTOR_INIT
+  C:0003H         LINE#         58
+  C:0003H         LINE#         60
+  C:0005H         LINE#         61
+  -------         ENDPROC       DC_MOTOR_INIT
+  -------         PROC          MAIN
+  C:00F2H         LINE#         62
+  C:00F2H         LINE#         63
+  C:00F5H         LINE#         64
+  C:00F8H         LINE#         65
+  C:00FBH         LINE#         66
+  C:00FEH         LINE#         67
+  C:0101H         LINE#         68
+  C:0104H         LINE#         69
+  C:0104H         LINE#         71
+  -------         ENDPROC       MAIN
+  -------         PROC          T0_ISR
+  -------         DO            
+  D:0008H         SYMBOL        counter
+  -------         ENDDO         
+  C:00AAH         LINE#         74
+  C:00AEH         LINE#         78
+  C:00B6H         LINE#         79
+  C:00BEH         LINE#         80
+  C:00C4H         LINE#         81
+  C:00C6H         LINE#         82
+  C:00C8H         LINE#         83
+  C:00C8H         LINE#         85
+  C:00CBH         LINE#         86
+  C:00CEH         LINE#         87
+  -------         ENDPROC       T0_ISR
+  -------         PROC          T1_ISR
+  -------         DO            
+  D:000AH         SYMBOL        counter
+  -------         ENDDO         
+  C:00D3H         LINE#         89
+  C:00D5H         LINE#         92
+  C:00DDH         LINE#         93
+  C:00E3H         LINE#         94
+  C:00E7H         LINE#         95
+  C:00E9H         LINE#         96
+  C:00E9H         LINE#         98
+  C:00ECH         LINE#         99
+  C:00EFH         LINE#         100
+  -------         ENDPROC       T1_ISR
+  -------         ENDMOD        MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/23/2024  19:15:11  PAGE 4
+
+
+
+Program Size: data=13.0 xdata=0 code=300
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

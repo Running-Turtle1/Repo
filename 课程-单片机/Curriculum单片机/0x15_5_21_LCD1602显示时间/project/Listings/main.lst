@@ -1,0 +1,84 @@
+C51 COMPILER V9.54   MAIN                                                                  05/27/2024 11:27:02 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN ..\output\main.obj
+COMPILER INVOKED BY: E:\KeilC51\C51\BIN\C51.EXE ..\user\main.c OPTIMIZE(8,SPEED) BROWSE INCDIR(..\bsp\DS;..\bsp\LCD;..\u
+                    -ser) DEBUG OBJECTEXTEND PRINT(.\Listings\main.lst) OBJECT(..\output\main.obj)
+
+line level    source
+
+   1          #include "public.h"
+   2          
+   3          u8 time_buf[8]; // 用于 LCD 显示
+   4          
+   5          char date_str[17]; // 日期字符串，长度为16字符+1个结束符
+   6          char time_str[17]; // 时间字符串，长度为16字符+1个结束符
+   7          
+   8          u16 x;
+   9          
+  10          void main(){
+  11   1              lcd1602_init();//LCD1602初始化
+  12   1              ds1302_init();//初始化DS1302
+  13   1              
+  14   1              while(1){
+  15   2                      Ds1302ReadTime();
+*** WARNING C206 IN LINE 15 OF ..\user\main.c: 'Ds1302ReadTime': missing function-prototype
+  16   2                      LcdDisplay();
+  17   2              }
+  18   1              
+  19   1      //      lcd1602_show_string(0,0,"DATE:24-05-21 #23");//第一行显示
+  20   1      //      lcd1602_show_string(0,1,"TIME:19:03:12");//第二行显示
+  21   1              
+  22   1              // 2024年5月21日20:19:01 作业, 初始化为 2024年 - 05 - 21 - 20 - 19 - 01
+  23   1              // u8 gDS1302_TIME[7] = {0x01, 0x19, 0x20, 0x21, 0x05, 0x24, 0x20};
+  24   1              
+  25   1              
+  26   1              /*
+  27   1              while(1){
+  28   1                              date_str[0] = 'D'; date_str[1] = 'A'; date_str[2] = 'T'; date_str[3] = 'E';
+  29   1              date_str[4] = ':'; 
+  30   1              date_str[5] = '0' + gDS1302_TIME[6] / 16;  date_str[6] = '0' + gDS1302_TIME[6] % 16;
+  31   1              date_str[7] = '0' + gDS1302_TIME[5] / 16;  date_str[8] = '0' + gDS1302_TIME[5] % 16;
+  32   1              date_str[9] = '-'; 
+  33   1              date_str[10] = '0' + gDS1302_TIME[4] / 16;  date_str[11] = '0' + gDS1302_TIME[4] % 16;
+  34   1              date_str[12] = '-'; 
+  35   1              date_str[13] = '0' + gDS1302_TIME[3] / 16;  date_str[14] = '0' + gDS1302_TIME[3] % 16;
+  36   1      
+  37   1              
+  38   1              time_str[0] = 'T'; time_str[1] = 'I'; time_str[2] = 'M'; time_str[3] = 'E';
+  39   1              time_str[4] = ':'; 
+  40   1              time_str[5] = '0' + gDS1302_TIME[2] / 16;  time_str[6] = '0' + gDS1302_TIME[2] % 16;
+  41   1              time_str[7] = ':'; 
+  42   1              time_str[8] = '0' + gDS1302_TIME[1] / 16;  time_str[9] = '0' + gDS1302_TIME[1] % 16;
+  43   1              time_str[10] = ':'; 
+  44   1              time_str[11] = '0' + gDS1302_TIME[0] / 16;  time_str[12] = '0' + gDS1302_TIME[0]++ % 16;
+  45   1              time_str[13] = ' '; 
+  46   1              time_str[14] = '#'; 
+  47   1              time_str[15] = '2';  time_str[15] = '3'; 
+  48   1              
+  49   1              lcd1602_show_string(0,0,date_str);//第一行显示
+  50   1              lcd1602_show_string(0,1,time_str);//第二行显示
+  51   1      
+  52   1              x = 500 * 100;
+  53   1              while(x--);
+C51 COMPILER V9.54   MAIN                                                                  05/27/2024 11:27:02 PAGE 2   
+
+  54   1              x = 500 * 100;
+  55   1              while(x--);
+  56   1              }*/
+  57   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     14    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     44    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

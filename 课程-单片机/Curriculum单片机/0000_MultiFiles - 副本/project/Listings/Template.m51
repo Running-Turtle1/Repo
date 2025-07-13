@@ -1,0 +1,210 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        06/18/2024  08:34:22  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+E:\KEILC51\C51\BIN\BL51.EXE ..\output\Eight_Multiple_Eight_LED_Matrix\main.obj, ..\output\Eight_Multiple_Eight_LED_Matri
+>> x\public.obj, ..\output\Eight_Multiple_Eight_LED_Matrix\Eight_Multiple_Eight_LED_Matrix.obj, ..\output\Eight_Multiple
+>> _Eight_LED_Matrix\timer.obj TO ..\output\Eight_Multiple_Eight_LED_Matrix\Template PRINT (.\Listings\Template.m51) RAM
+>> SIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  ..\output\Eight_Multiple_Eight_LED_Matrix\main.obj (MAIN)
+  ..\output\Eight_Multiple_Eight_LED_Matrix\public.obj (PUBLIC)
+  ..\output\Eight_Multiple_Eight_LED_Matrix\Eight_Multiple_Eight_LED_Matrix.obj (EIGHT_MULTIPLE_EIGHT_LED_MATRIX)
+  ..\output\Eight_Multiple_Eight_LED_Matrix\timer.obj (TIMER)
+  E:\KEILC51\C51\LIB\C51S.LIB (?C_STARTUP)
+  E:\KEILC51\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  ..\output\Eight_Multiple_Eight_LED_Matrix\Template (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0004H     UNIT         ?DT?WATERFALL_LIGHT?EIGHT_MULTIPLE_EIGHT_LED_MATRIX
+            DATA    000CH     0004H     UNIT         ?DT?TIMER
+            IDATA   0010H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0005H     UNIT         ?PR?MAIN?MAIN
+                    0008H     0003H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+            CODE    000EH     008CH     UNIT         ?C_C51STARTUP
+            CODE    009AH     006DH     UNIT         ?PR?T0_ISR?TIMER
+            CODE    0107H     0025H     UNIT         ?PR?WATERFALL_LIGHT?EIGHT_MULTIPLE_EIGHT_LED_MATRIX
+            CODE    012CH     0012H     UNIT         ?PR?_LIGHT_THE_X_TH_LED?EIGHT_MULTIPLE_EIGHT_LED_MATRIX
+            CODE    013EH     0010H     UNIT         ?PR?T0_1MS_INIT?TIMER
+            CODE    014EH     000BH     UNIT         ?PR?_DELAY_10US?PUBLIC
+            CODE    0159H     0009H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   ..\output\Eight_Multiple_Eight_LED_Matrix\Template (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?PR?T0_ISR?TIMER
+  +--> ?PR?_LIGHT_THE_X_TH_LED?EIGHT_MULTIPL...
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/18/2024  08:34:22  PAGE 2
+
+
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN
+  +--> ?PR?T0_1MS_INIT?TIMER
+
+
+
+SYMBOL TABLE OF MODULE:  ..\output\Eight_Multiple_Eight_LED_Matrix\Template (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0003H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  C:0003H         LINE#         3
+  C:0003H         LINE#         4
+  C:0006H         LINE#         5
+  C:0006H         LINE#         7
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        PUBLIC
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:014EH         PUBLIC        _delay_10us
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _DELAY_10US
+  D:0006H         SYMBOL        ten_us
+  C:014EH         LINE#         3
+  C:014EH         LINE#         4
+  C:0158H         LINE#         5
+  -------         ENDPROC       _DELAY_10US
+  -------         ENDMOD        PUBLIC
+
+  -------         MODULE        EIGHT_MULTIPLE_EIGHT_LED_MATRIX
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/18/2024  08:34:22  PAGE 3
+
+
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:0107H         PUBLIC        waterfall_light
+  D:00C8H         PUBLIC        T2CON
+  C:012CH         PUBLIC        _light_the_x_th_led
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _LIGHT_THE_X_TH_LED
+  D:0006H         SYMBOL        x
+  C:012CH         LINE#         4
+  C:012CH         LINE#         5
+  C:012FH         LINE#         6
+  C:013DH         LINE#         7
+  -------         ENDPROC       _LIGHT_THE_X_TH_LED
+  -------         PROC          WATERFALL_LIGHT
+  -------         DO            
+  D:0008H         SYMBOL        i
+  D:000AH         SYMBOL        t
+  -------         ENDDO         
+  C:0107H         LINE#         9
+  C:0107H         LINE#         11
+  C:010CH         LINE#         12
+  C:0113H         LINE#         13
+  C:011AH         LINE#         14
+  C:012BH         LINE#         15
+  -------         ENDPROC       WATERFALL_LIGHT
+  -------         ENDMOD        EIGHT_MULTIPLE_EIGHT_LED_MATRIX
+
+  -------         MODULE        TIMER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00A8H.7       PUBLIC        EA
+  C:013EH         PUBLIC        T0_1ms_init
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:009AH         PUBLIC        T0_isr
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  B:00A8H.1       PUBLIC        ET0
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  B:0088H.4       PUBLIC        TR0
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          T0_1MS_INIT
+  C:013EH         LINE#         4
+  C:013EH         LINE#         9
+  C:0141H         LINE#         17
+  C:0144H         LINE#         18
+  C:0147H         LINE#         21
+  C:0149H         LINE#         24
+  C:014BH         LINE#         27
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/18/2024  08:34:22  PAGE 4
+
+
+  C:014DH         LINE#         28
+  -------         ENDPROC       T0_1MS_INIT
+  -------         PROC          T0_ISR
+  -------         DO            
+  D:000CH         SYMBOL        counter
+  D:000EH         SYMBOL        ledNum
+  -------         ENDDO         
+  C:009AH         LINE#         30
+  C:00B7H         LINE#         35
+  C:00BFH         LINE#         36
+  C:00C7H         LINE#         37
+  C:00CDH         LINE#         38
+  C:00D4H         LINE#         39
+  C:00DCH         LINE#         40
+  C:00E6H         LINE#         41
+  C:00E6H         LINE#         43
+  C:00E9H         LINE#         44
+  C:00ECH         LINE#         45
+  -------         ENDPROC       T0_ISR
+  -------         ENDMOD        TIMER
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?WATERFALL_LIGHT?EIGHT_MULTIPLE_EIGHT_LED_MATRIX
+
+Program Size: data=17.0 xdata=0 code=351
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

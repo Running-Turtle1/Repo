@@ -1,0 +1,72 @@
+C51 COMPILER V9.54   TIMER                                                                 05/21/2024 19:45:46 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE TIMER
+OBJECT MODULE PLACED IN ..\output\Eight_Multiple_Eight_LED_Matrix\timer.obj
+COMPILER INVOKED BY: E:\KeilC51\C51\BIN\C51.EXE ..\bsp\timer\timer.c OPTIMIZE(8,SPEED) BROWSE INCDIR(..\user;..\bsp\Eigh
+                    -t_Multiple_Eight_LED_Matrix;..\bsp\IIC;..\bsp\timer;..\bsp\LCD1602A;..\bsp\DS1302) DEBUG OBJECTEXTEND PRINT(.\Listings\t
+                    -imer.lst) OBJECT(..\output\Eight_Multiple_Eight_LED_Matrix\timer.obj)
+
+line level    source
+
+   1          #include "public.h"
+   2          
+   3          /* 初始化 T0 计时器，使得 1ms 中断一次 */
+   4          void T0_1ms_init(){
+   5   1              /*
+   6   1              设定T0定时器模式 
+   7   1              M1 = 0, M0 = 1, 工作方式 1, 16 位定时器/计数器
+   8   1              */
+   9   1              TMOD = 0x01;
+  10   1              
+  11   1              /*
+  12   1                      设定定时器初值, 使得 1ms 中断一次
+  13   1                      两个 8 位计数器到 2^16 = 65536 会溢出
+  14   1                      机器周期大约为 1us,
+  15   1                      初始值设定为 64536 = 0xFC18 就能 1ms 中断一次(不精确)
+  16   1              */
+  17   1              TH0 = 0xFC;
+  18   1              TL0 = 0x18;
+  19   1              
+  20   1              // 开启定时器0 中断
+  21   1              ET0 = 1;
+  22   1              
+  23   1              // 开启总中断
+  24   1              EA = 1;
+  25   1              
+  26   1              // 开启计时器开关 TR0 
+  27   1              TR0 = 1;
+  28   1      }
+  29          
+  30          void T0_isr() interrupt 1{
+  31   1              // 中断发生总次数
+  32   1              static unsigned int counter = 0;
+  33   1              // 当前需要点亮小灯的编号
+  34   1              static unsigned int ledNum = 0;
+  35   1              counter ++;
+  36   1              if(counter == 1000){ // 1000 * 1 = 1000 ms
+  37   2                      counter = 0; 
+  38   2                      light_the_x_th_led(ledNum);
+  39   2                      ledNum ++;
+  40   2                      if(ledNum == 8) ledNum = 0;
+  41   2              }
+  42   1              // 保证 1ms 的计时器中断周期
+  43   1              TH0 = 0xFC;
+  44   1              TL0 = 0x18;
+  45   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    125    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4    ----
+C51 COMPILER V9.54   TIMER                                                                 05/21/2024 19:45:46 PAGE 2   
+
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

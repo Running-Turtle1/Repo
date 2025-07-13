@@ -1,0 +1,1 @@
+"..\bsp\IIC\IIC.c" OPTIMIZE (8,SPEED) BROWSE INCDIR(..\user;..\bsp\Eight_Multiple_Eight_LED_Matrix;..\bsp\IIC;..\bsp\timer) DEBUG OBJECTEXTEND PRINT(.\Listings\IIC.lst) OBJECT(..\output\Eight_Multiple_Eight_LED_Matrix\IIC.obj)

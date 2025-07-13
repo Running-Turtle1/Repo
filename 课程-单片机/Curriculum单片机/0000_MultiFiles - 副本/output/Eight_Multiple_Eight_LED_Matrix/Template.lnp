@@ -1,0 +1,6 @@
+"..\output\Eight_Multiple_Eight_LED_Matrix\main.obj",
+"..\output\Eight_Multiple_Eight_LED_Matrix\public.obj",
+"..\output\Eight_Multiple_Eight_LED_Matrix\Eight_Multiple_Eight_LED_Matrix.obj",
+"..\output\Eight_Multiple_Eight_LED_Matrix\timer.obj" 
+TO "..\output\Eight_Multiple_Eight_LED_Matrix\Template" 
+PRINT(".\Listings\Template.m51") RAMSIZE(256) 

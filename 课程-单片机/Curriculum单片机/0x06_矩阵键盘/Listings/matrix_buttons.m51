@@ -1,0 +1,156 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        05/05/2024  17:59:04  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+E:\KEILC51\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\matrix_buttons PRINT (.\Listings\matrix_buttons.m51) RAMSIZE
+>>  (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  E:\KEILC51\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\matrix_buttons (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0116H     UNIT         ?PR?MAIN?MAIN
+            CODE    0119H     0010H     UNIT         ?CO?MAIN
+            CODE    0129H     000FH     UNIT         ?PR?_DELAY_10US?MAIN
+            CODE    0138H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\matrix_buttons (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN
+  +--> ?PR?_DELAY_10US?MAIN
+  +--> ?CO?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\matrix_buttons (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  C:0119H         PUBLIC        Array
+  D:00B0H         PUBLIC        P3
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/05/2024  17:59:04  PAGE 2
+
+
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0003H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:012DH         PUBLIC        _delay_10us
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  C:0129H         SYMBOL        L?0045
+  -------         PROC          L?0044
+  -------         ENDPROC       L?0044
+  C:0129H         SYMBOL        L?0045
+  -------         PROC          _DELAY_10US
+  D:0006H         SYMBOL        x
+  C:012DH         LINE#         37
+  C:012DH         LINE#         38
+  C:0137H         LINE#         39
+  -------         ENDPROC       _DELAY_10US
+  -------         PROC          MAIN
+  C:0003H         LINE#         42
+  C:0003H         LINE#         43
+  C:0003H         LINE#         45
+  C:0006H         LINE#         46
+  C:000CH         LINE#         47
+  C:000FH         LINE#         48
+  C:0014H         LINE#         50
+  C:001BH         LINE#         51
+  C:001DH         LINE#         52
+  C:0022H         LINE#         54
+  C:0029H         LINE#         55
+  C:002BH         LINE#         56
+  C:0030H         LINE#         58
+  C:0037H         LINE#         59
+  C:0039H         LINE#         60
+  C:003EH         LINE#         62
+  C:0045H         LINE#         63
+  C:0047H         LINE#         64
+  C:0047H         LINE#         69
+  C:004AH         LINE#         70
+  C:0050H         LINE#         71
+  C:0053H         LINE#         72
+  C:0058H         LINE#         73
+  C:005FH         LINE#         74
+  C:0061H         LINE#         75
+  C:0066H         LINE#         76
+  C:006DH         LINE#         77
+  C:006FH         LINE#         78
+  C:0074H         LINE#         79
+  C:007BH         LINE#         80
+  C:007DH         LINE#         81
+  C:0082H         LINE#         82
+  C:0089H         LINE#         83
+  C:008BH         LINE#         84
+  C:008BH         LINE#         87
+  C:008EH         LINE#         88
+  C:0094H         LINE#         89
+  C:0097H         LINE#         90
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/05/2024  17:59:04  PAGE 3
+
+
+  C:009CH         LINE#         91
+  C:00A3H         LINE#         92
+  C:00A5H         LINE#         93
+  C:00AAH         LINE#         94
+  C:00B1H         LINE#         95
+  C:00B3H         LINE#         96
+  C:00B8H         LINE#         97
+  C:00BFH         LINE#         98
+  C:00C1H         LINE#         99
+  C:00C6H         LINE#         100
+  C:00CDH         LINE#         101
+  C:00CFH         LINE#         102
+  C:00CFH         LINE#         105
+  C:00D2H         LINE#         106
+  C:00DBH         LINE#         107
+  C:00DEH         LINE#         108
+  C:00E3H         LINE#         109
+  C:00EAH         LINE#         110
+  C:00ECH         LINE#         111
+  C:00F1H         LINE#         112
+  C:00F8H         LINE#         113
+  C:00FAH         LINE#         114
+  C:00FFH         LINE#         115
+  C:0106H         LINE#         116
+  C:0108H         LINE#         117
+  C:0111H         LINE#         118
+  C:0117H         LINE#         119
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+Program Size: data=9.0 xdata=0 code=324
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

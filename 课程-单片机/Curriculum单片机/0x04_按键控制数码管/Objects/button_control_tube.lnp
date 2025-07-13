@@ -1,0 +1,3 @@
+".\Objects\main.obj" 
+TO ".\Objects\button_control_tube" 
+PRINT(".\Listings\button_control_tube.m51") RAMSIZE(256) 

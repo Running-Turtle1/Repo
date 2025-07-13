@@ -1,0 +1,199 @@
+C51 COMPILER V9.54   IIC                                                                   05/21/2024 19:18:07 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE IIC
+OBJECT MODULE PLACED IN ..\output\Eight_Multiple_Eight_LED_Matrix\IIC.obj
+COMPILER INVOKED BY: E:\KeilC51\C51\BIN\C51.EXE ..\bsp\IIC\IIC.c OPTIMIZE(8,SPEED) BROWSE INCDIR(..\user;..\bsp\Eight_Mu
+                    -ltiple_Eight_LED_Matrix;..\bsp\IIC;..\bsp\timer) DEBUG OBJECTEXTEND PRINT(.\Listings\IIC.lst) OBJECT(..\output\Eight_Mul
+                    -tiple_Eight_LED_Matrix\IIC.obj)
+
+line level    source
+
+   1          #include "public.h"
+   2          
+   3          /*
+   4                  SDA, SCL 一定要有上拉电阻 (10K)
+   5                  IIC 总线空闲时, SDA = SCL = 1;
+   6                  当 SCL=1 时, SDA 上的数据不能改变
+   7                  当 SCL=0 时, SDA 上的数据可以改变
+   8                  
+   9                  AT24C02 256 个字节
+  10                  1 0 1 0 A2 A1 A0 R/W(读写标志位) --> 读是 1, 写是 0
+  11                  1 0 1 0 0  0  0  0
+  12                  
+  13                  通过 IIC 总线找到地址为 1010, 000 的 24C02 (EEPROM), 在地址为 0x01 的寄存器中写入数据 0x0F
+  14                  
+  15                  01 - 启动 IIC 总线, --> iic_start();
+  16                  02 - 写入 24C02 芯片地址 (1010,000) + W (写信号 0) --> iic_write_byte(0xA0);
+  17                  03 - 主机等待正确的 ASK 信号 --> iic_wait_ask();
+  18                  04 - 写入 24C02 地址 = 0x01 寄存器 -->  iic_write_byte(0x01);
+  19                  05 - 主机等待正确的 ASK 信号 --> iic_wait_ask();
+  20                  06 - 写入数据 0x0F -->  iic_write_byte(0x0F);
+  21                  07 - 主机等待正确的 ASK 信号 --> iic_wait_ask();
+  22                  08 - 停止 IIC 总线 --> iic_stop();
+  23          */
+  24          
+  25          /**********************************************
+  26          函数名称 : void iic_start()
+  27          函数功能 : IIC 总线开始信号 (启动IIC总线)
+  28          输入 : void
+  29          输出 : void
+  30          **********************************************/
+  31          void iic_start(){
+  32   1              // 初始状态 = 空闲状态
+  33   1              IIC_SCL = 1; // 时钟信号
+*** ERROR C202 IN LINE 33 OF ..\bsp\IIC\IIC.c: 'IIC_SCL': undefined identifier
+  34   1              IIC_SDA = 1; // 数据信号
+*** ERROR C202 IN LINE 34 OF ..\bsp\IIC\IIC.c: 'IIC_SDA': undefined identifier
+  35   1              delay_10us(1);
+  36   1              
+  37   1              // 起始信号 : SCL = 1, SDA 从 1 --> 0 (下降沿)
+  38   1              IIC_SDA = 0;
+*** ERROR C202 IN LINE 38 OF ..\bsp\IIC\IIC.c: 'IIC_SDA': undefined identifier
+  39   1              delay_10us(1);
+  40   1              
+  41   1              // 1- 代表
+  42   1              // 2- 代表可以进行下一次的发送和接受
+  43   1              IIC_SCL = 0;
+*** ERROR C202 IN LINE 43 OF ..\bsp\IIC\IIC.c: 'IIC_SCL': undefined identifier
+  44   1              delay_10us(1);
+  45   1      }
+  46          
+  47          /**********************************************
+  48          函数名称 : void iic_stop()
+  49          函数功能 :  
+C51 COMPILER V9.54   IIC                                                                   05/21/2024 19:18:07 PAGE 2   
+
+  50          输入 : void
+  51          输出 : void
+  52          **********************************************/
+  53          void iic_stop(){
+  54   1              // 初始状态
+  55   1              IIC_SCL = 1;
+*** ERROR C202 IN LINE 55 OF ..\bsp\IIC\IIC.c: 'IIC_SCL': undefined identifier
+  56   1              IIC_SDA = 0;
+*** ERROR C202 IN LINE 56 OF ..\bsp\IIC\IIC.c: 'IIC_SDA': undefined identifier
+  57   1              delay_10us(1);
+  58   1              
+  59   1              // 终止信号， SCL = 1, SDA 从 0 --> 1 (上升沿)
+  60   1              IIC_SDA = 1;
+*** ERROR C202 IN LINE 60 OF ..\bsp\IIC\IIC.c: 'IIC_SDA': undefined identifier
+  61   1              delay_10us(1);
+  62   1              
+  63   1              // IIC 总线停止后, 进入空闲状态, SCL = 1, SDA = 1, 这里不用写
+  64   1      }
+  65          
+  66          /**********************************************
+  67          函数名称 : iic_write_byte()
+  68          函数功能 :  
+  69          输入 : u8 dat
+  70                     1 0 1 0 0 0 0
+  71          输出 : void
+  72          **********************************************/
+  73          void iic_write_byte(u8 dat){
+  74   1              u8 i;
+  75   1              // 发送第一位时, 为了要改变 SDA 上的数据 
+  76   1              IIC_SCL = 0;
+*** ERROR C202 IN LINE 76 OF ..\bsp\IIC\IIC.c: 'IIC_SCL': undefined identifier
+  77   1              delay_10us(1);
+  78   1              
+  79   1              for(i = 0; i < 8; i ++){
+  80   2                      if((dat & 0x80) > 0){
+  81   3                              IIC_SDA = 1;
+*** ERROR C202 IN LINE 81 OF ..\bsp\IIC\IIC.c: 'IIC_SDA': undefined identifier
+  82   3                      }
+  83   2                      else{
+  84   3                              IIC_SDA = 0;
+*** ERROR C202 IN LINE 84 OF ..\bsp\IIC\IIC.c: 'IIC_SDA': undefined identifier
+  85   3                      }
+  86   2                      dat <<= 1;
+  87   2                      delay_10us(1);
+  88   2                      
+  89   2                      // 保持 SDA 上的数据不变， 用于发送
+  90   2                      IIC_SCL = 1;
+*** ERROR C202 IN LINE 90 OF ..\bsp\IIC\IIC.c: 'IIC_SCL': undefined identifier
+  91   2                      delay_10us(1);
+  92   2                      
+  93   2                      // 2- 可以开始进行下一次发送
+  94   2                      IIC_SCL = 0;
+*** ERROR C202 IN LINE 94 OF ..\bsp\IIC\IIC.c: 'IIC_SCL': undefined identifier
+  95   2                      delay_10us(1);
+  96   2              }
+  97   1              
+  98   1              // ???
+  99   1              // 准备第一位数据 (先发送高位数据)
+ 100   1              //IIC_SDA = 1; // ????
+ 101   1              //delay_10us(1); // ??
+ 102   1      }
+ 103          
+C51 COMPILER V9.54   IIC                                                                   05/21/2024 19:18:07 PAGE 3   
+
+ 104          /** 主机等待从从机发送过来的 ASK(应答) 信号 0 **/
+ 105          void iic_wait_ask(){
+ 106   1              // 保存 SDA 上数据不变，为了让主机读取从机发来的信号 0/1
+ 107   1              IIC_SCL = 1;
+*** ERROR C202 IN LINE 107 OF ..\bsp\IIC\IIC.c: 'IIC_SCL': undefined identifier
+ 108   1              delay_10us(1);
+ 109   1              // 等待正确 ASK 信号 SDA=0 (从机收到XX)
+ 110   1              while(IIC_SDA){
+*** ERROR C202 IN LINE 110 OF ..\bsp\IIC\IIC.c: 'IIC_SDA': undefined identifier
+ 111   2                      ;
+ 112   2              }
+ 113   1              // 2-开始下一次的发送/接受，当前写数据，实际是发送                    
+ 114   1              IIC_SCL = 0;
+*** ERROR C202 IN LINE 114 OF ..\bsp\IIC\IIC.c: 'IIC_SCL': undefined identifier
+ 115   1              delay_10us(1);
+ 116   1      }
+ 117          
+ 118          
+ 119          
+ 120          
+ 121          
+ 122          
+ 123          
+ 124          
+ 125          
+ 126          
+ 127          
+ 128          
+ 129          
+ 130          
+ 131          
+ 132          
+ 133          
+ 134          
+ 135          
+ 136          
+ 137          
+ 138          
+ 139          
+ 140          
+ 141          
+ 142          
+ 143          
+ 144          
+ 145          
+ 146          
+ 147          
+ 148          
+ 149          
+ 150          
+ 151          
+ 152          
+ 153          
+ 154          
+ 155          
+ 156          
+ 157          
+ 158          
+ 159          
+ 160          
+ 161          
+ 162          
+C51 COMPILER V9.54   IIC                                                                   05/21/2024 19:18:07 PAGE 4   
+
+ 163          
+ 164          
+ 165          
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  15 ERROR(S)

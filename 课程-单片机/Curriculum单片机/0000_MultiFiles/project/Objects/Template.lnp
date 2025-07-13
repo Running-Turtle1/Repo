@@ -1,0 +1,5 @@
+".\Objects\main.obj",
+".\Objects\public.obj",
+".\Objects\Eight_Multiple_Eight_LED_Matrix.obj" 
+TO ".\Objects\Template" 
+PRINT(".\Listings\Template.m51") RAMSIZE(256) 

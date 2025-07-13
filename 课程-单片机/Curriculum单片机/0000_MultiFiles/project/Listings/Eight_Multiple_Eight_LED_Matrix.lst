@@ -1,0 +1,43 @@
+C51 COMPILER V9.54   EIGHT_MULTIPLE_EIGHT_LED_MATRIX                                       05/21/2024 19:45:45 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE EIGHT_MULTIPLE_EIGHT_LED_MATRIX
+OBJECT MODULE PLACED IN ..\output\Eight_Multiple_Eight_LED_Matrix\Eight_Multiple_Eight_LED_Matrix.obj
+COMPILER INVOKED BY: E:\KeilC51\C51\BIN\C51.EXE ..\bsp\Eight_Multiple_Eight_LED_Matrix\Eight_Multiple_Eight_LED_Matrix.c
+                    - OPTIMIZE(8,SPEED) BROWSE INCDIR(..\user;..\bsp\Eight_Multiple_Eight_LED_Matrix;..\bsp\IIC;..\bsp\timer;..\bsp\LCD1602A;
+                    -..\bsp\DS1302) DEBUG OBJECTEXTEND PRINT(.\Listings\Eight_Multiple_Eight_LED_Matrix.lst) OBJECT(..\output\Eight_Multiple_
+                    -Eight_LED_Matrix\Eight_Multiple_Eight_LED_Matrix.obj)
+
+line level    source
+
+   1          #include "public.h"
+   2          
+   3          // 点亮单片机的第 x 个灯
+   4          void light_the_x_th_led(u16 x){
+   5   1              P2 = 0xff; // 全部熄灭
+   6   1              P2 &= ~(1 << x); // 将第 x 位置为 0
+   7   1      }
+   8          
+   9          void waterfall_light(){
+  10   1              u16 i, t;
+  11   1              for(i = 0; i < 8; i ++){
+  12   2                      light_the_x_th_led(i); 
+  13   2                      delay_10us(500 * 100); // 延时 500 ms
+  14   2              }
+  15   1      }
+*** WARNING C280 IN LINE 10 OF ..\bsp\Eight_Multiple_Eight_LED_Matrix\Eight_Multiple_Eight_LED_Matrix.c: 't': unreferenc
+             -ed local variable
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     55    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

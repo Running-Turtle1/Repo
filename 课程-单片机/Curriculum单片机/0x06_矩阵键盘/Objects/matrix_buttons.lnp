@@ -1,0 +1,3 @@
+".\Objects\main.obj" 
+TO ".\Objects\matrix_buttons" 
+PRINT(".\Listings\matrix_buttons.m51") RAMSIZE(256) 

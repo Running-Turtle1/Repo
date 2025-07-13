@@ -1,0 +1,249 @@
+C51 COMPILER V9.54   LCD                                                                   06/03/2024 10:47:42 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE LCD
+OBJECT MODULE PLACED IN ..\output\LCD.obj
+COMPILER INVOKED BY: E:\KeilC51\C51\BIN\C51.EXE ..\bsp\LCD\LCD.c OPTIMIZE(8,SPEED) BROWSE INCDIR(..\bsp\DS;..\bsp\LCD;..
+                    -\user;..\bsp\DS18;..\bsp\timer) DEBUG OBJECTEXTEND PRINT(.\Listings\LCD.lst) OBJECT(..\output\LCD.obj)
+
+line level    source
+
+   1          #include "public.h"
+   2          
+   3          /*******************************************************************************
+   4          * 函 数 名       : lcd1602_write_cmd
+   5          * 函数功能               : LCD1602写命令
+   6          * 输    入       : cmd：指令
+   7          * 输    出       : 无
+   8          
+   9          *******************************************************************************/
+  10          void lcd1602_write_cmd(u8 cmd)
+  11          {
+  12   1              // 可以查询 lcd1602 时序图的 写时序来进行编码
+  13   1              LCD1602_RS=0;//选择命令
+  14   1              LCD1602_RW=0;//选择写
+  15   1              LCD1602_E=0;
+  16   1              LCD1602_DATAPORT=cmd;//准备命令
+  17   1              delay_10us(100);
+  18   1              LCD1602_E=1;//使能脚E先上升沿写入
+  19   1              delay_10us(100);
+  20   1              LCD1602_E=0;//使能脚E后负跳变完成写入   
+  21   1      }
+  22          
+  23          /*******************************************************************************
+  24          * 函 数 名       : lcd1602_write_data
+  25          * 函数功能               : LCD1602写数据
+  26          * 输    入       : dat：数据
+  27          * 输    出       : 无
+  28          *******************************************************************************/
+  29          
+  30          void lcd1602_write_data(u8 dat) 
+  31          {
+  32   1              LCD1602_RS=1;//选择数据
+  33   1              LCD1602_RW=0;//选择写
+  34   1              LCD1602_E=0;
+  35   1              LCD1602_DATAPORT=dat;//准备数据
+  36   1              delay_10us(100);
+  37   1              LCD1602_E=1;//使能脚E先上升沿写入
+  38   1              delay_10us(100);
+  39   1              LCD1602_E=0;//使能脚E后负跳变完成写入           
+  40   1      }
+  41          
+  42          /*******************************************************************************
+  43          * 函 数 名       : lcd1602_init
+  44          * 函数功能               : LCD1602初始化
+  45          * 输    入       : 无
+  46          * 输    出       : 无
+  47          *******************************************************************************/
+  48          
+  49          void lcd1602_init()
+  50          {
+  51   1              lcd1602_write_cmd(0x38);//数据总线8位，显示2行，5*7点阵/字符
+  52   1              lcd1602_write_cmd(0x0c);//显示功能开，无光标，光标闪烁
+  53   1              lcd1602_write_cmd(0x06);//写入新数据后光标右移，显示屏不移动
+  54   1              lcd1602_write_cmd(0x01);//清屏  
+C51 COMPILER V9.54   LCD                                                                   06/03/2024 10:47:42 PAGE 2   
+
+  55   1      }
+  56          
+  57          /*******************************************************************************
+  58          * 函 数 名       : lcd1602_clear
+  59          * 函数功能               : LCD1602清屏
+  60          * 输    入       : 无
+  61          * 输    出       : 无
+  62          *******************************************************************************/
+  63          void lcd1602_clear()
+  64          {
+  65   1              lcd1602_write_cmd(0x01);        
+  66   1      }
+  67          
+  68          /*******************************************************************************
+  69          * 函 数 名       : lcd1602_show_string
+  70          * 函数功能               : LCD1602显示字符
+  71          * 输    入       : x,y：显示坐标，x=0~15，y=0~1;
+  72                                             str：显示字符串
+  73          * 输    出       : 无
+  74          *******************************************************************************/
+  75          void lcd1602_show_string(u8 x,u8 y,u8 *str)
+  76          {
+  77   1              u8 i=0;
+  78   1      
+  79   1              if(y>1||x>15)return;//行列参数不对则强制退出
+  80   1      
+  81   1              if(y<1) //第1行显示
+  82   1              {       
+  83   2                      while(*str!='\0')//字符串是以'\0'结尾，只要前面有内容就显示
+  84   2                      {
+  85   3                              if(i<16-x)//如果字符长度超过第一行显示范围，则在第二行继续显示
+  86   3                              {
+  87   4                                      lcd1602_write_cmd(0x80+i+x);//第一行显示地址设置        
+  88   4                              }
+  89   3                              else
+  90   3                              {
+  91   4                                      lcd1602_write_cmd(0x40+0x80+i+x-16);//第二行显示地址设置        
+  92   4                              }
+  93   3                              lcd1602_write_data(*str);//显示内容
+  94   3                              str++;//指针递增
+  95   3                              i++;    
+  96   3                      }       
+  97   2              }
+  98   1              else    //第2行显示
+  99   1              {
+ 100   2                      while(*str!='\0')
+ 101   2                      {
+ 102   3                              if(i<16-x) //如果字符长度超过第二行显示范围，则在第一行继续显示
+ 103   3                              {
+ 104   4                                      lcd1602_write_cmd(0x80+0x40+i+x);       
+ 105   4                              }
+ 106   3                              else
+ 107   3                              {
+ 108   4                                      lcd1602_write_cmd(0x80+i+x-16); 
+ 109   4                              }
+ 110   3                              lcd1602_write_data(*str);
+ 111   3                              str++;
+ 112   3                              i++;    
+ 113   3                      }       
+ 114   2              }                               
+ 115   1      }
+ 116          
+C51 COMPILER V9.54   LCD                                                                   06/03/2024 10:47:42 PAGE 3   
+
+ 117          /*LCD1602 显示DS1302日期和时间 函数*/
+ 118          //---秒分时日月周年 最低位读写位;-------//
+ 119          //u8 gREAD_RTC_ADDR[7] = {0x81, 0x83, 0x85, 0x87, 0x89, 0x8b, 0x8d}; 
+ 120          // u8 gDS1302_TIME[7] = {0x01, 0x19, 0x20, 0x21, 0x05, 0x24, 0x20};
+ 121          // //---DS1302时钟初始化2021年05月20日星期四13点51分47秒。---//
+ 122          //---存储顺序是秒分时日月周年,存储格式是用BCD码---//
+ 123          // u8 gDS1302_TIME[7] = {0x47, 0x51, 0x13, 0x20, 0x04, 0x05, 0x21};
+ 124          int temperture; // 温度;
+ 125          u8 i=0;
+ 126          void LcdDisplay(){
+ 127   1              lcd1602_write_cmd(0x80+0X40); // 这条指令的作用是将LCD1602的光标移动到第二行的第一个字符位置。
+ 128   1              lcd1602_write_data('0'+gDS1302_TIME[2]/16);                             //时
+ 129   1              lcd1602_write_data('0'+(gDS1302_TIME[2]&0x0f));                          
+ 130   1              lcd1602_write_data('-');
+ 131   1              lcd1602_write_data('0'+gDS1302_TIME[1]/16);                             //分
+ 132   1              lcd1602_write_data('0'+(gDS1302_TIME[1]&0x0f)); 
+ 133   1              lcd1602_write_data('-');
+ 134   1              lcd1602_write_data('0'+gDS1302_TIME[0]/16);                             //秒
+ 135   1              lcd1602_write_data('0'+(gDS1302_TIME[0]&0x0f));
+ 136   1      
+ 137   1              lcd1602_write_cmd(0x80); // 将光标移动到第一行的第一个字符位置
+ 138   1              lcd1602_write_data('2');                        //年
+ 139   1              lcd1602_write_data('0');
+ 140   1              lcd1602_write_data('0'+gDS1302_TIME[6]/16);                      
+ 141   1              lcd1602_write_data('0'+(gDS1302_TIME[6]&0x0f));
+ 142   1              lcd1602_write_data('-');
+ 143   1              lcd1602_write_data('0'+gDS1302_TIME[4]/16);                     //月
+ 144   1              lcd1602_write_data('0'+(gDS1302_TIME[4]&0x0f));
+ 145   1              lcd1602_write_data('-');
+ 146   1              lcd1602_write_data('0'+gDS1302_TIME[3]/16);                     //日
+ 147   1              lcd1602_write_data('0'+(gDS1302_TIME[3]&0x0f));
+ 148   1              
+ 149   1              lcd1602_write_data(' ');
+ 150   1              if((gDS1302_TIME[5]&0x07) == 1){
+ 151   2                      lcd1602_write_data('M');
+ 152   2                      lcd1602_write_data('o');
+ 153   2                      lcd1602_write_data('n');
+ 154   2              }
+ 155   1              else if((gDS1302_TIME[5]&0x07) == 2){
+ 156   2                      lcd1602_write_data('T');
+ 157   2                      lcd1602_write_data('u');
+ 158   2                      lcd1602_write_data('e');
+ 159   2                      lcd1602_write_data('s');
+ 160   2              }
+ 161   1              else if((gDS1302_TIME[5]&0x07) == 3){
+ 162   2                      lcd1602_write_data('W');
+ 163   2                      lcd1602_write_data('e');
+ 164   2                      lcd1602_write_data('d');
+ 165   2                      lcd1602_write_data('n');
+ 166   2              }
+ 167   1              else if((gDS1302_TIME[5]&0x07) == 4){
+ 168   2                      lcd1602_write_data('T');
+ 169   2                      lcd1602_write_data('h');
+ 170   2                      lcd1602_write_data('u');
+ 171   2                      lcd1602_write_data('r');
+ 172   2              }
+ 173   1              else if((gDS1302_TIME[5]&0x07) == 5){
+ 174   2                      lcd1602_write_data('F');
+ 175   2                      lcd1602_write_data('r');
+ 176   2                      lcd1602_write_data('i');
+ 177   2              }
+ 178   1              else if((gDS1302_TIME[5]&0x07) == 6){
+C51 COMPILER V9.54   LCD                                                                   06/03/2024 10:47:42 PAGE 4   
+
+ 179   2                      lcd1602_write_data('S');
+ 180   2                      lcd1602_write_data('a');
+ 181   2                      lcd1602_write_data('t');
+ 182   2              }
+ 183   1              else{
+ 184   2                      lcd1602_write_data('S');
+ 185   2                      lcd1602_write_data('u');
+ 186   2                      lcd1602_write_data('n');
+ 187   2              }
+ 188   1              //lcd1602_write_cmd(0x8f); // 0x8? , 其中 ? 代表第 ? 个位置显示什么, ? = [0, f]
+ 189   1              //lcd1602_write_data('0'+(gDS1302_TIME[5]&0x07));       //星期
+ 190   1              
+ 191   1                      i++;
+ 192   1              if(i%50==0){
+ 193   2              //间隔一段时间读取温度值，间隔时间要大于温度传感器转换温度时间
+ 194   2                  temperture=ds18b20_read_temperture()*10;//保留温度值小数后一位
+ 195   2                  
+ 196   2              }
+ 197   1                      lcd1602_write_cmd(0x89 + 0x40); // 第 9 个开始写
+ 198   1              
+ 199   1              
+ 200   1          //  lcd1602_write_data('0' + (int)temp_value%10); //百位
+ 201   1              
+ 202   1              if(temperture<0)//负温度
+ 203   1              {
+ 204   2                  temperture=-temperture;
+ 205   2                  lcd1602_write_data('-'); //百位
+ 206   2              }
+ 207   1              else{
+ 208   2                   
+ 209   2              }
+ 210   1              
+ 211   1              
+ 212   1              lcd1602_write_data('0' + temperture/1000); //百位
+ 213   1              lcd1602_write_data('0' + temperture%1000/100); //十位
+ 214   1              lcd1602_write_data('0' + temperture%1000%100/10); //个位+小数点
+ 215   1              lcd1602_write_data('.');
+ 216   1              lcd1602_write_data('0' + temperture%1000%100%10); //小数点后一位
+ 217   1      //      lcd1602_write_data('0' + temp_value%10); //小数点后两位
+ 218   1      }
+ 219          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    721    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      3       5
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

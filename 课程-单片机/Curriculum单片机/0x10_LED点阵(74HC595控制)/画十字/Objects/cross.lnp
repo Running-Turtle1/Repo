@@ -1,0 +1,3 @@
+".\Objects\main.obj" 
+TO ".\Objects\cross" 
+PRINT(".\Listings\cross.m51") RAMSIZE(256) 

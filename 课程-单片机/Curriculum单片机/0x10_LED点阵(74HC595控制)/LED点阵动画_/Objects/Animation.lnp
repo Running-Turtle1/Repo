@@ -1,0 +1,3 @@
+".\Objects\main.obj" 
+TO ".\Objects\Animation" 
+PRINT(".\Listings\Animation.m51") RAMSIZE(256) 

@@ -1,0 +1,126 @@
+C51 COMPILER V9.54   MAIN                                                                  04/23/2024 19:15:09 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: E:\KeilC51\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main
+                    -.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include "reg52.h"
+   2          
+   3          sbit LED0 = P2 ^ 0;
+   4          sbit LED1 = P2 ^ 1;
+   5          
+   6          void T0_1ms_init(){
+   7   1        // 设定T0定时器模式 : 工作在方式1, 16位定时器 
+   8   1        TMOD = 0x01;
+   9   1        
+  10   1        /*
+  11   1          设定定时器初值, 使得 1ms 中断一次
+  12   1          两个 8 位计数器到 2^16 = 65536 会溢出
+  13   1          机器周期为 1us,
+  14   1          初始值设定为 64536 = 0xFC18 就能 1ms 中断一次
+  15   1        */
+  16   1        TH0 = 0xFC;
+  17   1        TL0 = 0x18;
+  18   1        
+  19   1        // 开启定时器0 中断
+  20   1        ET0 = 1;
+  21   1        // 开启总中断
+  22   1        EA = 1;
+  23   1        
+  24   1        // 开启计时器开关 TR0 
+  25   1        TR0 = 1;
+  26   1      }
+  27          
+  28          void T1_50ms_init(){
+  29   1        // 设定T0定时器模式 : 工作在方式1, 16位定时器 
+  30   1        TMOD |= 0x10;
+  31   1        
+  32   1        // 50ms 中断一次
+  33   1        TH1 = 0x3C;
+  34   1        TL1 = 0xB0;
+  35   1        
+  36   1        // 开启定时器0 中断
+  37   1        ET1 = 1;
+  38   1        // 开启总中断
+  39   1        EA = 1;
+  40   1        
+  41   1        // 开启计时器开关 TR0 
+  42   1        TR1 = 1;
+  43   1      }
+  44          /***********************************************************/
+  45          // 这节课的内容 : 
+  46          /*
+  47            51 单片机不是驱动, 而是控制
+  48            感性元件 : 
+  49            ULN2003 最高不超过 50V
+  50            in : 1, out : 0
+  51            in : 0, out : ?
+  52          */
+  53          
+  54          sbit dc_motor_pin = P1 ^ 0; // 定义 dc2003 引脚
+C51 COMPILER V9.54   MAIN                                                                  04/23/2024 19:15:09 PAGE 2   
+
+  55          void delay_ten_us(int x){
+  56   1        while(x --);
+  57   1      }
+  58          void DC_MOTOR_INIT(){
+  59   1        // 关闭电机
+  60   1        dc_motor_pin = 0;
+  61   1      }
+  62          void main(){
+  63   1        DC_MOTOR_INIT();
+  64   1        delay_ten_us(1000 * 100);
+  65   1        delay_ten_us(1000 * 100);
+  66   1        delay_ten_us(1000 * 100);
+  67   1        T0_1ms_init();
+  68   1        T1_50ms_init();
+  69   1        while(1){
+  70   2          
+  71   2        }
+  72   1      }
+  73          /***********************************************************/
+  74          void T0_isr() interrupt 1{
+  75   1        // 1s 使得小灯1 翻转一次
+  76   1        // 1s 使得电机改变一次状态
+  77   1        static unsigned int counter = 0;
+  78   1        counter ++;
+  79   1        if(counter == 1000){ // 1000 ms
+  80   2          counter = 0; 
+  81   2          LED0 = !LED0;
+  82   2          dc_motor_pin = !dc_motor_pin;
+  83   2        }
+  84   1        // 保证 1ms 的计时器中断周期
+  85   1        TH0 = 0xFC;
+  86   1        TL0 = 0x18;
+  87   1      }
+  88          
+  89          void T1_isr() interrupt 3{
+  90   1        // 1s 使得小灯2 翻转一次
+  91   1        static unsigned int counter = 0;
+  92   1        counter ++;
+  93   1        if(counter == 20){ // 1000 ms
+  94   2          counter = 0; 
+  95   2          LED1 = !LED1;
+  96   2        }
+  97   1        // 保证 50ms 的计时器中断周期
+  98   1        TH1 = 0x3C;
+  99   1        TL1 = 0xB0;
+ 100   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    142    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

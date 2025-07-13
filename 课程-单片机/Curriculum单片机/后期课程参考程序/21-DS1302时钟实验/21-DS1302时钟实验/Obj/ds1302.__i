@@ -1,0 +1,1 @@
+"App\ds1302\ds1302.c" OPTIMIZE (8,SPEED) BROWSE INCDIR(.\App\24c02;.\App\iic;.\App\key;.\App\smg;.\Public;.\App\ds18b20;.\App\ds1302) DEBUG OBJECTEXTEND PRINT(.\Obj\ds1302.lst) OBJECT(.\Obj\ds1302.obj)

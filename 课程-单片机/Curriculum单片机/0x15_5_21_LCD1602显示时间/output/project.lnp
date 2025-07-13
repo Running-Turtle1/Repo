@@ -1,0 +1,6 @@
+"..\output\main.obj",
+"..\output\public.obj",
+"..\output\DS.obj",
+"..\output\LCD.obj" 
+TO "..\output\project" 
+PRINT(".\Listings\project.m51") RAMSIZE(256) 

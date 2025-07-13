@@ -1,0 +1,167 @@
+C51 COMPILER V9.01   STEP_MOTOR                                                            05/11/2024 15:40:09 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE STEP_MOTOR
+OBJECT MODULE PLACED IN ..\output\step_motor.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE ..\bsp\step_motor\step_motor.c BROWSE INCDIR(..\bsp;..\public;..\bsp\led;..
+                    -\bsp\key;..\bsp\smg;..\bsp\step_motor;..\bsp\iic;..\bsp\24c02;..\bsp\lcd1602;..\bsp\timer) DEBUG OBJECTEXTEND PRINT(.\st
+                    -ep_motor.lst) OBJECT(..\output\step_motor.obj)
+
+line level    source
+
+   1          #include "public.h"
+   2          
+   3          /******************************************************
+   4          函数名称：void step_motor_4_beat_send_pulse(u8 dir,u8 step)
+   5          函数功能：步进电机-发送脉冲-控制程序
+   6          输入    :       u8 dir
+   7                                  dir=1:逆时针旋转
+   8                                  dir=0:顺时针旋转
+   9                                  u8 step
+  10          输出    ：void
+  11          ******************************************************/
+  12          void step_motor_4_beat_send_pulse(u8 dir,u8 step)
+  13          {
+  14   1              u8 temp=step;
+  15   1              
+  16   1              if(dir==0)      //如果为逆时针旋转
+  17   1                      temp=3-step;//调换节拍信号
+  18   1              switch(temp)//8个节拍控制：
+  19   1              {
+  20   2                      //->D
+  21   2                      case 0: STEP_MOTOR_IN_D=1;
+  22   2                                      STEP_MOTOR_IN_C=0;
+  23   2                                      STEP_MOTOR_IN_B=0;
+  24   2                                      STEP_MOTOR_IN_A=0;
+  25   2                                      break;
+  26   2                      //->C
+  27   2                      case 1: 
+  28   2                                      STEP_MOTOR_IN_D=0;
+  29   2                                      STEP_MOTOR_IN_C=1;
+  30   2                                      STEP_MOTOR_IN_B=0;
+  31   2                                      STEP_MOTOR_IN_A=0;
+  32   2                                      break;
+  33   2                      //B
+  34   2                      case 2: 
+  35   2                                      STEP_MOTOR_IN_D=0;
+  36   2                                      STEP_MOTOR_IN_C=0;
+  37   2                                      STEP_MOTOR_IN_B=1;
+  38   2                                      STEP_MOTOR_IN_A=0;
+  39   2                                      break;
+  40   2                      //CB
+  41   2                      case 3: 
+  42   2                                      STEP_MOTOR_IN_D=0;
+  43   2                                      STEP_MOTOR_IN_C=0;
+  44   2                                      STEP_MOTOR_IN_B=0;
+  45   2                                      STEP_MOTOR_IN_A=1;
+  46   2                                      break;
+  47   2                       //停止相序
+  48   2                      default:
+  49   2                                      STEP_MOTOR_IN_D=0;
+  50   2                                      STEP_MOTOR_IN_C=0;
+  51   2                                      STEP_MOTOR_IN_B=0;
+  52   2                                      STEP_MOTOR_IN_A=0;
+  53   2                                      break;  
+C51 COMPILER V9.01   STEP_MOTOR                                                            05/11/2024 15:40:09 PAGE 2   
+
+  54   2              }                       
+  55   1      }
+  56          /******************************************************
+  57          函数名称：void step_motor_8_beat_send_pulse(u8 dir,u8 step)
+  58          函数功能：步进电机-发送脉冲-控制程序
+  59          输入    :       u8 dir
+  60                                  dir=1:逆时针旋转
+  61                                  dir=0:顺时针旋转
+  62                                  u8 step
+  63          输出    ：void
+  64          ******************************************************/
+  65          void step_motor_8_beat_send_pulse(u8 dir,u8 step)
+  66          {
+  67   1              u8 step_temp=step;
+  68   1              if(dir=0)
+*** WARNING C276 IN LINE 68 OF ..\BSP\STEP_MOTOR\STEP_MOTOR.C: constant in condition expression
+  69   1              {
+  70   2                 step_temp=7-step;
+  71   2              }
+  72   1              switch(step_temp)
+  73   1              {
+  74   2                      //->D
+  75   2                      case 0: STEP_MOTOR_IN_D=1;
+  76   2                                      STEP_MOTOR_IN_C=0;
+  77   2                                      STEP_MOTOR_IN_B=0;
+  78   2                                      STEP_MOTOR_IN_A=0;
+  79   2                                      break;
+  80   2                      //->DC
+  81   2                      case 1: 
+  82   2                                      STEP_MOTOR_IN_D=1;
+  83   2                                      STEP_MOTOR_IN_C=1;
+  84   2                                      STEP_MOTOR_IN_B=0;
+  85   2                                      STEP_MOTOR_IN_A=0;
+  86   2                                      break;
+  87   2                      //C
+  88   2                      case 2: 
+  89   2                                      STEP_MOTOR_IN_D=0;
+  90   2                                      STEP_MOTOR_IN_C=1;
+  91   2                                      STEP_MOTOR_IN_B=0;
+  92   2                                      STEP_MOTOR_IN_A=0;
+  93   2                                      break;
+  94   2                      //CB
+  95   2                      case 3: 
+  96   2                                      STEP_MOTOR_IN_D=0;
+  97   2                                      STEP_MOTOR_IN_C=1;
+  98   2                                      STEP_MOTOR_IN_B=1;
+  99   2                                      STEP_MOTOR_IN_A=0;
+ 100   2                                      break;
+ 101   2                      //B
+ 102   2                      case 4: 
+ 103   2                                      STEP_MOTOR_IN_D=0;
+ 104   2                                      STEP_MOTOR_IN_C=0;
+ 105   2                                      STEP_MOTOR_IN_B=1;
+ 106   2                                      STEP_MOTOR_IN_A=0;
+ 107   2                                      break;
+ 108   2                      //BA
+ 109   2                      case 5: 
+ 110   2                                      STEP_MOTOR_IN_D=0;
+ 111   2                                      STEP_MOTOR_IN_C=0;
+ 112   2                                      STEP_MOTOR_IN_B=1;
+ 113   2                                      STEP_MOTOR_IN_A=1;
+ 114   2                                      break;
+C51 COMPILER V9.01   STEP_MOTOR                                                            05/11/2024 15:40:09 PAGE 3   
+
+ 115   2                      //A
+ 116   2                      case 6: 
+ 117   2                                      STEP_MOTOR_IN_D=0;
+ 118   2                                      STEP_MOTOR_IN_C=0;
+ 119   2                                      STEP_MOTOR_IN_B=0;
+ 120   2                                      STEP_MOTOR_IN_A=1;
+ 121   2                                      break;
+ 122   2                      //AD
+ 123   2                      case 7: 
+ 124   2                                      STEP_MOTOR_IN_D=1;
+ 125   2                                      STEP_MOTOR_IN_C=0;
+ 126   2                                      STEP_MOTOR_IN_B=0;
+ 127   2                                      STEP_MOTOR_IN_A=1;
+ 128   2                                      break;
+ 129   2                       //停止相序
+ 130   2                      default:
+ 131   2                                      STEP_MOTOR_IN_D=0;
+ 132   2                                      STEP_MOTOR_IN_C=0;
+ 133   2                                      STEP_MOTOR_IN_B=0;
+ 134   2                                      STEP_MOTOR_IN_A=0;
+ 135   2                                      break;                          
+ 136   2              }       
+ 137   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    160    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,1 @@
+"..\bsp\LCD\LCD.c" OPTIMIZE (8,SPEED) BROWSE INCDIR(..\bsp\DS;..\bsp\LCD;..\user) DEBUG OBJECTEXTEND PRINT(.\Listings\LCD.lst) OBJECT(.\Objects\LCD.obj)

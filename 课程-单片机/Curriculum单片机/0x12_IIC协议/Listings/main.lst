@@ -1,0 +1,119 @@
+C51 COMPILER V9.54   MAIN                                                                  05/07/2024 20:41:59 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: E:\KeilC51\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main
+                    -.lst) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          
+   3          // 定义I2C总线的相关引脚和控制寄存器
+   4          sbit SCL = P1^0; // 时钟线
+   5          sbit SDA = P1^1; // 数据线
+   6          
+   7          void delay_10us(unsigned int x){
+   8   1              while(x --);
+   9   1      }       
+  10          
+  11          void i2c_start() {
+  12   1              // 空闲状态
+  13   1          SDA = 1;
+  14   1          SCL = 1;
+  15   1              delay_10us(1);
+  16   1              
+  17   1          // 发送起始信号
+  18   1          SDA = 0;
+  19   1              delay_10us(1);
+  20   1              
+  21   1          // SCL由高电平变为低电平，产生下降沿
+  22   1              // 在I2C通信中，时钟线（SCL）的下降沿通常被用来触发数据的传输或接收。
+  23   1          SCL = 0;
+  24   1              delay_10us(1);
+  25   1      }
+  26          
+  27          void i2c_stop() {
+  28   1              // 初始状态
+  29   1          SDA = 0;
+  30   1          SCL = 1;
+  31   1              delay_10us(1);
+  32   1              
+  33   1          // 发送停止信号
+  34   1          SDA = 1;
+  35   1              delay_10us(1);
+  36   1      }
+  37          
+  38          void i2c_send_byte(unsigned char byte) {
+  39   1          unsigned char i;
+  40   1          for (i = 0; i < 8; i++) {
+  41   2              // 发送每一位数据
+  42   2              SDA = (byte & 0x80) ? 1 : 0; // 先发送高位
+  43   2              byte <<= 1;
+  44   2                      delay_10us(1);
+  45   2                      
+  46   2                      // 保持 SDA 上的数据不变， 用于发送
+  47   2              SCL = 1;
+  48   2                      delay_10us(1);
+  49   2                      
+  50   2              // SCL由高电平变为低电平，产生下降沿
+  51   2                      // 可以开始进行下一次发送
+  52   2              SCL = 0;
+  53   2                      delay_10us(1);
+  54   2          }
+C51 COMPILER V9.54   MAIN                                                                  05/07/2024 20:41:59 PAGE 2   
+
+  55   1      }
+  56          
+  57          unsigned char i2c_receive_byte() {
+  58   1          unsigned char i, byte = 0;
+  59   1          SDA = 1; // 允许从设备将数据拉低
+  60   1          for (i = 0; i < 8; i++) {
+  61   2              SCL = 1;
+  62   2              byte = (byte << 1) | SDA; // 接收数据
+  63   2              SCL = 0;
+  64   2          }
+  65   1          return byte;
+  66   1      }
+  67          
+  68          void i2c_init() {
+  69   1          // 初始化I2C总线
+  70   1          SDA = 1;
+  71   1          SCL = 1;
+  72   1      }
+  73          
+  74          void main() {
+  75   1          unsigned char dat;
+  76   1          i2c_init(); // 初始化I2C总线
+  77   1          
+  78   1          i2c_start(); // 发送起始信号
+  79   1          i2c_send_byte(0xA0); // 发送设备地址（写模式）
+  80   1          i2c_send_byte(0x00); // 发送数据地址
+  81   1          i2c_send_byte(0x55); // 发送数据
+  82   1          i2c_stop(); // 发送停止信号
+  83   1          
+  84   1          i2c_start(); // 发送起始信号
+  85   1          i2c_send_byte(0xA0); // 发送设备地址（写模式）
+  86   1          i2c_send_byte(0x00); // 发送数据地址
+  87   1          i2c_start(); // 发送重复起始信号
+  88   1          i2c_send_byte(0xA1); // 发送设备地址（读模式）
+  89   1          dat = i2c_receive_byte(); // 接收数据
+  90   1          i2c_stop(); // 发送停止信号
+  91   1          
+  92   1          while (1);
+  93   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    158    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

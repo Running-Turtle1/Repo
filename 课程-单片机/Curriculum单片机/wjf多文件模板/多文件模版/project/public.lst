@@ -1,0 +1,36 @@
+C51 COMPILER V9.01   PUBLIC                                                                05/11/2024 15:40:08 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE PUBLIC
+OBJECT MODULE PLACED IN ..\output\public.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE ..\public\public.c BROWSE INCDIR(..\bsp;..\public;..\bsp\led;..\bsp\key;..\
+                    -bsp\smg;..\bsp\step_motor;..\bsp\iic;..\bsp\24c02;..\bsp\lcd1602;..\bsp\timer) DEBUG OBJECTEXTEND PRINT(.\public.lst) OB
+                    -JECT(..\output\public.obj)
+
+line level    source
+
+   1          #include "public.h"
+   2          /***************************
+   3          函数名称：void delay_10us(u16 ten_us)
+   4          函数功能：定义延时函数10us
+   5          输入    : u16 ten_us(最长延时65536*10us)
+   6          输出    ：void
+   7          ***************************/
+   8          void delay_10us(u16 ten_us)
+   9          {
+  10   1              while(ten_us--);
+  11   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     11    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

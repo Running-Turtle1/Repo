@@ -1,0 +1,87 @@
+C51 COMPILER V9.54   TIMER                                                                 06/03/2024 10:47:42 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE TIMER
+OBJECT MODULE PLACED IN ..\output\timer.obj
+COMPILER INVOKED BY: E:\KeilC51\C51\BIN\C51.EXE ..\bsp\timer\timer.c OPTIMIZE(8,SPEED) BROWSE INCDIR(..\bsp\DS;..\bsp\LC
+                    -D;..\user;..\bsp\DS18;..\bsp\timer) DEBUG OBJECTEXTEND PRINT(.\Listings\timer.lst) OBJECT(..\output\timer.obj)
+
+line level    source
+
+   1          #include "public.h"
+   2          
+   3          
+   4          void T0_1ms_init(){
+   5   1              /*
+   6   1              设定T0定时器模式 
+   7   1              M1 = 0, M0 = 1, 工作方式 1, 16 位定时器/计数器
+   8   1              */
+   9   1              TMOD = 0x01;
+  10   1              
+  11   1              /*
+  12   1                      设定定时器初值, 使得 1ms 中断一次
+  13   1                      两个 8 位计数器到 2^16 = 65536 会溢出
+  14   1                      机器周期大约为 1us,
+  15   1                      初始值设定为 64536 = 0xFC18 就能 1ms 中断一次(不精确)
+  16   1              */
+  17   1              TH0 = 0xFC;
+  18   1              TL0 = 0x18;
+  19   1              
+  20   1              // 开启定时器0 中断
+  21   1              ET0 = 1;
+  22   1              
+  23   1              // 开启总中断
+  24   1              EA = 1;
+  25   1              
+  26   1              // 开启计时器开关 TR0 
+  27   1              TR0 = 1;
+  28   1      }
+  29          
+  30          void T0_50ms_init(){
+  31   1              /*
+  32   1              设定T0定时器模式 
+  33   1              M1 = 0, M0 = 1, 工作方式 1, 16 位定时器/计数器
+  34   1              */
+  35   1              TMOD = 0x01;
+  36   1              
+  37   1              /*
+  38   1                      设定定时器初值, 使得 1ms 中断一次
+  39   1                      两个 8 位计数器到 2^16 = 65536 会溢出
+  40   1                      机器周期大约为 1us,
+  41   1                      初始值设定为 64536 = 0xFC18 就能 1ms 中断一次(不精确)
+  42   1              */
+  43   1              /*
+  44   1                      设定定时器初值, 使得 100ms 中断一次
+  45   1                      50ms = 50 000 us
+  46   1                      两个 8 位计数器到 2^16 = 65536  
+  47   1                      机器周期大约为 1us,
+  48   1                      初始值设定为 15536 = 0xFC18 就能 1ms 中断一次(不精确)
+  49   1              */
+  50   1              TH0 = 0x3C;
+  51   1              TL0 = 0xB0;
+  52   1              
+  53   1              // 开启定时器0 中断
+  54   1              ET0 = 1;
+C51 COMPILER V9.54   TIMER                                                                 06/03/2024 10:47:42 PAGE 2   
+
+  55   1              
+  56   1              // 开启总中断
+  57   1              EA = 1;
+  58   1              
+  59   1              // 开启计时器开关 TR0 
+  60   1              TR0 = 1;
+  61   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     32    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

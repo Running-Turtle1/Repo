@@ -1,0 +1,10 @@
+Output: Protel
+Type  : ProtelNetlist
+From  : Project [PCB_Project1.PrjPCB]
+   Generated File[Sheet1.NET]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 19:30:46 On 2024/4/28

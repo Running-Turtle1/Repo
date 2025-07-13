@@ -1,0 +1,58 @@
+C51 COMPILER V9.54   MAIN                                                                  05/14/2024 19:59:50 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Obj\main.obj
+COMPILER INVOKED BY: E:\KeilC51\C51\BIN\C51.EXE User\main.c OPTIMIZE(8,SPEED) BROWSE INCDIR(.\App\24c02;.\App\iic;.\App\
+                    -key;.\App\smg;.\Public;.\App\ds18b20;.\App\ds1302;.\App\ired;.\App\time;.\App\xpt2046;.\App\pwm;.\App\lcd1602) DEBUG OBJ
+                    -ECTEXTEND PRINT(.\Obj\main.lst) OBJECT(.\Obj\main.obj)
+
+line level    source
+
+   1          /**************************************************************************************
+   2          深圳市普中科技有限公司（PRECHIN 普中）
+   3          技术支持：www.prechin.net
+   4          PRECHIN
+   5           普中
+   6          
+   7          实验名称：LCD1602液晶显示实验
+   8          接线说明：      
+   9          实验现象：下载程序后，LCD1602上显示字符信息
+  10          注意事项：                                                                                                                                                                
+  11          ***************************************************************************************/
+  12          #include "public.h"
+  13          #include "lcd1602.h"
+  14          
+  15          
+  16          /*******************************************************************************
+  17          * 函 数 名       : main
+  18          * 函数功能               : 主函数
+  19          * 输    入       : 无
+  20          * 输    出       : 无
+  21          *******************************************************************************/
+  22          void main()
+  23          {       
+  24   1              lcd1602_init();//LCD1602初始化
+  25   1              lcd1602_show_string(0,0,"running_Turtle__");//第一行显示
+  26   1              lcd1602_show_string(0,1,"Wei_Peng_Chao___");//第二行显示
+  27   1              // lcd1602_show_string(0,0,"Hello World!");//第一行显示
+  28   1              // lcd1602_show_string(0,1,"0123456789");//第二行显示
+  29   1              while(1)
+  30   1              {
+  31   2                      
+  32   2              }       
+  33   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     30    ----
+   CONSTANT SIZE    =     34    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,345 @@
+C51 COMPILER V9.54   CALENDAR                                                              05/28/2024 17:04:51 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE CALENDAR
+OBJECT MODULE PLACED IN .\Obj\calendar.obj
+COMPILER INVOKED BY: E:\KeilC51\C51\BIN\C51.EXE App_Demo\calendar.c OPTIMIZE(8,SPEED) BROWSE INCDIR(.\App\24c02;.\App\ii
+                    -c;.\App\key;.\App\smg;.\Public;.\App\ds18b20;.\App\beep;.\App\time;.\App\lcd1602;.\App\ired;.\App\smg;.\App\ds1302;.\App
+                    -_Demo) DEBUG OBJECTEXTEND PRINT(.\Obj\calendar.lst) OBJECT(.\Obj\calendar.obj)
+
+line level    source
+
+   1          #include "calendar.h"
+   2          #include "ds1302.h"
+   3          #include "ds18b20.h"
+   4          #include "lcd1602.h"
+   5          #include "key.h"
+   6          #include "beep.h"
+   7          #include "time.h"
+   8          
+   9          
+  10          code u8 alarm_switch_str[]="Alarm: OFF";
+  11          code u8 alarm_on_str[]="ON ";
+  12          code u8 alarm_off_str[]="OFF";
+  13          
+  14          _calendar g_calendar;
+  15          
+  16          u8 g_keyvalue=0;
+  17          
+  18          void time0() interrupt 1
+  19          {
+  20   1              static u8 cnt=0;
+  21   1              static u8 oneflag=1;
+  22   1              TH0=0xDC;
+  23   1              TL0=0x00; 
+  24   1              cnt++;
+  25   1              
+  26   1              if(cnt==50)
+  27   1              {
+  28   2                      cnt=0;
+  29   2                      if(g_calendar.mode==0)
+  30   2                              ds1302_read_time();                     
+  31   2                      if(oneflag==1)
+  32   2                      {
+  33   3                              oneflag=0;
+  34   3                              g_calendar.alarm_time[0]=g_calendar.min;
+  35   3                              g_calendar.alarm_time[1]=g_calendar.hour;//记录初始闹钟时间             
+  36   3                      }
+  37   2                      g_calendar.temperture=ds18b20_read_temperture();                
+  38   2              }
+  39   1      }
+  40          
+  41          void calendar_datapros(u8 *datebuf,u8 *timebuf)
+  42          {
+  43   1              datebuf[0]='2';
+  44   1              datebuf[1]='0';
+  45   1              datebuf[2]=g_calendar.year/16+0x30;
+  46   1              datebuf[3]=g_calendar.year%16+0x30;
+  47   1              datebuf[4]='-';
+  48   1              datebuf[5]=g_calendar.month/16+0x30;
+  49   1              datebuf[6]=g_calendar.month%16+0x30;
+  50   1              datebuf[7]='-';
+  51   1              datebuf[8]=g_calendar.day/16+0x30;
+  52   1              datebuf[9]=g_calendar.day%16+0x30;
+  53   1              datebuf[10]=' ';
+C51 COMPILER V9.54   CALENDAR                                                              05/28/2024 17:04:51 PAGE 2   
+
+  54   1              datebuf[11]='D';
+  55   1              datebuf[12]='a';
+  56   1              datebuf[13]='y';
+  57   1              datebuf[14]=g_calendar.week%16+0x30;
+  58   1              datebuf[15]='\0';
+  59   1      
+  60   1              timebuf[0]=g_calendar.hour/16+0x30;
+  61   1              timebuf[1]=g_calendar.hour%16+0x30;
+  62   1              timebuf[2]=':';
+  63   1              timebuf[3]=g_calendar.min/16+0x30;
+  64   1              timebuf[4]=g_calendar.min%16+0x30;
+  65   1              timebuf[5]=':';
+  66   1              timebuf[6]=g_calendar.sec/16+0x30;
+  67   1              timebuf[7]=g_calendar.sec%16+0x30;
+  68   1              timebuf[8]='\0';                                
+  69   1      }
+  70          
+  71          void temperture_datapros(u8 *tempbuf)
+  72          {
+  73   1              int temp_value;
+  74   1      
+  75   1              temp_value=g_calendar.temperture*10;
+  76   1              if(temp_value<0)
+  77   1              {
+  78   2                      temp_value=-temp_value;
+  79   2                      tempbuf[0]='-'; 
+  80   2              }
+  81   1              else
+  82   1                      tempbuf[0]=' ';
+  83   1              if(temp_value>=1000)
+  84   1                      tempbuf[1]=temp_value/1000+0x30;
+  85   1              else
+  86   1                      tempbuf[1]=' ';
+  87   1              tempbuf[2]=temp_value%1000/100+0x30;
+  88   1              tempbuf[3]=temp_value%1000%100/10+0x30;
+  89   1              tempbuf[4]='.';
+  90   1              tempbuf[5]=temp_value%1000%100%10+0x30;
+  91   1              tempbuf[6]='C';
+  92   1              tempbuf[7]='\0';                
+  93   1      }
+  94          
+  95          void alarm_datapros(u8 *alarmbuf)
+  96          {
+  97   1              alarmbuf[0]=g_calendar.alarm_time[1]/16+0x30;
+  98   1              alarmbuf[1]=g_calendar.alarm_time[1]%16+0x30;
+  99   1              alarmbuf[2]='-';
+ 100   1              alarmbuf[3]=g_calendar.alarm_time[0]/16+0x30;
+ 101   1              alarmbuf[4]=g_calendar.alarm_time[0]%16+0x30;
+ 102   1              alarmbuf[5]='\0';               
+ 103   1      }
+ 104          
+ 105          void calendar_save_set_time(void)
+ 106          {
+ 107   1              gDS1302_TIME[0]=g_calendar.sec;
+ 108   1              gDS1302_TIME[1]=g_calendar.min;
+ 109   1              gDS1302_TIME[2]=g_calendar.hour;
+ 110   1              gDS1302_TIME[3]=g_calendar.day;
+ 111   1              gDS1302_TIME[4]=g_calendar.month;
+ 112   1              gDS1302_TIME[5]=g_calendar.week;
+ 113   1              gDS1302_TIME[6]=g_calendar.year;
+ 114   1      
+ 115   1              ds1302_init();          
+C51 COMPILER V9.54   CALENDAR                                                              05/28/2024 17:04:51 PAGE 3   
+
+ 116   1      }         
+ 117          
+ 118          void calendar_set_time(void)//时钟设置模式
+ 119          {
+ 120   1              if(g_calendar.mode==1)//时钟设置
+ 121   1              {
+ 122   2                      if(g_calendar.add==1)
+ 123   2                      {
+ 124   3                              g_calendar.add=0;       
+ 125   3                              switch(g_calendar.time_choice)
+ 126   3                              {
+ 127   4                                      case 0: g_calendar.sec++;
+ 128   4                                                      if((g_calendar.sec&0x0f)>9)g_calendar.sec+=6;
+ 129   4                                                      if(g_calendar.sec>=0x60)g_calendar.sec=0;
+ 130   4                                                      break;
+ 131   4                                      case 1: g_calendar.min++;
+ 132   4                                                      if((g_calendar.min&0x0f)>9)g_calendar.min+=6;
+ 133   4                                                      if(g_calendar.min>=0x60)g_calendar.min=0;
+ 134   4                                                      break;
+ 135   4                                      case 2: g_calendar.hour++;
+ 136   4                                                      if((g_calendar.hour&0x0f)>9)g_calendar.hour+=6;
+ 137   4                                                      if(g_calendar.hour>=0x24)g_calendar.hour=0;
+ 138   4                                                      break;
+ 139   4                                      case 3: g_calendar.week++;
+ 140   4                                                      if((g_calendar.week&0x0f)>9)g_calendar.week+=6;
+ 141   4                                                      if(g_calendar.week>=0x08)g_calendar.week=1;
+ 142   4                                                      break;
+ 143   4                                      case 4: g_calendar.day++;
+ 144   4                                                      if((g_calendar.day&0x0f)>9)g_calendar.day+=6;
+ 145   4                                                      if(g_calendar.day>=0x32)g_calendar.day=1;
+ 146   4                                                      break;
+ 147   4                                      case 5: g_calendar.month++;
+ 148   4                                                      if((g_calendar.month&0x0f)>9)g_calendar.month+=6;
+ 149   4                                                      if(g_calendar.month>=0x13)g_calendar.month=1;
+ 150   4                                                      break;
+ 151   4                                      case 6: g_calendar.year++;
+ 152   4                                                      if((g_calendar.year&0x0f)>9)g_calendar.year+=6;
+ 153   4                                                      if(g_calendar.year>=0x99)g_calendar.year=0;
+ 154   4                                                      break;          
+ 155   4                              }       
+ 156   3                      }                                                                                                                               
+ 157   2              }                               
+ 158   1      }
+ 159          
+ 160          void calendar_set_alarm(void)//闹钟设置模式
+ 161          {
+ 162   1              if(g_calendar.mode==2)//闹钟设置
+ 163   1              {
+ 164   2                      if(g_calendar.add==1)
+ 165   2                      {
+ 166   3                              g_calendar.add=0;       
+ 167   3                              switch(g_calendar.time_choice)
+ 168   3                              {
+ 169   4                                      case 0: g_calendar.alarm_time[0]++;
+ 170   4                                                      if((g_calendar.alarm_time[0]&0x0f)>9)g_calendar.alarm_time[0]+=6;
+ 171   4                                                      if(g_calendar.alarm_time[0]>=0x60)g_calendar.alarm_time[0]=0;
+ 172   4                                                      break;
+ 173   4                                      case 1: g_calendar.alarm_time[1]++;
+ 174   4                                                      if((g_calendar.alarm_time[1]&0x0f)>9)g_calendar.alarm_time[1]+=6;
+ 175   4                                                      if(g_calendar.alarm_time[1]>=0x24)g_calendar.alarm_time[1]=0;
+ 176   4                                                      break; 
+ 177   4                                      case 2: g_calendar.alarm=!g_calendar.alarm;
+C51 COMPILER V9.54   CALENDAR                                                              05/28/2024 17:04:51 PAGE 4   
+
+ 178   4                                                      break;
+ 179   4                                      case 3: g_calendar.time_choice=0;
+ 180   4                                                      break;
+ 181   4                              }       
+ 182   3                      }                                                                                                                                       
+ 183   2              }               
+ 184   1      }
+ 185          
+ 186          void calendar_show(void)//时钟显示
+ 187          {
+ 188   1              u8 date_buf[16];
+ 189   1              u8 time_buf[9];
+ 190   1              u8 temp_buf[8];
+ 191   1      
+ 192   1              if(g_calendar.mode==0)//正常模式显示
+ 193   1              {
+ 194   2                      g_calendar.sec=gDS1302_TIME[0]; 
+ 195   2                      g_calendar.min=gDS1302_TIME[1];
+ 196   2                      g_calendar.hour=gDS1302_TIME[2];
+ 197   2                      g_calendar.day=gDS1302_TIME[3];
+ 198   2                      g_calendar.month=gDS1302_TIME[4];
+ 199   2                      g_calendar.week=gDS1302_TIME[5];
+ 200   2                      g_calendar.year=gDS1302_TIME[6];
+ 201   2      
+ 202   2                      calendar_datapros(date_buf,time_buf);                   
+ 203   2                      temperture_datapros(temp_buf);
+ 204   2                      lcd1602_show_string(0,0,date_buf);
+ 205   2                      lcd1602_show_string(0,1,time_buf);
+ 206   2                      lcd1602_show_string(9,1,temp_buf);                                              
+ 207   2              }
+ 208   1              else if(g_calendar.mode==1)//时钟设置模式显示
+ 209   1              {
+ 210   2                      calendar_datapros(date_buf,time_buf);                   
+ 211   2                      temperture_datapros(temp_buf);
+ 212   2                      lcd1602_show_string(0,0,date_buf);
+ 213   2                      lcd1602_show_string(0,1,time_buf);
+ 214   2                      lcd1602_show_string(9,1,temp_buf);                      
+ 215   2              }
+ 216   1              else if(g_calendar.mode==2)//闹钟设置模式显示
+ 217   1              {       
+ 218   2                      alarm_datapros(time_buf);       
+ 219   2                      lcd1602_show_string(0,1,time_buf);
+ 220   2                      if(g_calendar.alarm)
+ 221   2                              lcd1602_show_string(7,0,alarm_on_str);  
+ 222   2                      else
+ 223   2                              lcd1602_show_string(7,0,alarm_off_str);         
+ 224   2              }                       
+ 225   1      }
+ 226          
+ 227          void alarm_compareproc(void)
+ 228          {
+ 229   1              if(g_calendar.alarm&&g_calendar.setok)
+ 230   1              {
+ 231   2                      if(g_calendar.alarm_time[1]==g_calendar.hour)
+ 232   2                      {
+ 233   3                              if(g_calendar.alarm_time[0]==g_calendar.min)//对比闹钟设置时间和当前时间，相同则闹铃
+ 234   3                                      beep_alarm(100,10);             
+ 235   3                      }       
+ 236   2              }       
+ 237   1      }
+ 238          
+ 239          void calendar_test(void)
+C51 COMPILER V9.54   CALENDAR                                                              05/28/2024 17:04:51 PAGE 5   
+
+ 240          {
+ 241   1              u8 key_temp=0;
+ 242   1      
+ 243   1              lcd1602_init();
+ 244   1              ds1302_init();
+ 245   1              ds18b20_init();
+ 246   1              time0_init();//定时器10ms       
+ 247   1              while(1)
+ 248   1              {
+ 249   2                      key_temp=key_scan(0);
+ 250   2                      if(key_temp==KEY1_PRESS)//模式设置
+ 251   2                      {
+ 252   3                              g_calendar.mode++;
+ 253   3                              if(g_calendar.mode==3)
+ 254   3                                      g_calendar.mode=1;
+ 255   3                              g_calendar.setok=0;
+ 256   3                              g_calendar.time_choice=0;
+ 257   3                              if(g_calendar.mode==2)
+ 258   3                              {
+ 259   4                                      lcd1602_clear();
+ 260   4                                      lcd1602_show_string(0,0,alarm_switch_str);      
+ 261   4                              }
+ 262   3                              beep_alarm(100,10);     
+ 263   3                      }                               
+ 264   2                      else if(key_temp==KEY2_PRESS)//进入设置模式时，对应位选择设置
+ 265   2                      {
+ 266   3                              g_calendar.time_choice++;
+ 267   3                              if(g_calendar.time_choice==7)
+ 268   3                                      g_calendar.time_choice=0;
+ 269   3                              beep_alarm(100,10);
+ 270   3                              
+ 271   3                      }
+ 272   2                      else if(key_temp==KEY3_PRESS)//进入设置模式时，进行数据加操作
+ 273   2                      {
+ 274   3                              g_calendar.add=1;
+ 275   3                              beep_alarm(100,10);
+ 276   3                      }       
+ 277   2                      else if(key_temp==KEY4_PRESS)//设置完成，恢复正常显示模式
+ 278   2                      {
+ 279   3                              g_calendar.setok=1;
+ 280   3                              g_calendar.time_choice=0;
+ 281   3                              g_calendar.mode=0;
+ 282   3                              calendar_save_set_time();
+ 283   3                              beep_alarm(100,10);                     
+ 284   3                      }
+ 285   2                      if(g_calendar.mode==1)//模拟光标闪烁
+ 286   2                      {
+ 287   3                              if(g_calendar.time_choice<3)
+ 288   3                                      lcd1602_show_string(7-g_calendar.time_choice*3,1," ");
+ 289   3                              else if(g_calendar.time_choice>=3&&g_calendar.time_choice<4)
+ 290   3                                      lcd1602_show_string(14,0," ");
+ 291   3                              else if(g_calendar.time_choice>=4&&g_calendar.time_choice<7)
+ 292   3                                      lcd1602_show_string(21-g_calendar.time_choice*3,0," ");         
+ 293   3                      }
+ 294   2                      else if(g_calendar.mode==2)//模拟光标闪烁
+ 295   2                      {
+ 296   3                              if(g_calendar.time_choice<2)
+ 297   3                                      lcd1602_show_string(4-g_calendar.time_choice*3,1," ");
+ 298   3                              else if(g_calendar.time_choice==2)
+ 299   3                                      lcd1602_show_string(9,0," ");
+ 300   3                              else if(g_calendar.time_choice==3)
+ 301   3                                      lcd1602_show_string(4,1," ");           
+C51 COMPILER V9.54   CALENDAR                                                              05/28/2024 17:04:51 PAGE 6   
+
+ 302   3                      }
+ 303   2                                      
+ 304   2                      calendar_set_time();
+ 305   2                      calendar_set_alarm();   
+ 306   2                      calendar_show();
+ 307   2                      alarm_compareproc();                    
+ 308   2              }               
+ 309   1      }
+ 310          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1563    ----
+   CONSTANT SIZE    =     21    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     21      45
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

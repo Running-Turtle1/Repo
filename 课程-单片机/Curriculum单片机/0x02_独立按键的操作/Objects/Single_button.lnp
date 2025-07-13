@@ -1,0 +1,3 @@
+".\Objects\main.obj" 
+TO ".\Objects\Single_button" 
+PRINT(".\Listings\Single_button.m51") RAMSIZE(256) 

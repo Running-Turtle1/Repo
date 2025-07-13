@@ -1,0 +1,4 @@
+"main.obj",
+"i2c.obj" 
+TO "template" 
+RAMSIZE(256) 
