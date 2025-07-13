@@ -1,0 +1,14 @@
+C:\Users\95432\Desktop\C#实验\Property\Property\bin\Debug\net6.0\Property.exe
+C:\Users\95432\Desktop\C#实验\Property\Property\bin\Debug\net6.0\Property.deps.json
+C:\Users\95432\Desktop\C#实验\Property\Property\bin\Debug\net6.0\Property.runtimeconfig.json
+C:\Users\95432\Desktop\C#实验\Property\Property\bin\Debug\net6.0\Property.dll
+C:\Users\95432\Desktop\C#实验\Property\Property\bin\Debug\net6.0\Property.pdb
+C:\Users\95432\Desktop\C#实验\Property\Property\obj\Debug\net6.0\Property.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\95432\Desktop\C#实验\Property\Property\obj\Debug\net6.0\Property.AssemblyInfoInputs.cache
+C:\Users\95432\Desktop\C#实验\Property\Property\obj\Debug\net6.0\Property.AssemblyInfo.cs
+C:\Users\95432\Desktop\C#实验\Property\Property\obj\Debug\net6.0\Property.csproj.CoreCompileInputs.cache
+C:\Users\95432\Desktop\C#实验\Property\Property\obj\Debug\net6.0\Property.dll
+C:\Users\95432\Desktop\C#实验\Property\Property\obj\Debug\net6.0\refint\Property.dll
+C:\Users\95432\Desktop\C#实验\Property\Property\obj\Debug\net6.0\Property.pdb
+C:\Users\95432\Desktop\C#实验\Property\Property\obj\Debug\net6.0\Property.genruntimeconfig.cache
+C:\Users\95432\Desktop\C#实验\Property\Property\obj\Debug\net6.0\ref\Property.dll

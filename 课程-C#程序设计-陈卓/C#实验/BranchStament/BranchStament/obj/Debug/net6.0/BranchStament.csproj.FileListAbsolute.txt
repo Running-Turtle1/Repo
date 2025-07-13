@@ -1,0 +1,14 @@
+C:\Users\95432\Desktop\C#实验\BranchStament\BranchStament\bin\Debug\net6.0\BranchStament.exe
+C:\Users\95432\Desktop\C#实验\BranchStament\BranchStament\bin\Debug\net6.0\BranchStament.deps.json
+C:\Users\95432\Desktop\C#实验\BranchStament\BranchStament\bin\Debug\net6.0\BranchStament.runtimeconfig.json
+C:\Users\95432\Desktop\C#实验\BranchStament\BranchStament\bin\Debug\net6.0\BranchStament.dll
+C:\Users\95432\Desktop\C#实验\BranchStament\BranchStament\bin\Debug\net6.0\BranchStament.pdb
+C:\Users\95432\Desktop\C#实验\BranchStament\BranchStament\obj\Debug\net6.0\BranchStament.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\95432\Desktop\C#实验\BranchStament\BranchStament\obj\Debug\net6.0\BranchStament.AssemblyInfoInputs.cache
+C:\Users\95432\Desktop\C#实验\BranchStament\BranchStament\obj\Debug\net6.0\BranchStament.AssemblyInfo.cs
+C:\Users\95432\Desktop\C#实验\BranchStament\BranchStament\obj\Debug\net6.0\BranchStament.csproj.CoreCompileInputs.cache
+C:\Users\95432\Desktop\C#实验\BranchStament\BranchStament\obj\Debug\net6.0\BranchStament.dll
+C:\Users\95432\Desktop\C#实验\BranchStament\BranchStament\obj\Debug\net6.0\refint\BranchStament.dll
+C:\Users\95432\Desktop\C#实验\BranchStament\BranchStament\obj\Debug\net6.0\BranchStament.pdb
+C:\Users\95432\Desktop\C#实验\BranchStament\BranchStament\obj\Debug\net6.0\BranchStament.genruntimeconfig.cache
+C:\Users\95432\Desktop\C#实验\BranchStament\BranchStament\obj\Debug\net6.0\ref\BranchStament.dll

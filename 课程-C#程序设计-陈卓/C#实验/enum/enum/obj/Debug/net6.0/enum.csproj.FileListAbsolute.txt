@@ -1,0 +1,14 @@
+C:\Users\95432\Desktop\C#实验\enum\enum\bin\Debug\net6.0\enum.exe
+C:\Users\95432\Desktop\C#实验\enum\enum\bin\Debug\net6.0\enum.deps.json
+C:\Users\95432\Desktop\C#实验\enum\enum\bin\Debug\net6.0\enum.runtimeconfig.json
+C:\Users\95432\Desktop\C#实验\enum\enum\bin\Debug\net6.0\enum.dll
+C:\Users\95432\Desktop\C#实验\enum\enum\bin\Debug\net6.0\enum.pdb
+C:\Users\95432\Desktop\C#实验\enum\enum\obj\Debug\net6.0\enum.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\95432\Desktop\C#实验\enum\enum\obj\Debug\net6.0\enum.AssemblyInfoInputs.cache
+C:\Users\95432\Desktop\C#实验\enum\enum\obj\Debug\net6.0\enum.AssemblyInfo.cs
+C:\Users\95432\Desktop\C#实验\enum\enum\obj\Debug\net6.0\enum.csproj.CoreCompileInputs.cache
+C:\Users\95432\Desktop\C#实验\enum\enum\obj\Debug\net6.0\enum.dll
+C:\Users\95432\Desktop\C#实验\enum\enum\obj\Debug\net6.0\refint\enum.dll
+C:\Users\95432\Desktop\C#实验\enum\enum\obj\Debug\net6.0\enum.pdb
+C:\Users\95432\Desktop\C#实验\enum\enum\obj\Debug\net6.0\enum.genruntimeconfig.cache
+C:\Users\95432\Desktop\C#实验\enum\enum\obj\Debug\net6.0\ref\enum.dll

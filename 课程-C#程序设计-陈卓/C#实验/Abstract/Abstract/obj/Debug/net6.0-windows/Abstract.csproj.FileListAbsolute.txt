@@ -1,0 +1,16 @@
+C:\Users\95432\Desktop\C#实验\Abstract\Abstract\obj\Debug\net6.0-windows\Abstract.Form1.resources
+C:\Users\95432\Desktop\C#实验\Abstract\Abstract\obj\Debug\net6.0-windows\Abstract.csproj.GenerateResource.cache
+C:\Users\95432\Desktop\C#实验\Abstract\Abstract\obj\Debug\net6.0-windows\Abstract.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\95432\Desktop\C#实验\Abstract\Abstract\obj\Debug\net6.0-windows\Abstract.AssemblyInfoInputs.cache
+C:\Users\95432\Desktop\C#实验\Abstract\Abstract\obj\Debug\net6.0-windows\Abstract.AssemblyInfo.cs
+C:\Users\95432\Desktop\C#实验\Abstract\Abstract\obj\Debug\net6.0-windows\Abstract.csproj.CoreCompileInputs.cache
+C:\Users\95432\Desktop\C#实验\Abstract\Abstract\bin\Debug\net6.0-windows\Abstract.exe
+C:\Users\95432\Desktop\C#实验\Abstract\Abstract\bin\Debug\net6.0-windows\Abstract.deps.json
+C:\Users\95432\Desktop\C#实验\Abstract\Abstract\bin\Debug\net6.0-windows\Abstract.runtimeconfig.json
+C:\Users\95432\Desktop\C#实验\Abstract\Abstract\bin\Debug\net6.0-windows\Abstract.dll
+C:\Users\95432\Desktop\C#实验\Abstract\Abstract\bin\Debug\net6.0-windows\Abstract.pdb
+C:\Users\95432\Desktop\C#实验\Abstract\Abstract\obj\Debug\net6.0-windows\Abstract.dll
+C:\Users\95432\Desktop\C#实验\Abstract\Abstract\obj\Debug\net6.0-windows\refint\Abstract.dll
+C:\Users\95432\Desktop\C#实验\Abstract\Abstract\obj\Debug\net6.0-windows\Abstract.pdb
+C:\Users\95432\Desktop\C#实验\Abstract\Abstract\obj\Debug\net6.0-windows\Abstract.genruntimeconfig.cache
+C:\Users\95432\Desktop\C#实验\Abstract\Abstract\obj\Debug\net6.0-windows\ref\Abstract.dll

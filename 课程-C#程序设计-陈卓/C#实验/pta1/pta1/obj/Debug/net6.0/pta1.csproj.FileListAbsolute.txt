@@ -1,0 +1,14 @@
+C:\Users\95432\Desktop\C#实验\pta1\pta1\bin\Debug\net6.0\pta1.exe
+C:\Users\95432\Desktop\C#实验\pta1\pta1\bin\Debug\net6.0\pta1.deps.json
+C:\Users\95432\Desktop\C#实验\pta1\pta1\bin\Debug\net6.0\pta1.runtimeconfig.json
+C:\Users\95432\Desktop\C#实验\pta1\pta1\bin\Debug\net6.0\pta1.dll
+C:\Users\95432\Desktop\C#实验\pta1\pta1\bin\Debug\net6.0\pta1.pdb
+C:\Users\95432\Desktop\C#实验\pta1\pta1\obj\Debug\net6.0\pta1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\95432\Desktop\C#实验\pta1\pta1\obj\Debug\net6.0\pta1.AssemblyInfoInputs.cache
+C:\Users\95432\Desktop\C#实验\pta1\pta1\obj\Debug\net6.0\pta1.AssemblyInfo.cs
+C:\Users\95432\Desktop\C#实验\pta1\pta1\obj\Debug\net6.0\pta1.csproj.CoreCompileInputs.cache
+C:\Users\95432\Desktop\C#实验\pta1\pta1\obj\Debug\net6.0\pta1.dll
+C:\Users\95432\Desktop\C#实验\pta1\pta1\obj\Debug\net6.0\refint\pta1.dll
+C:\Users\95432\Desktop\C#实验\pta1\pta1\obj\Debug\net6.0\pta1.pdb
+C:\Users\95432\Desktop\C#实验\pta1\pta1\obj\Debug\net6.0\pta1.genruntimeconfig.cache
+C:\Users\95432\Desktop\C#实验\pta1\pta1\obj\Debug\net6.0\ref\pta1.dll

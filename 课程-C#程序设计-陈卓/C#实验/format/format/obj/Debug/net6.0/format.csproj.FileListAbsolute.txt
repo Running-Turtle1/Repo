@@ -1,0 +1,14 @@
+C:\Users\95432\Desktop\C#实验\format\format\bin\Debug\net6.0\format.exe
+C:\Users\95432\Desktop\C#实验\format\format\bin\Debug\net6.0\format.deps.json
+C:\Users\95432\Desktop\C#实验\format\format\bin\Debug\net6.0\format.runtimeconfig.json
+C:\Users\95432\Desktop\C#实验\format\format\bin\Debug\net6.0\format.dll
+C:\Users\95432\Desktop\C#实验\format\format\bin\Debug\net6.0\format.pdb
+C:\Users\95432\Desktop\C#实验\format\format\obj\Debug\net6.0\format.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\95432\Desktop\C#实验\format\format\obj\Debug\net6.0\format.AssemblyInfoInputs.cache
+C:\Users\95432\Desktop\C#实验\format\format\obj\Debug\net6.0\format.AssemblyInfo.cs
+C:\Users\95432\Desktop\C#实验\format\format\obj\Debug\net6.0\format.csproj.CoreCompileInputs.cache
+C:\Users\95432\Desktop\C#实验\format\format\obj\Debug\net6.0\format.dll
+C:\Users\95432\Desktop\C#实验\format\format\obj\Debug\net6.0\refint\format.dll
+C:\Users\95432\Desktop\C#实验\format\format\obj\Debug\net6.0\format.pdb
+C:\Users\95432\Desktop\C#实验\format\format\obj\Debug\net6.0\format.genruntimeconfig.cache
+C:\Users\95432\Desktop\C#实验\format\format\obj\Debug\net6.0\ref\format.dll

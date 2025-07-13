@@ -1,0 +1,14 @@
+C:\Users\95432\Desktop\C#实验\多态\多态\bin\Debug\net6.0\多态.exe
+C:\Users\95432\Desktop\C#实验\多态\多态\bin\Debug\net6.0\多态.deps.json
+C:\Users\95432\Desktop\C#实验\多态\多态\bin\Debug\net6.0\多态.runtimeconfig.json
+C:\Users\95432\Desktop\C#实验\多态\多态\bin\Debug\net6.0\多态.dll
+C:\Users\95432\Desktop\C#实验\多态\多态\bin\Debug\net6.0\多态.pdb
+C:\Users\95432\Desktop\C#实验\多态\多态\obj\Debug\net6.0\多态.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\95432\Desktop\C#实验\多态\多态\obj\Debug\net6.0\多态.AssemblyInfoInputs.cache
+C:\Users\95432\Desktop\C#实验\多态\多态\obj\Debug\net6.0\多态.AssemblyInfo.cs
+C:\Users\95432\Desktop\C#实验\多态\多态\obj\Debug\net6.0\多态.csproj.CoreCompileInputs.cache
+C:\Users\95432\Desktop\C#实验\多态\多态\obj\Debug\net6.0\多态.dll
+C:\Users\95432\Desktop\C#实验\多态\多态\obj\Debug\net6.0\refint\多态.dll
+C:\Users\95432\Desktop\C#实验\多态\多态\obj\Debug\net6.0\多态.pdb
+C:\Users\95432\Desktop\C#实验\多态\多态\obj\Debug\net6.0\多态.genruntimeconfig.cache
+C:\Users\95432\Desktop\C#实验\多态\多态\obj\Debug\net6.0\ref\多态.dll
