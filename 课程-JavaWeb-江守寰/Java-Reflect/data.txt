@@ -1,0 +1,5 @@
+name=wpc
+age=21
+gender=male
+hobby=learn
+height=180.5

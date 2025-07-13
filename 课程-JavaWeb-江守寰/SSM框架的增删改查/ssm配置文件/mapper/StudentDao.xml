@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qust.stumis.dao.StudentDao">
+	<select id="search" resultType="com.qust.stumis.entity.Student">
+        select * from student
+    </select>
+</mapper> 
+    
+    

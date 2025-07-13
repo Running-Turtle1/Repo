@@ -1,0 +1,54 @@
+1.解压缩 mysql-5.7.31-winx64.zip 到安装目录（假设解压到E:\mysql5.7.31）
+2.配置环境变量
+变量名：MYSQL_HOME
+变量值：E:\mysql5.7.31
+
+在环境变量Path里添加：  %MYSQL_HOME%\bin
+
+2.创建数据目录及配置文件
+创建data目录为 E:\mysql5.7.31\data。另外，创建upload目录作为MySQL导入导出的目录。在MYSQL_HOME目录下创建文本文件my.ini，内容如下：
+[client]
+# 设置mysql客户端默认字符集
+default-character-set=utf8mb4
+[mysql]
+default-character-set=utf8mb4
+[mysqld]
+# 设置3306端口
+port=3306
+# 设置mysql的安装目录
+basedir=E:\mysql5.7.31
+# 设置mysql数据库的数据的存放目录
+datadir=E:\mysql5.7.31\data
+# 允许最大连接数
+max_connections=15
+# 设置服务端默认字符集
+character-set-server= utf8mb4
+# 创建新表时将使用的默认存储引擎
+default-storage-engine=INNODB
+secure-file-priv=E:\mysql5.7.31\upload
+
+(cmd开管理员权限)
+
+3.初始化数据库
+cmd命令行进入E:\mysql5.7.31目录，执行：
+
+mysqld --initialize-insecure
+
+4.注册并启动MySQL服务
+## 执行安装服务
+mysqld –install MySQL57
+
+## 启动MySQL服务
+net start MySQL57
+
+5.登录并修改密码
+打开cmd输入以下命令
+mysql -u root -p
+按回车(出现输入密码提示时,直接按回车)，进入mysql提示符
+
+然后输入以下命令：
+use mysql;
+update user set authentication_string=password("1234") where user="root";
+flush privileges;
+
+update user set password_expired="N" where user="root";

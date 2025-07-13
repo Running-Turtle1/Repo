@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qust.bkmis.dao.CourseDao">
+	<select id="search" resultType="com.qust.bkmis.entity.Course">
+        select * from course
+    </select>
+
+    <insert id="add">
+        insert into course(id, cno, cname, credit, memo) values (#{id}, #{cno}, #{cname}, #{credit}, #{memo})
+    </insert>
+    
+    <delete id="delete" parameterType="String">
+        delete from course where cno=#{cno}
+    </delete>
+
+    <update id="update" parameterType="com.qust.bkmis.entity.Course">
+        update course set id=#{id},cno=#{cno},cname=#{cname},credit=#{credit},memo=#{memo} where cno=#{cno}
+    </update>
+
+    <select id="findByCno" parameterType="String" resultType="com.qust.bkmis.entity.Course">
+        select  * from course where cno=#{cno}
+    </select>
+</mapper> 
+    
+    

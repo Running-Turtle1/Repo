@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr th:each="cs:${course}">
+            <td th:text="${cs.cno}"></td>
+        </tr>
+    </table>
+</body>
+</html>
